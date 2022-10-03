@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="SalesDataSet" targetNamespace="http://tempuri.org/SalesDataSet.xsd" xmlns:mstns="http://tempuri.org/SalesDataSet.xsd" xmlns="http://tempuri.org/SalesDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="POSDataConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="POSDataConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.POSBO.Properties.Settings.GlobalReference.Default.POSDataConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="SalesDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="SalesDataSet" msprop:Generator_UserDSName="SalesDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="SalseDetail" msprop:Generator_TableClassName="SalseDetailDataTable" msprop:Generator_TableVarName="tableSalseDetail" msprop:Generator_RowChangedName="SalseDetailRowChanged" msprop:Generator_TablePropName="SalseDetail" msprop:Generator_RowDeletingName="SalseDetailRowDeleting" msprop:Generator_RowChangingName="SalseDetailRowChanging" msprop:Generator_RowEvHandlerName="SalseDetailRowChangeEventHandler" msprop:Generator_RowDeletedName="SalseDetailRowDeleted" msprop:Generator_RowClassName="SalseDetailRow" msprop:Generator_UserTableName="SalseDetail" msprop:Generator_RowEvArgName="SalseDetailRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Product_Name" msprop:Generator_ColumnVarNameInTable="columnProduct_Name" msprop:Generator_ColumnPropNameInRow="Product_Name" msprop:Generator_ColumnPropNameInTable="Product_NameColumn" msprop:Generator_UserColumnName="Product_Name" type="xs:string" minOccurs="0" />
+              <xs:element name="Product_Price" msprop:Generator_ColumnVarNameInTable="columnProduct_Price" msprop:Generator_ColumnPropNameInRow="Product_Price" msprop:Generator_ColumnPropNameInTable="Product_PriceColumn" msprop:Generator_UserColumnName="Product_Price" type="xs:string" minOccurs="0" />
+              <xs:element name="Product_Choices" msprop:Generator_ColumnVarNameInTable="columnProduct_Choices" msprop:Generator_ColumnPropNameInRow="Product_Choices" msprop:Generator_ColumnPropNameInTable="Product_ChoicesColumn" msprop:Generator_UserColumnName="Product_Choices" type="xs:string" minOccurs="0" />
+              <xs:element name="Prodcut_Quantity" msprop:Generator_ColumnVarNameInTable="columnProdcut_Quantity" msprop:Generator_ColumnPropNameInRow="Prodcut_Quantity" msprop:Generator_ColumnPropNameInTable="Prodcut_QuantityColumn" msprop:Generator_UserColumnName="Prodcut_Quantity" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

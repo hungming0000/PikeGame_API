@@ -1,0 +1,718 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>WebBO</name>
+    </assembly>
+    <members>
+        <member name="T:WebBO.Controllers.County">
+            <summary>
+            縣市
+            </summary>
+        </member>
+        <member name="T:WebBO.Controllers.Town">
+            <summary>
+            鄉鎮
+            </summary>
+        </member>
+        <member name="T:WebBO.Controllers.CountyRoad">
+            <summary>
+            路名
+            </summary>
+        </member>
+        <member name="M:WebBO.Controllers.SharedClass.GetCounty">
+            <summary>
+            取得縣市
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:WebBO.Controllers.SharedClass.GetTown(WebBO.Controllers.County)">
+            <summary>
+            取得某縣市的鄉鎮
+            </summary>
+            <param name="ci">縣市代碼</param>
+            <returns></returns>
+        </member>
+        <member name="M:WebBO.Controllers.SharedClass.GetRoad(WebBO.Controllers.CountyRoad)">
+            <summary>
+            取得某鄉鎮的路名
+            </summary>
+            <param name="cri">縣市與鄉鎮代碼</param>
+            <returns></returns>
+        </member>
+        <member name="T:WebBO.Controllers.UserInfo">
+            <summary>
+            純登入使用
+            </summary>
+        </member>
+        <member name="T:WebBO.General.TBabuTools">
+            <summary>
+            處理動態相關的ㄅㄚㄅㄨ工具類別
+            </summary>
+        </member>
+        <member name="M:WebBO.General.TBabuTools.FillProperty(System.Object,System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            把 Dictionary 的值填入任意類別的屬性裡
+            Class 必須為 public，只有 Class.Property 才會被填寫
+            </summary>
+            <param name="obj">要填入的類別實例</param>
+            <param name="aPropertyValue">Dictionary 格式的屬性-值</param>
+        </member>
+        <member name="M:WebBO.General.TBabuTools.CreateInstance``1(System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            產生一個任意類別的實例，並把 Dictionary 裡面的值填到屬性裡
+            範例：
+            Dictionary&lt;string,string&gt; dic = new Dictionary&lt;string,string&gt; ();
+            dic["p1"] = "v1";
+            dic["p2"] = "v2";
+            TClass cls = CreateInstance&lt;TClass&gt;(dic);
+            </summary>
+            <typeparam name="T">Class Type</typeparam>
+            <param name="aPropertyValue">Dictionary 格式的屬性-值</param>
+            <returns></returns>
+        </member>
+        <member name="T:WebBO.General.TBabuClass">
+            <summary>
+            動態類別的基礎類別
+            </summary>
+        </member>
+        <member name="M:WebBO.General.TBabuClass.CreateInstance(System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            將 Dictionary 的值拿來產生新 Type 並把 Key 當屬性
+            第一次呼叫時會自動產生新 Type，往後的呼叫都使用此 Type 產生實例
+            </summary>
+            <param name="aPropertyValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebBO.General.TBabuClass.CreateInstance">
+            <summary>
+            使用內部已存在的 ClassType 產生一個實例
+            如果內部 ClsssType 不存在，傳回 null
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:WebBO.General.TBabuClass.CreateTypeAndInstance(System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            產生一個以 Dictionary 的 Key 為 Property, Value 為值的動態類別實例
+            </summary>
+            <param name="aPropertyValue">要拿來當 Property 的內容</param>
+            <returns>動態產生的類別</returns>
+        </member>
+        <member name="M:WebBO.General.TBabuClass.CreateType(System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            產生一個以 Dictionary 的 Key 為 Property 的動態類別型態
+            </summary>
+            <param name="aPropertyValue">要拿來當 Property 的內容</param>
+            <returns></returns>
+        </member>
+        <member name="M:WebBO.General.TBabuClass.Assign(WebBO.General.TBabuClass)">
+            <summary>
+            將 aSource 的屬性內容逐一設定過來
+            </summary>
+            <param name="aSource">要複製屬性值的來源</param>
+        </member>
+        <member name="M:WebBO.General.TBabuClass.AppendProperties(System.String[],System.Type[])">
+            <summary>
+            新增 Property 到 Babu 裡面，並傳回新實體
+            </summary>
+            <param name="aProperties">要新增的 Property</param>
+            <param name="aPropertiesType">要新增的 Property Type</param>
+            <returns></returns>
+        </member>
+        <member name="M:WebBO.General.TBabuClass.GetProperty(System.String)">
+            <summary>
+            取得 Property (object 型態)
+            </summary>
+            <param name="aPropertyName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebBO.General.TBabuClass.SetPropertyValue(System.String,System.Object)">
+            <summary>
+            設定 Property 的值
+            </summary>
+            <param name="aPropertyName">Property Name</param>
+            <param name="aValue">Value</param>
+        </member>
+        <member name="M:WebBO.General.CommonLib.MakeBabuList(System.Collections.Generic.List{System.Collections.Generic.Dictionary{System.String,System.String}},System.Boolean)">
+            <summary>
+            客戶端使用
+            </summary>
+            <param name="aDataList"></param>
+            <param name="aDateTimeOnlyDate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebBO.General.CommonLib.OnlyDate(System.Collections.Generic.List{System.Collections.Generic.Dictionary{System.String,System.String}})">
+            <summary>
+            客戶端使用
+            </summary>
+            <param name="aDataList"></param>
+        </member>
+        <!-- 已忽略成員 "M:WebBO.General.CommonLib.DataTableToList(System.Data.DataTable)" 中格式錯誤的 XML 註解 -->
+        <member name="T:WebBO.General.CommonLib.DataStore">
+            <summary>
+            資料包裝
+            </summary>
+        </member>
+        <member name="F:WebBO.General.CommonLib.DataStore.Data">
+            <summary>
+            資料結果實體
+            </summary>
+        </member>
+        <member name="F:WebBO.General.CommonLib.DataStore.DataList">
+            <summary>
+            資料結果實體
+            </summary>
+        </member>
+        <member name="F:WebBO.General.CommonLib.DataStore.FieldList">
+            <summary>
+            欄位資訊
+            </summary>
+        </member>
+        <member name="F:WebBO.General.CommonLib.DateTimeList">
+            <summary>
+            日期公用函數
+            </summary>
+        </member>
+        <member name="M:WebBO.General.CommonLib.ChackIdentityCard(System.String)">
+            <summary>
+            檢查身分證的合法性
+            </summary>
+            <param name="vid"></param>
+            <returns>1：字數不到10，2：第二碼非1,2，3：首碼有誤，4：查碼不對，０：正確</returns>
+        </member>
+        <member name="M:WebBO.General.CommonLib.CheckCompanyID(System.String)">
+            <summary>
+            檢查統一編號合法性
+            </summary>
+            <param name="sCompanyID"></param>
+            <returns></returns>
+        </member>
+        <member name="T:WebBO.DBLayer">
+            <summary>
+            DataLayer
+            </summary>
+        </member>
+        <member name="F:WebBO.DBLayer.disposed">
+            <summary>
+            物件回收
+            </summary>       
+        </member>
+        <member name="M:WebBO.DBLayer.#ctor">
+            <summary>
+            建構子
+            </summary>
+        </member>
+        <member name="P:WebBO.DBLayer.ConnectionString">
+            <summary>
+            存取連線字串
+            </summary>
+        </member>
+        <member name="P:WebBO.DBLayer.CommandTimeout">
+            <summary>
+            存取指令執行逾時時間，預設為30秒
+            </summary>
+        </member>
+        <member name="M:WebBO.DBLayer.IsConnected">
+            <summary>
+            取得連線狀態
+            </summary>
+        </member>
+        <member name="P:WebBO.DBLayer.CommandType">
+            <summary>
+            設定指令類型
+            </summary>
+        </member>
+        <member name="M:WebBO.DBLayer.Finalize">
+            <summary>
+            解構
+            </summary>
+        </member>
+        <member name="M:WebBO.DBLayer.SetConnectName(System.String)">
+            <summary>
+            設定連線字串
+            </summary>
+            <param name="ConnName">連線名稱</param>
+            <returns></returns>
+        </member>
+        <member name="M:WebBO.DBLayer.Open">
+            <summary>
+            開啟資料庫連線
+            </summary>
+        </member>
+        <member name="M:WebBO.DBLayer.Close">
+            <summary>
+            關閉資料庫連線
+            </summary>
+        </member>
+        <member name="M:WebBO.DBLayer.BeginTrans">
+            <summary>
+            開始交易
+            </summary>
+        </member>
+        <member name="M:WebBO.DBLayer.CommitTrans">
+            <summary>
+            完成交易
+            </summary>
+        </member>
+        <member name="M:WebBO.DBLayer.RollbackTrans">
+            <summary>
+            回復交易
+            </summary>
+        </member>
+        <member name="M:WebBO.DBLayer.GetDataTable(System.String)">
+            <summary>
+            取得執行指令結果的 DataTable 
+            </summary>
+            <param name="SQLStr">執行指令</param>
+            <returns>DataTable</returns>
+        </member>
+        <member name="M:WebBO.DBLayer.GetDataTable(System.String,System.Collections.Generic.Dictionary{System.String,WebBO.DBParamter})">
+            <summary>
+            取得執行指令結果的 DataTable
+            </summary>
+            <param name="SQLStr">執行指令</param>
+            <param name="Parameters">指令參數集合</param>
+            <returns>DataTable</returns>
+        </member>
+        <member name="M:WebBO.DBLayer.ExecuteScalar(System.String)">
+            <summary>
+            執行查詢，並傳回查詢所傳回的結果集第一個資料列的第一個資料行。會忽略其他的資料行或資料列。
+            </summary>
+            <param name="SQLStr">執行指令</param>
+            <returns>DataTable</returns>
+        </member>
+        <member name="M:WebBO.DBLayer.ExecuteScalar(System.String,System.Collections.Generic.Dictionary{System.String,WebBO.DBParamter})">
+            <summary>
+            執行查詢，並傳回查詢所傳回的結果集第一個資料列的第一個資料行。會忽略其他的資料行或資料列。
+            </summary>
+            <param name="SQLStr">執行指令</param>
+            <param name="Parameters">指令參數集合</param>
+            <returns>DataTable</returns>
+        </member>
+        <member name="M:WebBO.DBLayer.ExecuteNonQuery(System.String)">
+            <summary>
+            執行查詢，並傳回受影響的資料列數目
+            </summary>
+            <param name="SQLStr">執行指令</param>
+            <returns>受影像資料列數目</returns>
+        </member>
+        <member name="M:WebBO.DBLayer.ExecuteNonQuery(System.String,System.Collections.Generic.Dictionary{System.String,WebBO.DBParamter})">
+            <summary>
+            執行查詢，並傳回受影響的資料列數目
+            </summary>
+            <param name="SQLStr">執行指令</param>
+            <param name="Parameters">指令參數集合</param>
+            <returns>受影像資料列數目</returns>
+        </member>
+        <member name="M:WebBO.DBLayer.Dispose">
+            <summary>
+            終結託管資源
+            </summary>
+        </member>
+        <member name="T:WebBO.IDataLayer">
+            <summary>
+            資料存取物件介面
+            </summary>
+        </member>
+        <member name="M:WebBO.IDataLayer.SetConnectName(System.String)">
+            <summary>
+            設定連線字串
+            </summary>
+            <param name="ConnName">連線名稱</param>
+            <returns></returns>
+        </member>
+        <member name="M:WebBO.IDataLayer.SetCommandType(System.String)">
+            <summary>
+            設定 CommandType Text or Sp(StoredProcedure)
+            </summary>
+            <param name="CmdType"></param>
+        </member>
+        <member name="M:WebBO.IDataLayer.SetCommandTimeout(System.Int32)">
+            <summary>
+            設定指令執行逾期時間，單位為秒
+            </summary>
+            <param name="Expire"></param>
+        </member>
+        <member name="M:WebBO.IDataLayer.Open">
+            <summary>
+            開啟資料庫連線
+            </summary>
+        </member>
+        <member name="M:WebBO.IDataLayer.Close">
+            <summary>
+            關閉資料庫連線
+            </summary>
+        </member>
+        <member name="M:WebBO.IDataLayer.BeginTrans">
+            <summary>
+            開始交易
+            </summary>
+        </member>
+        <member name="M:WebBO.IDataLayer.CommitTrans">
+            <summary>
+            完成交易
+            </summary>
+        </member>
+        <member name="M:WebBO.IDataLayer.RollbackTrans">
+            <summary>
+            回復交易
+            </summary>
+        </member>
+        <member name="M:WebBO.IDataLayer.GetDataTable(System.String)">
+            <summary>
+            取得執行指令結果的 DataTable 
+            </summary>
+            <param name="SQLStr">執行指令</param>
+            <returns>DataTable</returns>
+        </member>
+        <member name="M:WebBO.IDataLayer.GetDataTable(System.String,System.Collections.Generic.Dictionary{System.String,WebBO.DBParamter})">
+            <summary>
+            取得執行指令結果的 DataTable
+            </summary>
+            <param name="SQLStr">執行指令</param>
+            <param name="Parameters">指令參數集合</param>
+            <returns>DataTable</returns>
+        </member>
+        <member name="M:WebBO.IDataLayer.ExecuteScalar(System.String)">
+            <summary>
+            執行查詢，並傳回查詢所傳回的結果集第一個資料列的第一個資料行。會忽略其他的資料行或資料列。
+            </summary>
+            <param name="SQLStr">執行指令</param>
+            <returns>DataTable</returns>
+        </member>
+        <member name="M:WebBO.IDataLayer.ExecuteScalar(System.String,System.Collections.Generic.Dictionary{System.String,WebBO.DBParamter})">
+            <summary>
+            執行查詢，並傳回查詢所傳回的結果集第一個資料列的第一個資料行。會忽略其他的資料行或資料列。
+            </summary>
+            <param name="SQLStr">執行指令</param>
+            <param name="Parameters">指令參數集合</param>
+            <returns>DataTable</returns>
+        </member>
+        <member name="M:WebBO.IDataLayer.ExecuteNonQuery(System.String)">
+            <summary>
+            執行查詢，並傳回受影響的資料列數目
+            </summary>
+            <param name="SQLStr">執行指令</param>
+            <returns>受影像資料列數目</returns>
+        </member>
+        <member name="M:WebBO.IDataLayer.ExecuteNonQuery(System.String,System.Collections.Generic.Dictionary{System.String,WebBO.DBParamter})">
+            <summary>
+            執行查詢，並傳回受影響的資料列數目
+            </summary>
+            <param name="SQLStr">執行指令</param>
+            <param name="Parameters">指令參數集合</param>
+            <returns>受影像資料列數目</returns>
+        </member>
+        <member name="T:WebBO.Models.ClassConvert">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:WebBO.Models.ClassConvert.ParseDTParameters(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="DT"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebBO.Models.ClassConvert.ParseDTSearch(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="DT"></param>
+            <returns></returns>
+        </member>
+        <member name="T:WebBO.Models.DTResult`1">
+            <summary>
+            A full result, as understood by jQuery DataTables.
+            </summary>
+            <typeparam name="T">The data type of each row.</typeparam>
+        </member>
+        <member name="P:WebBO.Models.DTResult`1.draw">
+            <summary>
+            The draw counter that this object is a response to - from the draw parameter sent as part of the data request.
+            Note that it is strongly recommended for security reasons that you cast this parameter to an integer, rather than simply echoing back to the client what it sent in the draw parameter, in order to prevent Cross Site Scripting (XSS) attacks.
+            </summary>
+        </member>
+        <member name="P:WebBO.Models.DTResult`1.recordsTotal">
+            <summary>
+            Total records, before filtering (i.e. the total number of records in the database)
+            </summary>
+        </member>
+        <member name="P:WebBO.Models.DTResult`1.recordsFiltered">
+            <summary>
+            Total records, after filtering (i.e. the total number of records after filtering has been applied - not just the number of records being returned for this page of data).
+            </summary>
+        </member>
+        <member name="P:WebBO.Models.DTResult`1.data">
+            <summary>
+            The data to be displayed in the table.
+            This is an array of data source objects, one for each row, which will be used by DataTables.
+            Note that this parameter's name can be changed using the ajaxDT option's dataSrc property.
+            </summary>
+        </member>
+        <member name="T:WebBO.Models.DTRow">
+            <summary>
+            The additional columns that you can send to jQuery DataTables for automatic processing.
+            </summary>
+        </member>
+        <member name="P:WebBO.Models.DTRow.DT_RowId">
+            <summary>
+            Set the ID property of the dt-tag tr node to this value
+            </summary>
+        </member>
+        <member name="P:WebBO.Models.DTRow.DT_RowClass">
+            <summary>
+            Add this class to the dt-tag tr node
+            </summary>
+        </member>
+        <member name="P:WebBO.Models.DTRow.DT_RowData">
+            <summary>
+            Add this data property to the row's dt-tag tr node allowing abstract data to be added to the node, using the HTML5 data-* attributes.
+            This uses the jQuery data() method to set the data, which can also then be used for later retrieval (for example on a click event).
+            </summary>
+        </member>
+        <member name="T:WebBO.Models.DTParameters">
+            <summary>
+            The parameters sent by jQuery DataTables in AJAX queries.
+            </summary>
+        </member>
+        <member name="P:WebBO.Models.DTParameters.Draw">
+            <summary>
+            Draw counter.
+            This is used by DataTables to ensure that the Ajax returns from server-side processing requests are drawn in sequence by DataTables (Ajax requests are asynchronous and thus can return out of sequence).
+            This is used as part of the draw return parameter (see below).
+            </summary>
+        </member>
+        <member name="P:WebBO.Models.DTParameters.Columns">
+            <summary>
+            An array defining all columns in the table.
+            </summary>
+        </member>
+        <member name="P:WebBO.Models.DTParameters.Order">
+            <summary>
+            An array defining how many columns are being ordering upon - i.e. if the array length is 1, then a single column sort is being performed, otherwise a multi-column sort is being performed.
+            </summary>
+        </member>
+        <member name="P:WebBO.Models.DTParameters.Start">
+            <summary>
+            Paging first record indicator.
+            This is the start point in the current data set (0 index based - i.e. 0 is the first record).
+            </summary>
+        </member>
+        <member name="P:WebBO.Models.DTParameters.Length">
+            <summary>
+            Number of records that the table can display in the current draw.
+            It is expected that the number of records returned will be equal to this number, unless the server has fewer records to return.
+            Note that this can be -1 to indicate that all records should be returned (although that negates any benefits of server-side processing!)
+            </summary>
+        </member>
+        <member name="P:WebBO.Models.DTParameters.Search">
+            <summary>
+            Global search value. To be applied to all columns which have searchable as true.
+            </summary>
+        </member>
+        <member name="P:WebBO.Models.DTParameters.SortOrder">
+            <summary>
+            Custom column that is used to further sort on the first Order column.
+            </summary>
+        </member>
+        <member name="T:WebBO.Models.DTColumn">
+            <summary>
+            A jQuery DataTables column.
+            </summary>
+        </member>
+        <member name="P:WebBO.Models.DTColumn.Data">
+            <summary>
+            Column's data source, as defined by columns.data.
+            </summary>
+        </member>
+        <member name="P:WebBO.Models.DTColumn.Name">
+            <summary>
+            Column's name, as defined by columns.name.
+            </summary>
+        </member>
+        <member name="P:WebBO.Models.DTColumn.Searchable">
+            <summary>
+            Flag to indicate if this column is searchable (true) or not (false). This is controlled by columns.searchable.
+            </summary>
+        </member>
+        <member name="P:WebBO.Models.DTColumn.Orderable">
+            <summary>
+            Flag to indicate if this column is orderable (true) or not (false). This is controlled by columns.orderable.
+            </summary>
+        </member>
+        <member name="P:WebBO.Models.DTColumn.Search">
+            <summary>
+            Specific search value.
+            </summary>
+        </member>
+        <member name="T:WebBO.Models.DTOrder">
+            <summary>
+            An order, as sent by jQuery DataTables when doing AJAX queries.
+            </summary>
+        </member>
+        <member name="P:WebBO.Models.DTOrder.Column">
+            <summary>
+            Column to which ordering should be applied.
+            This is an index reference to the columns array of information that is also submitted to the server.
+            </summary>
+        </member>
+        <member name="P:WebBO.Models.DTOrder.Dir">
+            <summary>
+            Ordering direction for this column.
+            It will be dt-string asc or dt-string desc to indicate ascending ordering or descending ordering, respectively.
+            </summary>
+        </member>
+        <member name="T:WebBO.Models.DTOrderDir">
+            <summary>
+            Sort orders of jQuery DataTables.
+            </summary>
+        </member>
+        <member name="T:WebBO.Models.DTSearch">
+            <summary>
+            A search, as sent by jQuery DataTables when doing AJAX queries.
+            </summary>
+        </member>
+        <member name="P:WebBO.Models.DTSearch.Value">
+            <summary>
+            Global search value. To be applied to all columns which have searchable as true.
+            </summary>
+        </member>
+        <member name="P:WebBO.Models.DTSearch.Regex">
+            <summary>
+            true if the global filter should be treated as a regular expression for advanced searching, false otherwise.
+            Note that normally server-side processing scripts will not perform regular expression searching for performance reasons on large data sets, but it is technically possible and at the discretion of your script.
+            </summary>
+        </member>
+        <member name="T:DataTableResultSet">
+            <summary>
+                Resultset to be JSON stringified and set back to client.
+            </summary>
+        </member>
+        <member name="F:DataTableResultSet.data">
+            <summary>Array of records. Each element of the array is itself an array of columns</summary>
+        </member>
+        <member name="F:DataTableResultSet.draw">
+            <summary>value of draw parameter sent by client</summary>
+        </member>
+        <member name="F:DataTableResultSet.recordsFiltered">
+            <summary>filtered record count</summary>
+        </member>
+        <member name="F:DataTableResultSet.recordsTotal">
+            <summary>total record count in resultset</summary>
+        </member>
+        <member name="M:DataTables.DataTableColumnSearch.Get(Newtonsoft.Json.Linq.JToken)">
+            <summary>
+            Retrieve the DataTables Columns dictionary from a JSON parameter list
+            </summary>
+            <param name="input">JToken object</param>
+            <returns>Dictionary of Column elements</returns>
+        </member>
+        <member name="M:DataTables.DataTableSearchs.Get(System.Object)">
+            <summary>
+            Retrieve DataTable parameters from WebMethod parameter, sanitized against parameter spoofing
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DataTables.DataTableSearchs.Get(Newtonsoft.Json.Linq.JToken)">
+            <summary>
+            Retrieve DataTable parameters from JSON, sanitized against parameter spoofing
+            </summary>
+            <param name="input">JToken object</param>
+            <returns>parameters</returns>
+        </member>
+        <member name="M:DataTables.DataTableParameters.Get(System.Object)">
+            <summary>
+            Retrieve DataTable parameters from WebMethod parameter, sanitized against parameter spoofing
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DataTables.DataTableParameters.Get(Newtonsoft.Json.Linq.JToken)">
+            <summary>
+            Retrieve DataTable parameters from JSON, sanitized against parameter spoofing
+            </summary>
+            <param name="input">JToken object</param>
+            <returns>parameters</returns>
+        </member>
+        <member name="M:DataTables.DataTableColumn.Get(Newtonsoft.Json.Linq.JToken)">
+            <summary>
+            Retrieve the DataTables Columns dictionary from a JSON parameter list
+            </summary>
+            <param name="input">JToken object</param>
+            <returns>Dictionary of Column elements</returns>
+        </member>
+        <member name="M:DataTables.DataTableOrder.Get(Newtonsoft.Json.Linq.JToken)">
+            <summary>
+            Retrieve the DataTables order dictionary from a JSON parameter list
+            </summary>
+            <param name="input">JToken object</param>
+            <returns>Dictionary of Order elements</returns>
+        </member>
+        <member name="P:TSqlMaker.TableName">
+            <summary>
+            要操作的 Table
+            </summary>
+        </member>
+        <member name="M:TSqlMaker.AddFieldValue(System.String,System.String,System.String)">
+            <summary>
+            增加欄位和欄位的值
+            </summary>
+            <param name="aField">欄位</param>
+            <param name="aValue">欄位的值</param>
+            <param name="aValueSymbol">欄位的值用什麼符號括起來，一般為單引號</param>
+        </member>
+        <member name="M:TSqlMaker.AddWhereFieldValue(System.String,System.String,System.String)">
+            <summary>
+            增加 Select 或 Update Where 條件欄位和欄位的值
+            </summary>
+            <param name="aField">欄位</param>
+            <param name="aValue">欄位的值</param>
+            <param name="aValueSymbol">欄位的值用什麼符號括起來，一般為單引號</param>
+        </member>
+        <member name="M:TSqlMaker.AddLikeFieldValue(System.String,System.String,System.String)">
+            <summary>
+            增加 Select 或 Update Where-Like 條件欄位和欄位的值
+            </summary>
+            <param name="aField">欄位</param>
+            <param name="aValue">欄位的值</param>
+            <param name="aValueSymbol">欄位的值用什麼符號括起來，一般為單引號</param>
+        </member>
+        <member name="M:TSqlMaker.Clear">
+            <summary>
+            清除所有欄位和欄位的值
+            </summary>
+        </member>
+        <member name="M:TSqlMaker.GenUpdate">
+            <summary>
+            產生 Update 的語法
+            </summary>
+            <returns>產生的語法</returns>
+        </member>
+        <member name="M:TSqlMaker.GenInsert">
+            <summary>
+            產生 Insert 的語法
+            </summary>
+            <returns>產生的語法</returns>
+        </member>
+        <member name="M:TSqlMaker.GenCount">
+            <summary>
+            產生 Count 的語法
+            </summary>
+            <returns>產生的語法</returns>
+        </member>
+        <member name="M:TSqlMaker.GenDelete">
+            <summary>
+            產生 Delete 的語法
+            </summary>
+            <returns>產生的語法</returns>
+        </member>
+        <member name="M:TSqlMaker.GenSelect">
+            <summary>
+            產生 Select 的語法
+            </summary>
+            <returns>產生的語法</returns>
+        </member>
+    </members>
+</doc>

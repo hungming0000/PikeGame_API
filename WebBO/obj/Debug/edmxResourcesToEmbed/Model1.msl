@@ -1,0 +1,652 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="NT_PlantTreeModelStoreContainer" CdmEntityContainer="Entities">
+    <EntitySetMapping Name="tbAppContractTypeDoc">
+      <EntityTypeMapping TypeName="NT_PlantTreeModel.tbAppContractTypeDoc">
+        <MappingFragment StoreEntitySet="tbAppContractTypeDoc">
+          <ScalarProperty Name="AppContractTypeDocID" ColumnName="AppContractTypeDocID" />
+          <ScalarProperty Name="AppContractType" ColumnName="AppContractType" />
+          <ScalarProperty Name="DocumentName" ColumnName="DocumentName" />
+          <ScalarProperty Name="DocumentDesc" ColumnName="DocumentDesc" />
+          <ScalarProperty Name="MustHaveType" ColumnName="MustHaveType" />
+          <ScalarProperty Name="CopiesNumber" ColumnName="CopiesNumber" />
+          <ScalarProperty Name="DispType" ColumnName="DispType" />
+          <ScalarProperty Name="OrderKey" ColumnName="OrderKey" />
+          <ScalarProperty Name="ItemNumber" ColumnName="ItemNumber" />
+          <ScalarProperty Name="DocumentData" ColumnName="DocumentData" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbAppSaplingAllocation">
+      <EntityTypeMapping TypeName="NT_PlantTreeModel.tbAppSaplingAllocation">
+        <MappingFragment StoreEntitySet="tbAppSaplingAllocation">
+          <ScalarProperty Name="AppSaplingAllocationID" ColumnName="AppSaplingAllocationID" />
+          <ScalarProperty Name="AppContractTypeID" ColumnName="AppContractTypeID" />
+          <ScalarProperty Name="AllocationNum" ColumnName="AllocationNum" />
+          <ScalarProperty Name="AllocationNo" ColumnName="AllocationNo" />
+          <ScalarProperty Name="ForecastDate" ColumnName="ForecastDate" />
+          <ScalarProperty Name="Memo" ColumnName="Memo" />
+          <ScalarProperty Name="ModifyUser" ColumnName="ModifyUser" />
+          <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbAppSurvey">
+      <EntityTypeMapping TypeName="NT_PlantTreeModel.tbAppSurvey">
+        <MappingFragment StoreEntitySet="tbAppSurvey">
+          <ScalarProperty Name="AppSurveyID" ColumnName="AppSurveyID" />
+          <ScalarProperty Name="AppSurveyNo" ColumnName="AppSurveyNo" />
+          <ScalarProperty Name="AppSurveyStartDate" ColumnName="AppSurveyStartDate" />
+          <ScalarProperty Name="AppSurveyEndDate" ColumnName="AppSurveyEndDate" />
+          <ScalarProperty Name="AppSurveyPurpose" ColumnName="AppSurveyPurpose" />
+          <ScalarProperty Name="AppSurveyStatus" ColumnName="AppSurveyStatus" />
+          <ScalarProperty Name="AppSurveyStateName" ColumnName="AppSurveyStateName" />
+          <ScalarProperty Name="ModifyUser" ColumnName="ModifyUser" />
+          <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbAppSurveyTable">
+      <EntityTypeMapping TypeName="NT_PlantTreeModel.tbAppSurveyTable">
+        <MappingFragment StoreEntitySet="tbAppSurveyTable">
+          <ScalarProperty Name="AppSurveyTableID" ColumnName="AppSurveyTableID" />
+          <ScalarProperty Name="AppSurveyID" ColumnName="AppSurveyID" />
+          <ScalarProperty Name="TableAlias" ColumnName="TableAlias" />
+          <ScalarProperty Name="TableName" ColumnName="TableName" />
+          <ScalarProperty Name="ForeignKey" ColumnName="ForeignKey" />
+          <ScalarProperty Name="IsMustHave" ColumnName="IsMustHave" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbAppSurveyUser">
+      <EntityTypeMapping TypeName="NT_PlantTreeModel.tbAppSurveyUser">
+        <MappingFragment StoreEntitySet="tbAppSurveyUser">
+          <ScalarProperty Name="AppSurveyUserID" ColumnName="AppSurveyUserID" />
+          <ScalarProperty Name="AppSurveyID" ColumnName="AppSurveyID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="Sort" ColumnName="Sort" />
+          <ScalarProperty Name="ModifyUser" ColumnName="ModifyUser" />
+          <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbContractFruit">
+      <EntityTypeMapping TypeName="NT_PlantTreeModel.tbContractFruit">
+        <MappingFragment StoreEntitySet="tbContractFruit">
+          <ScalarProperty Name="ContractFruitID" ColumnName="ContractFruitID" />
+          <ScalarProperty Name="ContractID" ColumnName="ContractID" />
+          <ScalarProperty Name="TreeTableName" ColumnName="TreeTableName" />
+          <ScalarProperty Name="TreeTableKey" ColumnName="TreeTableKey" />
+          <ScalarProperty Name="TreeFruitID" ColumnName="TreeFruitID" />
+          <ScalarProperty Name="AppSurveyID" ColumnName="AppSurveyID" />
+          <ScalarProperty Name="AppSurveyPlantTreeID" ColumnName="AppSurveyPlantTreeID" />
+          <ScalarProperty Name="AppSurveyStatus" ColumnName="AppSurveyStatus" />
+          <ScalarProperty Name="TreeID" ColumnName="TreeID" />
+          <ScalarProperty Name="Area" ColumnName="Area" />
+          <ScalarProperty Name="PlantDate" ColumnName="PlantDate" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="CollectTenor" ColumnName="CollectTenor" />
+          <ScalarProperty Name="TransferTenor" ColumnName="TransferTenor" />
+          <ScalarProperty Name="Memo" ColumnName="Memo" />
+          <ScalarProperty Name="ModifyUser" ColumnName="ModifyUser" />
+          <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbContractLand">
+      <EntityTypeMapping TypeName="NT_PlantTreeModel.tbContractLand">
+        <MappingFragment StoreEntitySet="tbContractLand">
+          <ScalarProperty Name="ContractLandID" ColumnName="ContractLandID" />
+          <ScalarProperty Name="ContractID" ColumnName="ContractID" />
+          <ScalarProperty Name="Area" ColumnName="Area" />
+          <ScalarProperty Name="UsePurpose" ColumnName="UsePurpose" />
+          <ScalarProperty Name="LandName" ColumnName="LandName" />
+          <ScalarProperty Name="InOutWorkAreaName" ColumnName="InOutWorkAreaName" />
+          <ScalarProperty Name="ZoneNo" ColumnName="ZoneNo" />
+          <ScalarProperty Name="Memo" ColumnName="Memo" />
+          <ScalarProperty Name="ModifyUser" ColumnName="ModifyUser" />
+          <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbContractLandCadastral">
+      <EntityTypeMapping TypeName="NT_PlantTreeModel.tbContractLandCadastral">
+        <MappingFragment StoreEntitySet="tbContractLandCadastral">
+          <ScalarProperty Name="ContractLandCadastralID" ColumnName="ContractLandCadastralID" />
+          <ScalarProperty Name="ContractLandID" ColumnName="ContractLandID" />
+          <ScalarProperty Name="LandCadastralID" ColumnName="LandCadastralID" />
+          <ScalarProperty Name="IsAllRent" ColumnName="IsAllRent" />
+          <ScalarProperty Name="PrivateLandNo" ColumnName="PrivateLandNo" />
+          <ScalarProperty Name="Area" ColumnName="Area" />
+          <ScalarProperty Name="ModifyUser" ColumnName="ModifyUser" />
+          <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbContractLandForest">
+      <EntityTypeMapping TypeName="NT_PlantTreeModel.tbContractLandForest">
+        <MappingFragment StoreEntitySet="tbContractLandForest">
+          <ScalarProperty Name="ContractLandForestID" ColumnName="ContractLandForestID" />
+          <ScalarProperty Name="ContractLandID" ColumnName="ContractLandID" />
+          <ScalarProperty Name="WorkAreaID" ColumnName="WorkAreaID" />
+          <ScalarProperty Name="SegMentLandNo" ColumnName="SegMentLandNo" />
+          <ScalarProperty Name="PrivateLandNo" ColumnName="PrivateLandNo" />
+          <ScalarProperty Name="ModifyUser" ColumnName="ModifyUser" />
+          <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbContractTree">
+      <EntityTypeMapping TypeName="NT_PlantTreeModel.tbContractTree">
+        <MappingFragment StoreEntitySet="tbContractTree">
+          <ScalarProperty Name="ContractTreeID" ColumnName="ContractTreeID" />
+          <ScalarProperty Name="ContractID" ColumnName="ContractID" />
+          <ScalarProperty Name="TreeID" ColumnName="TreeID" />
+          <ScalarProperty Name="Area" ColumnName="Area" />
+          <ScalarProperty Name="PlantDate" ColumnName="PlantDate" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="ModifyUser" ColumnName="ModifyUser" />
+          <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbMeasureBoundaryPile">
+      <EntityTypeMapping TypeName="NT_PlantTreeModel.tbMeasureBoundaryPile">
+        <MappingFragment StoreEntitySet="tbMeasureBoundaryPile">
+          <ScalarProperty Name="BoundaryPileID" ColumnName="BoundaryPileID" />
+          <ScalarProperty Name="BoundaryLocID" ColumnName="BoundaryLocID" />
+          <ScalarProperty Name="PileSort" ColumnName="PileSort" />
+          <ScalarProperty Name="PileNo" ColumnName="PileNo" />
+          <ScalarProperty Name="PileX" ColumnName="PileX" />
+          <ScalarProperty Name="PileY" ColumnName="PileY" />
+          <ScalarProperty Name="PileZ" ColumnName="PileZ" />
+          <ScalarProperty Name="ModifyUser" ColumnName="ModifyUser" />
+          <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbNSAllotDetail">
+      <EntityTypeMapping TypeName="NT_PlantTreeModel.tbNSAllotDetail">
+        <MappingFragment StoreEntitySet="tbNSAllotDetail">
+          <ScalarProperty Name="NSAllotDetailID" ColumnName="NSAllotDetailID" />
+          <ScalarProperty Name="NSAllotID" ColumnName="NSAllotID" />
+          <ScalarProperty Name="NSCultivateTreeID" ColumnName="NSCultivateTreeID" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="Memo" ColumnName="Memo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbNSAllotReceive">
+      <EntityTypeMapping TypeName="NT_PlantTreeModel.tbNSAllotReceive">
+        <MappingFragment StoreEntitySet="tbNSAllotReceive">
+          <ScalarProperty Name="NSAllotReceiveID" ColumnName="NSAllotReceiveID" />
+          <ScalarProperty Name="NSAllotID" ColumnName="NSAllotID" />
+          <ScalarProperty Name="NSAllotDetailID" ColumnName="NSAllotDetailID" />
+          <ScalarProperty Name="NSCultivateTreeID" ColumnName="NSCultivateTreeID" />
+          <ScalarProperty Name="ReceiveQuantity" ColumnName="ReceiveQuantity" />
+          <ScalarProperty Name="ReceiveDate" ColumnName="ReceiveDate" />
+          <ScalarProperty Name="SeedlingHigh" ColumnName="SeedlingHigh" />
+          <ScalarProperty Name="SeedlingDiameter" ColumnName="SeedlingDiameter" />
+          <ScalarProperty Name="IsLock" ColumnName="IsLock" />
+          <ScalarProperty Name="ModifyUser" ColumnName="ModifyUser" />
+          <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbNSCultivateWorkItem">
+      <EntityTypeMapping TypeName="NT_PlantTreeModel.tbNSCultivateWorkItem">
+        <MappingFragment StoreEntitySet="tbNSCultivateWorkItem">
+          <ScalarProperty Name="NSCultivateWorkItemID" ColumnName="NSCultivateWorkItemID" />
+          <ScalarProperty Name="NSScheduleDataPlanID" ColumnName="NSScheduleDataPlanID" />
+          <ScalarProperty Name="Category" ColumnName="Category" />
+          <ScalarProperty Name="WorkItemName" ColumnName="WorkItemName" />
+          <ScalarProperty Name="RecordItemName" ColumnName="RecordItemName" />
+          <ScalarProperty Name="IsPurchase" ColumnName="IsPurchase" />
+          <ScalarProperty Name="OrderKey" ColumnName="OrderKey" />
+          <ScalarProperty Name="Total" ColumnName="Total" />
+          <ScalarProperty Name="Unit" ColumnName="Unit" />
+          <ScalarProperty Name="Fee" ColumnName="Fee" />
+          <ScalarProperty Name="ModifyUser" ColumnName="ModifyUser" />
+          <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbNSCultivateWorkItemTemplate">
+      <EntityTypeMapping TypeName="NT_PlantTreeModel.tbNSCultivateWorkItemTemplate">
+        <MappingFragment StoreEntitySet="tbNSCultivateWorkItemTemplate">
+          <ScalarProperty Name="NSCultivateWorkItemTemplateID" ColumnName="NSCultivateWorkItemTemplateID" />
+          <ScalarProperty Name="NSScheduleTemplateID" ColumnName="NSScheduleTemplateID" />
+          <ScalarProperty Name="Category" ColumnName="Category" />
+          <ScalarProperty Name="WorkItemName" ColumnName="WorkItemName" />
+          <ScalarProperty Name="RecordItemName" ColumnName="RecordItemName" />
+          <ScalarProperty Name="IsPurchase" ColumnName="IsPurchase" />
+          <ScalarProperty Name="OrderKey" ColumnName="OrderKey" />
+          <ScalarProperty Name="Total" ColumnName="Total" />
+          <ScalarProperty Name="Unit" ColumnName="Unit" />
+          <ScalarProperty Name="Fee" ColumnName="Fee" />
+          <ScalarProperty Name="ModifyUser" ColumnName="ModifyUser" />
+          <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbNSCultivateWorkPeriod">
+      <EntityTypeMapping TypeName="NT_PlantTreeModel.tbNSCultivateWorkPeriod">
+        <MappingFragment StoreEntitySet="tbNSCultivateWorkPeriod">
+          <ScalarProperty Name="NSCultivateWorkPeriodID" ColumnName="NSCultivateWorkPeriodID" />
+          <ScalarProperty Name="NSScheduleDataPlanID" ColumnName="NSScheduleDataPlanID" />
+          <ScalarProperty Name="PeriodName" ColumnName="PeriodName" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+          <ScalarProperty Name="OrderKey" ColumnName="OrderKey" />
+          <ScalarProperty Name="ActualCompleteDate" ColumnName="ActualCompleteDate" />
+          <ScalarProperty Name="CompleteArea" ColumnName="CompleteArea" />
+          <ScalarProperty Name="OverdueMemo" ColumnName="OverdueMemo" />
+          <ScalarProperty Name="ModifyUser" ColumnName="ModifyUser" />
+          <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbNSCultivateWorkPeriodTemplate">
+      <EntityTypeMapping TypeName="NT_PlantTreeModel.tbNSCultivateWorkPeriodTemplate">
+        <MappingFragment StoreEntitySet="tbNSCultivateWorkPeriodTemplate">
+          <ScalarProperty Name="NSCultivateWorkPeriodTemplateID" ColumnName="NSCultivateWorkPeriodTemplateID" />
+          <ScalarProperty Name="NSScheduleTemplateID" ColumnName="NSScheduleTemplateID" />
+          <ScalarProperty Name="PeriodName" ColumnName="PeriodName" />
+          <ScalarProperty Name="OrderKey" ColumnName="OrderKey" />
+          <ScalarProperty Name="ModifyUser" ColumnName="ModifyUser" />
+          <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbNSCultivateWorkValue">
+      <EntityTypeMapping TypeName="NT_PlantTreeModel.tbNSCultivateWorkValue">
+        <MappingFragment StoreEntitySet="tbNSCultivateWorkValue">
+          <ScalarProperty Name="NSCultivateWorkValueID" ColumnName="NSCultivateWorkValueID" />
+          <ScalarProperty Name="NSScheduleDataPlanID" ColumnName="NSScheduleDataPlanID" />
+          <ScalarProperty Name="NSCultivateWorkPeriodID" ColumnName="NSCultivateWorkPeriodID" />
+          <ScalarProperty Name="NSCultivateWorkItemID" ColumnName="NSCultivateWorkItemID" />
+          <ScalarProperty Name="WorkValue" ColumnName="WorkValue" />
+          <ScalarProperty Name="OrderKey" ColumnName="OrderKey" />
+          <ScalarProperty Name="ModifyUser" ColumnName="ModifyUser" />
+          <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbNSCultivateWorkValueTemplate">
+      <EntityTypeMapping TypeName="NT_PlantTreeModel.tbNSCultivateWorkValueTemplate">
+        <MappingFragment StoreEntitySet="tbNSCultivateWorkValueTemplate">
+          <ScalarProperty Name="NSCultivateWorkValueTemplateID" ColumnName="NSCultivateWorkValueTemplateID" />
+          <ScalarProperty Name="NSScheduleTemplateID" ColumnName="NSScheduleTemplateID" />
+          <ScalarProperty Name="NSCultivateWorkPeriodTemplateID" ColumnName="NSCultivateWorkPeriodTemplateID" />
+          <ScalarProperty Name="NSCultivateWorkItemTemplateID" ColumnName="NSCultivateWorkItemTemplateID" />
+          <ScalarProperty Name="WorkValue" ColumnName="WorkValue" />
+          <ScalarProperty Name="OrderKey" ColumnName="OrderKey" />
+          <ScalarProperty Name="ModifyUser" ColumnName="ModifyUser" />
+          <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbRelAppContractTypeSurvey">
+      <EntityTypeMapping TypeName="NT_PlantTreeModel.tbRelAppContractTypeSurvey">
+        <MappingFragment StoreEntitySet="tbRelAppContractTypeSurvey">
+          <ScalarProperty Name="AppContractTypeID" ColumnName="AppContractTypeID" />
+          <ScalarProperty Name="AppSurveyID" ColumnName="AppSurveyID" />
+          <ScalarProperty Name="IsNoSurvey" ColumnName="IsNoSurvey" />
+          <ScalarProperty Name="IsSameOtherSurvey" ColumnName="IsSameOtherSurvey" />
+          <ScalarProperty Name="Memo" ColumnName="Memo" />
+          <ScalarProperty Name="ModifyUser" ColumnName="ModifyUser" />
+          <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbSysUserData">
+      <EntityTypeMapping TypeName="NT_PlantTreeModel.tbSysUserData">
+        <MappingFragment StoreEntitySet="tbSysUserData">
+          <ScalarProperty Name="IsDel" ColumnName="IsDel" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="SysOrganizationID" ColumnName="SysOrganizationID" />
+          <ScalarProperty Name="SysGroupID" ColumnName="SysGroupID" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="SubOrganizationName" ColumnName="SubOrganizationName" />
+          <ScalarProperty Name="IsEnable" ColumnName="IsEnable" />
+          <ScalarProperty Name="IsDirector" ColumnName="IsDirector" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Tel" ColumnName="Tel" />
+          <ScalarProperty Name="CellPhone" ColumnName="CellPhone" />
+          <ScalarProperty Name="Memo" ColumnName="Memo" />
+          <ScalarProperty Name="LastResetPwTime" ColumnName="LastResetPwTime" />
+          <ScalarProperty Name="ModifyUser" ColumnName="ModifyUser" />
+          <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbTMLandList">
+      <EntityTypeMapping TypeName="NT_PlantTreeModel.tbTMLandList">
+        <MappingFragment StoreEntitySet="tbTMLandList">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Guid" ColumnName="Guid" />
+          <ScalarProperty Name="MyKey" ColumnName="MyKey" />
+          <ScalarProperty Name="UnifiedNo" ColumnName="UnifiedNo" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="CityCode" ColumnName="CityCode" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="CityAreaCode" ColumnName="CityAreaCode" />
+          <ScalarProperty Name="CityArea" ColumnName="CityArea" />
+          <ScalarProperty Name="DistrictCode" ColumnName="DistrictCode" />
+          <ScalarProperty Name="District" ColumnName="District" />
+          <ScalarProperty Name="LandNumber" ColumnName="LandNumber" />
+          <ScalarProperty Name="SurfaceArea" ColumnName="SurfaceArea" />
+          <ScalarProperty Name="RegistrationOrder" ColumnName="RegistrationOrder" />
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+          <ScalarProperty Name="RightRegion" ColumnName="RightRegion" />
+          <ScalarProperty Name="LandUseZoning" ColumnName="LandUseZoning" />
+          <ScalarProperty Name="LandUseClassification" ColumnName="LandUseClassification" />
+          <ScalarProperty Name="CurrentLandValue" ColumnName="CurrentLandValue" />
+          <ScalarProperty Name="DeclaredLandValueDate" ColumnName="DeclaredLandValueDate" />
+          <ScalarProperty Name="DeclaredLandValue" ColumnName="DeclaredLandValue" />
+          <ScalarProperty Name="SerialNumber" ColumnName="SerialNumber" />
+          <ScalarProperty Name="PropertyName" ColumnName="PropertyName" />
+          <ScalarProperty Name="CertificateNo" ColumnName="CertificateNo" />
+          <ScalarProperty Name="Workstation" ColumnName="Workstation" />
+          <ScalarProperty Name="Department" ColumnName="Department" />
+          <ScalarProperty Name="ModalityIn" ColumnName="ModalityIn" />
+          <ScalarProperty Name="StatusIn" ColumnName="StatusIn" />
+          <ScalarProperty Name="DocumentNo" ColumnName="DocumentNo" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Transfer" ColumnName="Transfer" />
+          <ScalarProperty Name="Modality" ColumnName="Modality" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Memo" ColumnName="Memo" />
+          <ScalarProperty Name="ImportDate" ColumnName="ImportDate" />
+          <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+          <ScalarProperty Name="UpdateStatus" ColumnName="UpdateStatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbTMLandListBackup">
+      <EntityTypeMapping TypeName="NT_PlantTreeModel.tbTMLandListBackup">
+        <MappingFragment StoreEntitySet="tbTMLandListBackup">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Guid" ColumnName="Guid" />
+          <ScalarProperty Name="MyKey" ColumnName="MyKey" />
+          <ScalarProperty Name="UnifiedNo" ColumnName="UnifiedNo" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="CityCode" ColumnName="CityCode" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="CityAreaCode" ColumnName="CityAreaCode" />
+          <ScalarProperty Name="CityArea" ColumnName="CityArea" />
+          <ScalarProperty Name="DistrictCode" ColumnName="DistrictCode" />
+          <ScalarProperty Name="District" ColumnName="District" />
+          <ScalarProperty Name="LandNumber" ColumnName="LandNumber" />
+          <ScalarProperty Name="SurfaceArea" ColumnName="SurfaceArea" />
+          <ScalarProperty Name="RegistrationOrder" ColumnName="RegistrationOrder" />
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+          <ScalarProperty Name="RightRegion" ColumnName="RightRegion" />
+          <ScalarProperty Name="LandUseZoning" ColumnName="LandUseZoning" />
+          <ScalarProperty Name="LandUseClassification" ColumnName="LandUseClassification" />
+          <ScalarProperty Name="CurrentLandValue" ColumnName="CurrentLandValue" />
+          <ScalarProperty Name="DeclaredLandValueDate" ColumnName="DeclaredLandValueDate" />
+          <ScalarProperty Name="DeclaredLandValue" ColumnName="DeclaredLandValue" />
+          <ScalarProperty Name="SerialNumber" ColumnName="SerialNumber" />
+          <ScalarProperty Name="PropertyName" ColumnName="PropertyName" />
+          <ScalarProperty Name="CertificateNo" ColumnName="CertificateNo" />
+          <ScalarProperty Name="Workstation" ColumnName="Workstation" />
+          <ScalarProperty Name="Department" ColumnName="Department" />
+          <ScalarProperty Name="ModalityIn" ColumnName="ModalityIn" />
+          <ScalarProperty Name="StatusIn" ColumnName="StatusIn" />
+          <ScalarProperty Name="DocumentNo" ColumnName="DocumentNo" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Transfer" ColumnName="Transfer" />
+          <ScalarProperty Name="Modality" ColumnName="Modality" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Memo" ColumnName="Memo" />
+          <ScalarProperty Name="UpdateStatus" ColumnName="UpdateStatus" />
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+          <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbTMLandListRecord">
+      <EntityTypeMapping TypeName="NT_PlantTreeModel.tbTMLandListRecord">
+        <MappingFragment StoreEntitySet="tbTMLandListRecord">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="LandListGuid" ColumnName="LandListGuid" />
+          <ScalarProperty Name="ImportDate" ColumnName="ImportDate" />
+          <ScalarProperty Name="ImportUserId" ColumnName="ImportUserId" />
+          <ScalarProperty Name="ImportCount" ColumnName="ImportCount" />
+          <ScalarProperty Name="Increase" ColumnName="Increase" />
+          <ScalarProperty Name="Decrease" ColumnName="Decrease" />
+          <ScalarProperty Name="BackupStatus" ColumnName="BackupStatus" />
+          <ScalarProperty Name="BackupDate" ColumnName="BackupDate" />
+          <ScalarProperty Name="BackupUserId" ColumnName="BackupUserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbTMLandListResurvey">
+      <EntityTypeMapping TypeName="NT_PlantTreeModel.tbTMLandListResurvey">
+        <MappingFragment StoreEntitySet="tbTMLandListResurvey">
+          <ScalarProperty Name="TMLandListResurveyID" ColumnName="TMLandListResurveyID" />
+          <ScalarProperty Name="TMLandListID" ColumnName="TMLandListID" />
+          <ScalarProperty Name="MyKey" ColumnName="MyKey" />
+          <ScalarProperty Name="CityCode" ColumnName="CityCode" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="CityAreaCode" ColumnName="CityAreaCode" />
+          <ScalarProperty Name="CityArea" ColumnName="CityArea" />
+          <ScalarProperty Name="DistrictCode" ColumnName="DistrictCode" />
+          <ScalarProperty Name="District" ColumnName="District" />
+          <ScalarProperty Name="LandNumber" ColumnName="LandNumber" />
+          <ScalarProperty Name="ModifyUser" ColumnName="ModifyUser" />
+          <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbTree">
+      <EntityTypeMapping TypeName="NT_PlantTreeModel.tbTree">
+        <MappingFragment StoreEntitySet="tbTree">
+          <ScalarProperty Name="TreeID" ColumnName="TreeID" />
+          <ScalarProperty Name="TreeTypeID" ColumnName="TreeTypeID" />
+          <ScalarProperty Name="SortNum" ColumnName="SortNum" />
+          <ScalarProperty Name="TreeName" ColumnName="TreeName" />
+          <ScalarProperty Name="UnitQty" ColumnName="UnitQty" />
+          <ScalarProperty Name="Purpose" ColumnName="Purpose" />
+          <ScalarProperty Name="IsAwardTree" ColumnName="IsAwardTree" />
+          <ScalarProperty Name="IsEconomic" ColumnName="IsEconomic" />
+          <ScalarProperty Name="HewAge" ColumnName="HewAge" />
+          <ScalarProperty Name="IsProtect" ColumnName="IsProtect" />
+          <ScalarProperty Name="HewAgeProtect" ColumnName="HewAgeProtect" />
+          <ScalarProperty Name="IsHasFruit" ColumnName="IsHasFruit" />
+          <ScalarProperty Name="Memo" ColumnName="Memo" />
+          <ScalarProperty Name="TreePeriod" ColumnName="TreePeriod" />
+          <ScalarProperty Name="GovRate" ColumnName="GovRate" />
+          <ScalarProperty Name="ModifyUser" ColumnName="ModifyUser" />
+          <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbTreeFruit">
+      <EntityTypeMapping TypeName="NT_PlantTreeModel.tbTreeFruit">
+        <MappingFragment StoreEntitySet="tbTreeFruit">
+          <ScalarProperty Name="TreeFruitID" ColumnName="TreeFruitID" />
+          <ScalarProperty Name="TreeID" ColumnName="TreeID" />
+          <ScalarProperty Name="FruitName" ColumnName="FruitName" />
+          <ScalarProperty Name="ProduceUnitType" ColumnName="ProduceUnitType" />
+          <ScalarProperty Name="ProduceUnit" ColumnName="ProduceUnit" />
+          <ScalarProperty Name="ModifyUser" ColumnName="ModifyUser" />
+          <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="V_ContractLand">
+      <EntityTypeMapping TypeName="NT_PlantTreeModel.V_ContractLand">
+        <MappingFragment StoreEntitySet="V_ContractLand">
+          <ScalarProperty Name="ContractLandID" ColumnName="ContractLandID" />
+          <ScalarProperty Name="ContractID" ColumnName="ContractID" />
+          <ScalarProperty Name="LandName" ColumnName="LandName" />
+          <ScalarProperty Name="UsePurpose" ColumnName="UsePurpose" />
+          <ScalarProperty Name="ZoneNo" ColumnName="ZoneNo" />
+          <ScalarProperty Name="InOutWorkAreaName" ColumnName="InOutWorkAreaName" />
+          <ScalarProperty Name="Memo" ColumnName="Memo" />
+          <ScalarProperty Name="Area" ColumnName="Area" />
+          <ScalarProperty Name="ContractLandForestID" ColumnName="ContractLandForestID" />
+          <ScalarProperty Name="WorkAreaID" ColumnName="WorkAreaID" />
+          <ScalarProperty Name="WorkAreaName" ColumnName="WorkAreaName" />
+          <ScalarProperty Name="SegMentLandNo" ColumnName="SegMentLandNo" />
+          <ScalarProperty Name="PrivateLandNo" ColumnName="PrivateLandNo" />
+          <ScalarProperty Name="ContractLandCadastralID" ColumnName="ContractLandCadastralID" />
+          <ScalarProperty Name="LandCadastralID" ColumnName="LandCadastralID" />
+          <ScalarProperty Name="IsAllRent" ColumnName="IsAllRent" />
+          <ScalarProperty Name="CityID" ColumnName="CityID" />
+          <ScalarProperty Name="CityName" ColumnName="CityName" />
+          <ScalarProperty Name="TownID" ColumnName="TownID" />
+          <ScalarProperty Name="TownName" ColumnName="TownName" />
+          <ScalarProperty Name="MainSec" ColumnName="MainSec" />
+          <ScalarProperty Name="SubSec" ColumnName="SubSec" />
+          <ScalarProperty Name="LandNo" ColumnName="LandNo" />
+          <ScalarProperty Name="CadPrivateLandNo" ColumnName="CadPrivateLandNo" />
+          <ScalarProperty Name="CadArea" ColumnName="CadArea" />
+          <ScalarProperty Name="FullLandCadastralName" ColumnName="FullLandCadastralName" />
+          <ScalarProperty Name="SimpLandCadastralName" ColumnName="SimpLandCadastralName" />
+          <ScalarProperty Name="FullLandForestName" ColumnName="FullLandForestName" />
+          <ScalarProperty Name="SimpLandForestName" ColumnName="SimpLandForestName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="V_ContractLandCadastral">
+      <EntityTypeMapping TypeName="NT_PlantTreeModel.V_ContractLandCadastral">
+        <MappingFragment StoreEntitySet="V_ContractLandCadastral">
+          <ScalarProperty Name="ContractLandCadastralID" ColumnName="ContractLandCadastralID" />
+          <ScalarProperty Name="ContractLandID" ColumnName="ContractLandID" />
+          <ScalarProperty Name="LandCadastralID" ColumnName="LandCadastralID" />
+          <ScalarProperty Name="IsAllRent" ColumnName="IsAllRent" />
+          <ScalarProperty Name="PrivateLandNo" ColumnName="PrivateLandNo" />
+          <ScalarProperty Name="Area" ColumnName="Area" />
+          <ScalarProperty Name="CityID" ColumnName="CityID" />
+          <ScalarProperty Name="CityName" ColumnName="CityName" />
+          <ScalarProperty Name="TownID" ColumnName="TownID" />
+          <ScalarProperty Name="TownName" ColumnName="TownName" />
+          <ScalarProperty Name="MainSec" ColumnName="MainSec" />
+          <ScalarProperty Name="SubSec" ColumnName="SubSec" />
+          <ScalarProperty Name="LandNo" ColumnName="LandNo" />
+          <ScalarProperty Name="FullLandCadastralName" ColumnName="FullLandCadastralName" />
+          <ScalarProperty Name="SimpLandCadastralName" ColumnName="SimpLandCadastralName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="V_ContractLandForest">
+      <EntityTypeMapping TypeName="NT_PlantTreeModel.V_ContractLandForest">
+        <MappingFragment StoreEntitySet="V_ContractLandForest">
+          <ScalarProperty Name="ContractLandForestID" ColumnName="ContractLandForestID" />
+          <ScalarProperty Name="ContractLandID" ColumnName="ContractLandID" />
+          <ScalarProperty Name="WorkAreaID" ColumnName="WorkAreaID" />
+          <ScalarProperty Name="WorkAreaName" ColumnName="WorkAreaName" />
+          <ScalarProperty Name="SegMentLandNo" ColumnName="SegMentLandNo" />
+          <ScalarProperty Name="PrivateLandNo" ColumnName="PrivateLandNo" />
+          <ScalarProperty Name="FullLandForestName" ColumnName="FullLandForestName" />
+          <ScalarProperty Name="SimpLandForestName" ColumnName="SimpLandForestName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="SP_TM_UpdateLandByResurvey" FunctionName="NT_PlantTreeModel.Store.SP_TM_UpdateLandByResurvey" />
+    <EntitySetMapping Name="V_RTUpdateLandPrice">
+      <EntityTypeMapping TypeName="NT_PlantTreeModel.V_RTUpdateLandPrice">
+        <MappingFragment StoreEntitySet="V_RTUpdateLandPrice">
+          <ScalarProperty Name="RTLandValueSurveyID" ColumnName="RTLandValueSurveyID" />
+          <ScalarProperty Name="ResultExplain" ColumnName="ResultExplain" />
+          <ScalarProperty Name="ResponseResult" ColumnName="ResponseResult" />
+          <ScalarProperty Name="AppraisalLandValue" ColumnName="AppraisalLandValue" />
+          <ScalarProperty Name="CurrentValue" ColumnName="CurrentValue" />
+          <ScalarProperty Name="LandPrice" ColumnName="LandPrice" />
+          <ScalarProperty Name="PriceYear" ColumnName="PriceYear" />
+          <ScalarProperty Name="RentYear" ColumnName="RentYear" />
+          <ScalarProperty Name="LevyYear" ColumnName="LevyYear" />
+          <ScalarProperty Name="SecCode" ColumnName="SecCode" />
+          <ScalarProperty Name="Unit" ColumnName="Unit" />
+          <ScalarProperty Name="LandNo" ColumnName="LandNo" />
+          <ScalarProperty Name="SubSec" ColumnName="SubSec" />
+          <ScalarProperty Name="MainSec" ColumnName="MainSec" />
+          <ScalarProperty Name="TownID" ColumnName="TownID" />
+          <ScalarProperty Name="CityID" ColumnName="CityID" />
+          <ScalarProperty Name="RentCalcType" ColumnName="RentCalcType" />
+          <ScalarProperty Name="WorkStationID" ColumnName="WorkStationID" />
+          <ScalarProperty Name="ContractLandCadastralID" ColumnName="ContractLandCadastralID" />
+          <ScalarProperty Name="RTLandExtendID" ColumnName="RTLandExtendID" />
+          <ScalarProperty Name="LandContractID" ColumnName="LandContractID" />
+          <ScalarProperty Name="ContractID" ColumnName="ContractID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbRTLandValueTemp">
+      <EntityTypeMapping TypeName="NT_PlantTreeModel.tbRTLandValueTemp">
+        <MappingFragment StoreEntitySet="tbRTLandValueTemp">
+          <ScalarProperty Name="ResponseDate" ColumnName="ResponseDate" />
+          <ScalarProperty Name="ResultExplain" ColumnName="ResultExplain" />
+          <ScalarProperty Name="ResponseResult" ColumnName="ResponseResult" />
+          <ScalarProperty Name="AppraisalLandValue" ColumnName="AppraisalLandValue" />
+          <ScalarProperty Name="CurrentValue" ColumnName="CurrentValue" />
+          <ScalarProperty Name="LandPrice" ColumnName="LandPrice" />
+          <ScalarProperty Name="PriceYear" ColumnName="PriceYear" />
+          <ScalarProperty Name="NO" ColumnName="NO" />
+          <ScalarProperty Name="SEC" ColumnName="SEC" />
+          <ScalarProperty Name="UNIT" ColumnName="UNIT" />
+          <ScalarProperty Name="RentYear" ColumnName="RentYear" />
+          <ScalarProperty Name="LevyYear" ColumnName="LevyYear" />
+          <ScalarProperty Name="RTLandExtendID" ColumnName="RTLandExtendID" />
+          <ScalarProperty Name="RTLandValueSurveyID" ColumnName="RTLandValueSurveyID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbAppSaplingAllocationItem">
+      <EntityTypeMapping TypeName="NT_PlantTreeModel.tbAppSaplingAllocationItem">
+        <MappingFragment StoreEntitySet="tbAppSaplingAllocationItem">
+          <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+          <ScalarProperty Name="ModifyUser" ColumnName="ModifyUser" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="Area" ColumnName="Area" />
+          <ScalarProperty Name="SaplingType" ColumnName="SaplingType" />
+          <ScalarProperty Name="TreeID" ColumnName="TreeID" />
+          <ScalarProperty Name="AppSaplingAllocationID" ColumnName="AppSaplingAllocationID" />
+          <ScalarProperty Name="AppSaplingAllocationItemID" ColumnName="AppSaplingAllocationItemID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="V_ContractAccept">
+      <EntityTypeMapping TypeName="NT_PlantTreeModel.V_ContractAccept">
+        <MappingFragment StoreEntitySet="V_ContractAccept">
+          <ScalarProperty Name="UnderTaker" ColumnName="UnderTaker" />
+          <ScalarProperty Name="AcceptUser" ColumnName="AcceptUser" />
+          <ScalarProperty Name="AcceptDate" ColumnName="AcceptDate" />
+          <ScalarProperty Name="AppContractTypeID" ColumnName="AppContractTypeID" />
+          <ScalarProperty Name="AppTypeStateID" ColumnName="AppTypeStateID" />
+          <ScalarProperty Name="AppTypeState" ColumnName="AppTypeState" />
+          <ScalarProperty Name="AppTypeName" ColumnName="AppTypeName" />
+          <ScalarProperty Name="IsAppFormDataOK" ColumnName="IsAppFormDataOK" />
+          <ScalarProperty Name="AppFormStatus" ColumnName="AppFormStatus" />
+          <ScalarProperty Name="AppContractStatus" ColumnName="AppContractStatus" />
+          <ScalarProperty Name="AppFormID" ColumnName="AppFormID" />
+          <ScalarProperty Name="LesseeName" ColumnName="LesseeName" />
+          <ScalarProperty Name="SourceContractID" ColumnName="SourceContractID" />
+          <ScalarProperty Name="Memo" ColumnName="Memo" />
+          <ScalarProperty Name="WorkStationID" ColumnName="WorkStationID" />
+          <ScalarProperty Name="LandKindName" ColumnName="LandKindName" />
+          <ScalarProperty Name="UsePurpose" ColumnName="UsePurpose" />
+          <ScalarProperty Name="AgreeOrder" ColumnName="AgreeOrder" />
+          <ScalarProperty Name="ContractChangePurpose" ColumnName="ContractChangePurpose" />
+          <ScalarProperty Name="ContractChangeNo" ColumnName="ContractChangeNo" />
+          <ScalarProperty Name="ContractChangeDate" ColumnName="ContractChangeDate" />
+          <ScalarProperty Name="ContractClassify" ColumnName="ContractClassify" />
+          <ScalarProperty Name="RentCode" ColumnName="RentCode" />
+          <ScalarProperty Name="Area" ColumnName="Area" />
+          <ScalarProperty Name="ExpirtyDate" ColumnName="ExpirtyDate" />
+          <ScalarProperty Name="FromDate" ColumnName="FromDate" />
+          <ScalarProperty Name="LandContractID" ColumnName="LandContractID" />
+          <ScalarProperty Name="ContractStatusID" ColumnName="ContractStatusID" />
+          <ScalarProperty Name="ContractID" ColumnName="ContractID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

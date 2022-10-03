@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="getDeviceTime">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deviceID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getDeviceTimeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getDeviceTimeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getDeviceTimeByAddr">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deviceID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getDeviceTimeByAddrResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getDeviceTimeByAddrResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getWDData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deviceID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getWDDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getWDDataResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getWDDataByAddr">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deviceID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getWDDataByAddrResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getWDDataByAddrResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getRDData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deviceID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getRDDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getRDDataResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getRDDataByAddr">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deviceID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getRDDataByAddrResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getRDDataByAddrResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setDeviceTime">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deviceID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setDeviceTimeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="setDeviceTimeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setDeviceTimeByAddr">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deviceID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setDeviceTimeByAddrResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="setDeviceTimeByAddrResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="getDeviceTimeSoapIn">
+    <wsdl:part name="parameters" element="tns:getDeviceTime" />
+  </wsdl:message>
+  <wsdl:message name="getDeviceTimeSoapOut">
+    <wsdl:part name="parameters" element="tns:getDeviceTimeResponse" />
+  </wsdl:message>
+  <wsdl:message name="getDeviceTimeByAddrSoapIn">
+    <wsdl:part name="parameters" element="tns:getDeviceTimeByAddr" />
+  </wsdl:message>
+  <wsdl:message name="getDeviceTimeByAddrSoapOut">
+    <wsdl:part name="parameters" element="tns:getDeviceTimeByAddrResponse" />
+  </wsdl:message>
+  <wsdl:message name="getWDDataSoapIn">
+    <wsdl:part name="parameters" element="tns:getWDData" />
+  </wsdl:message>
+  <wsdl:message name="getWDDataSoapOut">
+    <wsdl:part name="parameters" element="tns:getWDDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="getWDDataByAddrSoapIn">
+    <wsdl:part name="parameters" element="tns:getWDDataByAddr" />
+  </wsdl:message>
+  <wsdl:message name="getWDDataByAddrSoapOut">
+    <wsdl:part name="parameters" element="tns:getWDDataByAddrResponse" />
+  </wsdl:message>
+  <wsdl:message name="getRDDataSoapIn">
+    <wsdl:part name="parameters" element="tns:getRDData" />
+  </wsdl:message>
+  <wsdl:message name="getRDDataSoapOut">
+    <wsdl:part name="parameters" element="tns:getRDDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="getRDDataByAddrSoapIn">
+    <wsdl:part name="parameters" element="tns:getRDDataByAddr" />
+  </wsdl:message>
+  <wsdl:message name="getRDDataByAddrSoapOut">
+    <wsdl:part name="parameters" element="tns:getRDDataByAddrResponse" />
+  </wsdl:message>
+  <wsdl:message name="setDeviceTimeSoapIn">
+    <wsdl:part name="parameters" element="tns:setDeviceTime" />
+  </wsdl:message>
+  <wsdl:message name="setDeviceTimeSoapOut">
+    <wsdl:part name="parameters" element="tns:setDeviceTimeResponse" />
+  </wsdl:message>
+  <wsdl:message name="setDeviceTimeByAddrSoapIn">
+    <wsdl:part name="parameters" element="tns:setDeviceTimeByAddr" />
+  </wsdl:message>
+  <wsdl:message name="setDeviceTimeByAddrSoapOut">
+    <wsdl:part name="parameters" element="tns:setDeviceTimeByAddrResponse" />
+  </wsdl:message>
+  <wsdl:portType name="orderServiceSoap">
+    <wsdl:operation name="getDeviceTime">
+      <wsdl:input message="tns:getDeviceTimeSoapIn" />
+      <wsdl:output message="tns:getDeviceTimeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getDeviceTimeByAddr">
+      <wsdl:input message="tns:getDeviceTimeByAddrSoapIn" />
+      <wsdl:output message="tns:getDeviceTimeByAddrSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getWDData">
+      <wsdl:input message="tns:getWDDataSoapIn" />
+      <wsdl:output message="tns:getWDDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getWDDataByAddr">
+      <wsdl:input message="tns:getWDDataByAddrSoapIn" />
+      <wsdl:output message="tns:getWDDataByAddrSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getRDData">
+      <wsdl:input message="tns:getRDDataSoapIn" />
+      <wsdl:output message="tns:getRDDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getRDDataByAddr">
+      <wsdl:input message="tns:getRDDataByAddrSoapIn" />
+      <wsdl:output message="tns:getRDDataByAddrSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="setDeviceTime">
+      <wsdl:input message="tns:setDeviceTimeSoapIn" />
+      <wsdl:output message="tns:setDeviceTimeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="setDeviceTimeByAddr">
+      <wsdl:input message="tns:setDeviceTimeByAddrSoapIn" />
+      <wsdl:output message="tns:setDeviceTimeByAddrSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="orderServiceSoap" type="tns:orderServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getDeviceTime">
+      <soap:operation soapAction="http://tempuri.org/getDeviceTime" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDeviceTimeByAddr">
+      <soap:operation soapAction="http://tempuri.org/getDeviceTimeByAddr" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getWDData">
+      <soap:operation soapAction="http://tempuri.org/getWDData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getWDDataByAddr">
+      <soap:operation soapAction="http://tempuri.org/getWDDataByAddr" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRDData">
+      <soap:operation soapAction="http://tempuri.org/getRDData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRDDataByAddr">
+      <soap:operation soapAction="http://tempuri.org/getRDDataByAddr" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setDeviceTime">
+      <soap:operation soapAction="http://tempuri.org/setDeviceTime" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setDeviceTimeByAddr">
+      <soap:operation soapAction="http://tempuri.org/setDeviceTimeByAddr" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="orderServiceSoap12" type="tns:orderServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getDeviceTime">
+      <soap12:operation soapAction="http://tempuri.org/getDeviceTime" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDeviceTimeByAddr">
+      <soap12:operation soapAction="http://tempuri.org/getDeviceTimeByAddr" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getWDData">
+      <soap12:operation soapAction="http://tempuri.org/getWDData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getWDDataByAddr">
+      <soap12:operation soapAction="http://tempuri.org/getWDDataByAddr" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRDData">
+      <soap12:operation soapAction="http://tempuri.org/getRDData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRDDataByAddr">
+      <soap12:operation soapAction="http://tempuri.org/getRDDataByAddr" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setDeviceTime">
+      <soap12:operation soapAction="http://tempuri.org/setDeviceTime" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setDeviceTimeByAddr">
+      <soap12:operation soapAction="http://tempuri.org/setDeviceTimeByAddr" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="orderService">
+    <wsdl:port name="orderServiceSoap" binding="tns:orderServiceSoap">
+      <soap:address location="http://117.56.84.8:8080/orderservice/orderService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="orderServiceSoap12" binding="tns:orderServiceSoap12">
+      <soap12:address location="http://117.56.84.8:8080/orderservice/orderService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

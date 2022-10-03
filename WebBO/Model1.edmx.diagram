@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="c5c2e8d756a2424b9a6bc37205eadea9" Name="Diagram1">
+        <EntityTypeShape EntityType="NT_PlantTreeModel.tbAppContractTypeDoc" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NT_PlantTreeModel.tbAppSaplingAllocation" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NT_PlantTreeModel.tbAppSurvey" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NT_PlantTreeModel.tbAppSurveyTable" Width="1.5" PointX="2.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NT_PlantTreeModel.tbAppSurveyUser" Width="1.5" PointX="4.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NT_PlantTreeModel.tbContractFruit" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NT_PlantTreeModel.tbContractLand" Width="1.5" PointX="6.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NT_PlantTreeModel.tbContractLandCadastral" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NT_PlantTreeModel.tbContractLandForest" Width="1.5" PointX="0.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NT_PlantTreeModel.tbContractTree" Width="1.5" PointX="2.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NT_PlantTreeModel.tbMeasureBoundaryPile" Width="1.5" PointX="8.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NT_PlantTreeModel.tbNSAllotDetail" Width="1.5" PointX="8.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NT_PlantTreeModel.tbNSAllotReceive" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NT_PlantTreeModel.tbNSCultivateWorkItem" Width="1.5" PointX="4.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NT_PlantTreeModel.tbNSCultivateWorkItemTemplate" Width="1.5" PointX="10.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NT_PlantTreeModel.tbNSCultivateWorkPeriod" Width="1.5" PointX="10.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NT_PlantTreeModel.tbNSCultivateWorkPeriodTemplate" Width="1.5" PointX="6.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NT_PlantTreeModel.tbNSCultivateWorkValue" Width="1.5" PointX="12.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NT_PlantTreeModel.tbNSCultivateWorkValueTemplate" Width="1.5" PointX="0.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NT_PlantTreeModel.tbRelAppContractTypeSurvey" Width="1.5" PointX="12.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NT_PlantTreeModel.tbSysUserData" Width="1.5" PointX="12.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NT_PlantTreeModel.tbTMLandList" Width="1.5" PointX="14.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NT_PlantTreeModel.tbTMLandListBackup" Width="1.5" PointX="14.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NT_PlantTreeModel.tbTMLandListRecord" Width="1.5" PointX="2.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NT_PlantTreeModel.tbTMLandListResurvey" Width="1.5" PointX="4.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NT_PlantTreeModel.tbTree" Width="1.5" PointX="6.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NT_PlantTreeModel.tbTreeFruit" Width="1.5" PointX="8.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NT_PlantTreeModel.V_ContractLand" Width="1.5" PointX="16.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NT_PlantTreeModel.V_ContractLandCadastral" Width="1.5" PointX="16.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NT_PlantTreeModel.V_ContractLandForest" Width="1.5" PointX="16.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NT_PlantTreeModel.V_RTUpdateLandPrice" Width="1.5" PointX="11.375" PointY="17.75" />
+        <EntityTypeShape EntityType="NT_PlantTreeModel.tbRTLandValueTemp" Width="1.5" PointX="17.375" PointY="17.75" />
+        <EntityTypeShape EntityType="NT_PlantTreeModel.tbAppSaplingAllocationItem" Width="1.5" PointX="19.375" PointY="0.75" />
+        <EntityTypeShape EntityType="NT_PlantTreeModel.V_ContractAccept" Width="2.625" PointX="0.75" PointY="19.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

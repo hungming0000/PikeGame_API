@@ -1,0 +1,2579 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="setControlManger">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deviceID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ControlStrategy" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="EffectTime" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setControlMangerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="setControlMangerResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setControlMangerByAddr">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deviceID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ControlStrategy" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="EffectTime" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setControlMangerByAddrResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="setControlMangerByAddrResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getControlManger">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deviceID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getControlMangerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getControlMangerResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getControlMangerByAddr">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deviceID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getControlMangerByAddrResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getControlMangerByAddrResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setDirectControl">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deviceID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="inDirect" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="InStartTime" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="InEndTime" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="outDirect" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="outStartTime" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="outEndTime" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="clearTime" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="flashGreen" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="greenTime" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="reverseTimeType" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="numWeekDay" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="weekDay" type="tns:ArrayOfInt" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfInt">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="int" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="setDirectControlResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="setDirectControlResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setDirectControlByAddr">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deviceID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="inDirect" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="InStartTime" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="InEndTime" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="outDirect" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="outStartTime" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="outEndTime" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="clearTime" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="flashGreen" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="greenTime" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="reverseTimeType" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="numWeekDay" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="weekDay" type="tns:ArrayOfInt" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setDirectControlByAddrResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="setDirectControlByAddrResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getDirectControl">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deviceID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="reverseTimeType" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="weekDay" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getDirectControlResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getDirectControlResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getDirectControlByAddr">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deviceID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="reverseTimeType" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="weekDay" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getDirectControlByAddrResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getDirectControlByAddrResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setSpeciaDirectControl">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deviceID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="inDirect" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="InStartTime" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="InEndTime" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="outDirect" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="outStartTime" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="outEndTime" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="clearTime" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="flashGreen" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="greenTime" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="reverseTimeType" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="specialStartDate" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="specialEndDate" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setSpeciaDirectControlResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="setSpeciaDirectControlResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setSpeciaDirectControlByAddr">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deviceID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="inDirect" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="InStartTime" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="InEndTime" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="outDirect" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="outStartTime" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="outEndTime" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="clearTime" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="flashGreen" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="greenTime" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="reverseTimeType" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="specialStartDate" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="specialEndDate" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setSpeciaDirectControlByAddrResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="setSpeciaDirectControlByAddrResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setSpecialDirectControl">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deviceID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="reverseTimeType" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setSpecialDirectControlResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="setSpecialDirectControlResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getSpeciaDirectControlByAddr">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deviceID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="reverseTimeType" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getSpeciaDirectControlByAddrResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getSpeciaDirectControlByAddrResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getSignalControl">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deviceID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="phaseOrder" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getSignalControlResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getSignalControlResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getSignalControlByAddr">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deviceID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="phaseOrder" type="s:unsignedByte" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getSignalControlByAddrResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getSignalControlByAddrResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setSignalParam">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deviceID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="planID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="subPhaseCount" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="minGreen" type="tns:ArrayOfInt" />
+            <s:element minOccurs="0" maxOccurs="1" name="maxGreen" type="tns:ArrayOfInt" />
+            <s:element minOccurs="0" maxOccurs="1" name="yellow" type="tns:ArrayOfInt" />
+            <s:element minOccurs="0" maxOccurs="1" name="allRed" type="tns:ArrayOfInt" />
+            <s:element minOccurs="0" maxOccurs="1" name="pedGreenFlash" type="tns:ArrayOfInt" />
+            <s:element minOccurs="0" maxOccurs="1" name="pedRed" type="tns:ArrayOfInt" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setSignalParamResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="setSignalParamResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setSignalParamByAddr">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deviceID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="planID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="subPhaseCount" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="minGreen" type="tns:ArrayOfInt" />
+            <s:element minOccurs="0" maxOccurs="1" name="maxGreen" type="tns:ArrayOfInt" />
+            <s:element minOccurs="0" maxOccurs="1" name="yellow" type="tns:ArrayOfInt" />
+            <s:element minOccurs="0" maxOccurs="1" name="allRed" type="tns:ArrayOfInt" />
+            <s:element minOccurs="0" maxOccurs="1" name="pedGreenFlash" type="tns:ArrayOfInt" />
+            <s:element minOccurs="0" maxOccurs="1" name="pedRed" type="tns:ArrayOfInt" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setSignalParamByAddrResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="setSignalParamByAddrResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getSignalParam">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deviceID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="planID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getSignalParamResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getSignalParamResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getSignalParamByAddr">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deviceID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="planID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getSignalParamByAddrResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getSignalParamByAddrResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setPlanParam">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deviceID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="planID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="direct" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="phaseOrder" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="subPhaseCount" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="green" type="tns:ArrayOfInt" />
+            <s:element minOccurs="1" maxOccurs="1" name="cycleTime" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="offset" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setPlanParamResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="setPlanParamResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setPlanParamByAddr">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deviceID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="planID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="direct" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="phaseOrder" type="s:unsignedByte" />
+            <s:element minOccurs="1" maxOccurs="1" name="subPhaseCount" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="green" type="tns:ArrayOfInt" />
+            <s:element minOccurs="1" maxOccurs="1" name="cycleTime" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="offset" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setPlanParamByAddrResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="setPlanParamByAddrResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getPlanParam">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deviceID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="planID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getPlanParamResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getPlanParamResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getPlanParamByAddr">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deviceID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="planID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getPlanParamByAddrResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getPlanParamByAddrResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setSegmentType">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deviceID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="segmentType" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="segmentCount" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="planID" type="tns:ArrayOfInt" />
+            <s:element minOccurs="0" maxOccurs="1" name="Hour" type="tns:ArrayOfInt" />
+            <s:element minOccurs="0" maxOccurs="1" name="Min" type="tns:ArrayOfInt" />
+            <s:element minOccurs="1" maxOccurs="1" name="numWeekDay" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="weekDay" type="tns:ArrayOfInt" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setSegmentTypeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="setSegmentTypeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setSegmentTypeByAddr">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deviceID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="segmentType" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="segmentCount" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="planID" type="tns:ArrayOfInt" />
+            <s:element minOccurs="0" maxOccurs="1" name="Hour" type="tns:ArrayOfInt" />
+            <s:element minOccurs="0" maxOccurs="1" name="Min" type="tns:ArrayOfInt" />
+            <s:element minOccurs="1" maxOccurs="1" name="numWeekDay" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="weekDay" type="tns:ArrayOfInt" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setSegmentTypeByAddrResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="setSegmentTypeByAddrResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getSegmentType">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deviceID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="segmentType" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="weekDay" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getSegmentTypeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getSegmentTypeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getSegmentTypeByAddr">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deviceID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="segmentType" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="weekDay" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getSegmentTypeByAddrResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getSegmentTypeByAddrResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setSpecialSegmentType">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deviceID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="segmentType" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="segmentCount" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="planID" type="tns:ArrayOfInt" />
+            <s:element minOccurs="0" maxOccurs="1" name="Hour" type="tns:ArrayOfInt" />
+            <s:element minOccurs="0" maxOccurs="1" name="Min" type="tns:ArrayOfInt" />
+            <s:element minOccurs="1" maxOccurs="1" name="specialStartTime" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="specialEndTime" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setSpecialSegmentTypeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="setSpecialSegmentTypeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setSpecialSegmentTypeByAddr">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deviceID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="segmentType" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="segmentCount" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="planID" type="tns:ArrayOfInt" />
+            <s:element minOccurs="0" maxOccurs="1" name="Hour" type="tns:ArrayOfInt" />
+            <s:element minOccurs="0" maxOccurs="1" name="Min" type="tns:ArrayOfInt" />
+            <s:element minOccurs="1" maxOccurs="1" name="specialStartTime" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="specialEndTime" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setSpecialSegmentTypeByAddrResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="setSpecialSegmentTypeByAddrResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getSpecialSegmentType">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deviceID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="segmentType" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getSpecialSegmentTypeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getSpecialSegmentTypeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getSpecialSegmentTypeByAddr">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deviceID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="segmentType" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getSpecialSegmentTypeByAddrResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getSpecialSegmentTypeByAddrResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setRunningPlan">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deviceID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="planID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setRunningPlanResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="setRunningPlanResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setRunningPlanByAddr">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deviceID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="planID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setRunningPlanByAddrResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="setRunningPlanByAddrResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getRunningPlan">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deviceID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getRunningPlanResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getRunningPlanResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getRunningPlanByAddr">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deviceID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getRunningPlanByAddrResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getRunningPlanByAddrResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setActuateParam">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deviceID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="subPhaseID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="actuateType" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="timeExtend" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="actuateData1" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="actuateData2" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setActuateParamResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="setActuateParamResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setActuateParamByAddr">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deviceID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="subPhaseID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="actuateType" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="timeExtend" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="actuateData1" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="actuateData2" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setActuateParamByAddrResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="setActuateParamByAddrResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getActuateParam">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deviceID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="actuateType" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getActuateParamResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getActuateParamResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getActuateParamByAddr">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deviceID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="actuateType" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getActuateParamByAddrResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getActuateParamByAddrResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setActuateTypeParam">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deviceID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="semgentType" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="semgentCount" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="hour" type="tns:ArrayOfInt" />
+            <s:element minOccurs="0" maxOccurs="1" name="min" type="tns:ArrayOfInt" />
+            <s:element minOccurs="0" maxOccurs="1" name="actuateType" type="tns:ArrayOfInt" />
+            <s:element minOccurs="1" maxOccurs="1" name="numWeekDay" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="weekDay" type="tns:ArrayOfInt" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setActuateTypeParamResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="setActuateTypeParamResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setActuateTypeParamByAddr">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deviceID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="semgentType" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="semgentCount" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="hour" type="tns:ArrayOfInt" />
+            <s:element minOccurs="0" maxOccurs="1" name="min" type="tns:ArrayOfInt" />
+            <s:element minOccurs="0" maxOccurs="1" name="actuateType" type="tns:ArrayOfInt" />
+            <s:element minOccurs="1" maxOccurs="1" name="numWeekDay" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="weekDay" type="tns:ArrayOfInt" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setActuateTypeParamByAddrResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="setActuateTypeParamByAddrResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getActuateTypeParam">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deviceID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="semgentType" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="weekDay" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getActuateTypeParamResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getActuateTypeParamResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getDayActuateParamByAddr">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deviceID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="semgentType" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="weekDay" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getDayActuateParamByAddrResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getDayActuateParamByAddrResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setSpecialActuateParam">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deviceID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="semgentType" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="semgentCount" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="hour" type="tns:ArrayOfInt" />
+            <s:element minOccurs="0" maxOccurs="1" name="min" type="tns:ArrayOfInt" />
+            <s:element minOccurs="0" maxOccurs="1" name="actuateType" type="tns:ArrayOfInt" />
+            <s:element minOccurs="0" maxOccurs="1" name="year" type="tns:ArrayOfInt" />
+            <s:element minOccurs="0" maxOccurs="1" name="month" type="tns:ArrayOfInt" />
+            <s:element minOccurs="0" maxOccurs="1" name="day" type="tns:ArrayOfInt" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setSpecialActuateParamResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="setSpecialActuateParamResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setSpecialActuateParamByAddr">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deviceID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="semgentType" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="semgentCount" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="hour" type="tns:ArrayOfInt" />
+            <s:element minOccurs="0" maxOccurs="1" name="min" type="tns:ArrayOfInt" />
+            <s:element minOccurs="0" maxOccurs="1" name="actuateType" type="tns:ArrayOfInt" />
+            <s:element minOccurs="0" maxOccurs="1" name="year" type="tns:ArrayOfInt" />
+            <s:element minOccurs="0" maxOccurs="1" name="month" type="tns:ArrayOfInt" />
+            <s:element minOccurs="0" maxOccurs="1" name="day" type="tns:ArrayOfInt" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setSpecialActuateParamByAddrResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="setSpecialActuateParamByAddrResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="querySpecialActuateParam">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deviceID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="semgentType" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="querySpecialActuateParamResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="querySpecialActuateParamResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="querySpecialActuateParamByAddr">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deviceID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="semgentType" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="querySpecialActuateParamByAddrResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="querySpecialActuateParamByAddrResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setStepManger">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deviceID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="subPhaseID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="stepID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="effectTime" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setStepMangerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="setStepMangerResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setStepMangerByAddr">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deviceID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="subPhaseID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="stepID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="effectTime" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setStepMangerByAddrResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="setStepMangerByAddrResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getStepManger">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deviceID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getStepMangerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getStepMangerResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getStepMangerByAddr">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deviceID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="semgentType" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getStepMangerByAddrResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getStepMangerByAddrResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setLimitRoad">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deviceID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="subPhaseCount" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="cycleTime" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="offset" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="green" type="tns:ArrayOfInt" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setLimitRoadResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="setLimitRoadResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setLimitRoadByAddr">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deviceID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="subPhaseCount" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="cycleTime" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="offset" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="green" type="tns:ArrayOfInt" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setLimitRoadByAddrResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="setLimitRoadByAddrResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setStepCycle">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deviceID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="transmitType" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="transmitCycle" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setStepCycleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="setStepCycleResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setStepCycleByAddr">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deviceID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="transmitType" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="transmitCycle" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setStepCycleByAddrResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="setStepCycleByAddrResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getTransmitType">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deviceID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="transmitType" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getTransmitTypeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getTransmitTypeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getTransmitTypeByAddr">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deviceID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="transmitType" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getTransmitTypeByAddrResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getTransmitTypeByAddrResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="setControlMangerSoapIn">
+    <wsdl:part name="parameters" element="tns:setControlManger" />
+  </wsdl:message>
+  <wsdl:message name="setControlMangerSoapOut">
+    <wsdl:part name="parameters" element="tns:setControlMangerResponse" />
+  </wsdl:message>
+  <wsdl:message name="setControlMangerByAddrSoapIn">
+    <wsdl:part name="parameters" element="tns:setControlMangerByAddr" />
+  </wsdl:message>
+  <wsdl:message name="setControlMangerByAddrSoapOut">
+    <wsdl:part name="parameters" element="tns:setControlMangerByAddrResponse" />
+  </wsdl:message>
+  <wsdl:message name="getControlMangerSoapIn">
+    <wsdl:part name="parameters" element="tns:getControlManger" />
+  </wsdl:message>
+  <wsdl:message name="getControlMangerSoapOut">
+    <wsdl:part name="parameters" element="tns:getControlMangerResponse" />
+  </wsdl:message>
+  <wsdl:message name="getControlMangerByAddrSoapIn">
+    <wsdl:part name="parameters" element="tns:getControlMangerByAddr" />
+  </wsdl:message>
+  <wsdl:message name="getControlMangerByAddrSoapOut">
+    <wsdl:part name="parameters" element="tns:getControlMangerByAddrResponse" />
+  </wsdl:message>
+  <wsdl:message name="setDirectControlSoapIn">
+    <wsdl:part name="parameters" element="tns:setDirectControl" />
+  </wsdl:message>
+  <wsdl:message name="setDirectControlSoapOut">
+    <wsdl:part name="parameters" element="tns:setDirectControlResponse" />
+  </wsdl:message>
+  <wsdl:message name="setDirectControlByAddrSoapIn">
+    <wsdl:part name="parameters" element="tns:setDirectControlByAddr" />
+  </wsdl:message>
+  <wsdl:message name="setDirectControlByAddrSoapOut">
+    <wsdl:part name="parameters" element="tns:setDirectControlByAddrResponse" />
+  </wsdl:message>
+  <wsdl:message name="getDirectControlSoapIn">
+    <wsdl:part name="parameters" element="tns:getDirectControl" />
+  </wsdl:message>
+  <wsdl:message name="getDirectControlSoapOut">
+    <wsdl:part name="parameters" element="tns:getDirectControlResponse" />
+  </wsdl:message>
+  <wsdl:message name="getDirectControlByAddrSoapIn">
+    <wsdl:part name="parameters" element="tns:getDirectControlByAddr" />
+  </wsdl:message>
+  <wsdl:message name="getDirectControlByAddrSoapOut">
+    <wsdl:part name="parameters" element="tns:getDirectControlByAddrResponse" />
+  </wsdl:message>
+  <wsdl:message name="setSpeciaDirectControlSoapIn">
+    <wsdl:part name="parameters" element="tns:setSpeciaDirectControl" />
+  </wsdl:message>
+  <wsdl:message name="setSpeciaDirectControlSoapOut">
+    <wsdl:part name="parameters" element="tns:setSpeciaDirectControlResponse" />
+  </wsdl:message>
+  <wsdl:message name="setSpeciaDirectControlByAddrSoapIn">
+    <wsdl:part name="parameters" element="tns:setSpeciaDirectControlByAddr" />
+  </wsdl:message>
+  <wsdl:message name="setSpeciaDirectControlByAddrSoapOut">
+    <wsdl:part name="parameters" element="tns:setSpeciaDirectControlByAddrResponse" />
+  </wsdl:message>
+  <wsdl:message name="setSpecialDirectControlSoapIn">
+    <wsdl:part name="parameters" element="tns:setSpecialDirectControl" />
+  </wsdl:message>
+  <wsdl:message name="setSpecialDirectControlSoapOut">
+    <wsdl:part name="parameters" element="tns:setSpecialDirectControlResponse" />
+  </wsdl:message>
+  <wsdl:message name="getSpeciaDirectControlByAddrSoapIn">
+    <wsdl:part name="parameters" element="tns:getSpeciaDirectControlByAddr" />
+  </wsdl:message>
+  <wsdl:message name="getSpeciaDirectControlByAddrSoapOut">
+    <wsdl:part name="parameters" element="tns:getSpeciaDirectControlByAddrResponse" />
+  </wsdl:message>
+  <wsdl:message name="getSignalControlSoapIn">
+    <wsdl:part name="parameters" element="tns:getSignalControl" />
+  </wsdl:message>
+  <wsdl:message name="getSignalControlSoapOut">
+    <wsdl:part name="parameters" element="tns:getSignalControlResponse" />
+  </wsdl:message>
+  <wsdl:message name="getSignalControlByAddrSoapIn">
+    <wsdl:part name="parameters" element="tns:getSignalControlByAddr" />
+  </wsdl:message>
+  <wsdl:message name="getSignalControlByAddrSoapOut">
+    <wsdl:part name="parameters" element="tns:getSignalControlByAddrResponse" />
+  </wsdl:message>
+  <wsdl:message name="setSignalParamSoapIn">
+    <wsdl:part name="parameters" element="tns:setSignalParam" />
+  </wsdl:message>
+  <wsdl:message name="setSignalParamSoapOut">
+    <wsdl:part name="parameters" element="tns:setSignalParamResponse" />
+  </wsdl:message>
+  <wsdl:message name="setSignalParamByAddrSoapIn">
+    <wsdl:part name="parameters" element="tns:setSignalParamByAddr" />
+  </wsdl:message>
+  <wsdl:message name="setSignalParamByAddrSoapOut">
+    <wsdl:part name="parameters" element="tns:setSignalParamByAddrResponse" />
+  </wsdl:message>
+  <wsdl:message name="getSignalParamSoapIn">
+    <wsdl:part name="parameters" element="tns:getSignalParam" />
+  </wsdl:message>
+  <wsdl:message name="getSignalParamSoapOut">
+    <wsdl:part name="parameters" element="tns:getSignalParamResponse" />
+  </wsdl:message>
+  <wsdl:message name="getSignalParamByAddrSoapIn">
+    <wsdl:part name="parameters" element="tns:getSignalParamByAddr" />
+  </wsdl:message>
+  <wsdl:message name="getSignalParamByAddrSoapOut">
+    <wsdl:part name="parameters" element="tns:getSignalParamByAddrResponse" />
+  </wsdl:message>
+  <wsdl:message name="setPlanParamSoapIn">
+    <wsdl:part name="parameters" element="tns:setPlanParam" />
+  </wsdl:message>
+  <wsdl:message name="setPlanParamSoapOut">
+    <wsdl:part name="parameters" element="tns:setPlanParamResponse" />
+  </wsdl:message>
+  <wsdl:message name="setPlanParamByAddrSoapIn">
+    <wsdl:part name="parameters" element="tns:setPlanParamByAddr" />
+  </wsdl:message>
+  <wsdl:message name="setPlanParamByAddrSoapOut">
+    <wsdl:part name="parameters" element="tns:setPlanParamByAddrResponse" />
+  </wsdl:message>
+  <wsdl:message name="getPlanParamSoapIn">
+    <wsdl:part name="parameters" element="tns:getPlanParam" />
+  </wsdl:message>
+  <wsdl:message name="getPlanParamSoapOut">
+    <wsdl:part name="parameters" element="tns:getPlanParamResponse" />
+  </wsdl:message>
+  <wsdl:message name="getPlanParamByAddrSoapIn">
+    <wsdl:part name="parameters" element="tns:getPlanParamByAddr" />
+  </wsdl:message>
+  <wsdl:message name="getPlanParamByAddrSoapOut">
+    <wsdl:part name="parameters" element="tns:getPlanParamByAddrResponse" />
+  </wsdl:message>
+  <wsdl:message name="setSegmentTypeSoapIn">
+    <wsdl:part name="parameters" element="tns:setSegmentType" />
+  </wsdl:message>
+  <wsdl:message name="setSegmentTypeSoapOut">
+    <wsdl:part name="parameters" element="tns:setSegmentTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="setSegmentTypeByAddrSoapIn">
+    <wsdl:part name="parameters" element="tns:setSegmentTypeByAddr" />
+  </wsdl:message>
+  <wsdl:message name="setSegmentTypeByAddrSoapOut">
+    <wsdl:part name="parameters" element="tns:setSegmentTypeByAddrResponse" />
+  </wsdl:message>
+  <wsdl:message name="getSegmentTypeSoapIn">
+    <wsdl:part name="parameters" element="tns:getSegmentType" />
+  </wsdl:message>
+  <wsdl:message name="getSegmentTypeSoapOut">
+    <wsdl:part name="parameters" element="tns:getSegmentTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="getSegmentTypeByAddrSoapIn">
+    <wsdl:part name="parameters" element="tns:getSegmentTypeByAddr" />
+  </wsdl:message>
+  <wsdl:message name="getSegmentTypeByAddrSoapOut">
+    <wsdl:part name="parameters" element="tns:getSegmentTypeByAddrResponse" />
+  </wsdl:message>
+  <wsdl:message name="setSpecialSegmentTypeSoapIn">
+    <wsdl:part name="parameters" element="tns:setSpecialSegmentType" />
+  </wsdl:message>
+  <wsdl:message name="setSpecialSegmentTypeSoapOut">
+    <wsdl:part name="parameters" element="tns:setSpecialSegmentTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="setSpecialSegmentTypeByAddrSoapIn">
+    <wsdl:part name="parameters" element="tns:setSpecialSegmentTypeByAddr" />
+  </wsdl:message>
+  <wsdl:message name="setSpecialSegmentTypeByAddrSoapOut">
+    <wsdl:part name="parameters" element="tns:setSpecialSegmentTypeByAddrResponse" />
+  </wsdl:message>
+  <wsdl:message name="getSpecialSegmentTypeSoapIn">
+    <wsdl:part name="parameters" element="tns:getSpecialSegmentType" />
+  </wsdl:message>
+  <wsdl:message name="getSpecialSegmentTypeSoapOut">
+    <wsdl:part name="parameters" element="tns:getSpecialSegmentTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="getSpecialSegmentTypeByAddrSoapIn">
+    <wsdl:part name="parameters" element="tns:getSpecialSegmentTypeByAddr" />
+  </wsdl:message>
+  <wsdl:message name="getSpecialSegmentTypeByAddrSoapOut">
+    <wsdl:part name="parameters" element="tns:getSpecialSegmentTypeByAddrResponse" />
+  </wsdl:message>
+  <wsdl:message name="setRunningPlanSoapIn">
+    <wsdl:part name="parameters" element="tns:setRunningPlan" />
+  </wsdl:message>
+  <wsdl:message name="setRunningPlanSoapOut">
+    <wsdl:part name="parameters" element="tns:setRunningPlanResponse" />
+  </wsdl:message>
+  <wsdl:message name="setRunningPlanByAddrSoapIn">
+    <wsdl:part name="parameters" element="tns:setRunningPlanByAddr" />
+  </wsdl:message>
+  <wsdl:message name="setRunningPlanByAddrSoapOut">
+    <wsdl:part name="parameters" element="tns:setRunningPlanByAddrResponse" />
+  </wsdl:message>
+  <wsdl:message name="getRunningPlanSoapIn">
+    <wsdl:part name="parameters" element="tns:getRunningPlan" />
+  </wsdl:message>
+  <wsdl:message name="getRunningPlanSoapOut">
+    <wsdl:part name="parameters" element="tns:getRunningPlanResponse" />
+  </wsdl:message>
+  <wsdl:message name="getRunningPlanByAddrSoapIn">
+    <wsdl:part name="parameters" element="tns:getRunningPlanByAddr" />
+  </wsdl:message>
+  <wsdl:message name="getRunningPlanByAddrSoapOut">
+    <wsdl:part name="parameters" element="tns:getRunningPlanByAddrResponse" />
+  </wsdl:message>
+  <wsdl:message name="setActuateParamSoapIn">
+    <wsdl:part name="parameters" element="tns:setActuateParam" />
+  </wsdl:message>
+  <wsdl:message name="setActuateParamSoapOut">
+    <wsdl:part name="parameters" element="tns:setActuateParamResponse" />
+  </wsdl:message>
+  <wsdl:message name="setActuateParamByAddrSoapIn">
+    <wsdl:part name="parameters" element="tns:setActuateParamByAddr" />
+  </wsdl:message>
+  <wsdl:message name="setActuateParamByAddrSoapOut">
+    <wsdl:part name="parameters" element="tns:setActuateParamByAddrResponse" />
+  </wsdl:message>
+  <wsdl:message name="getActuateParamSoapIn">
+    <wsdl:part name="parameters" element="tns:getActuateParam" />
+  </wsdl:message>
+  <wsdl:message name="getActuateParamSoapOut">
+    <wsdl:part name="parameters" element="tns:getActuateParamResponse" />
+  </wsdl:message>
+  <wsdl:message name="getActuateParamByAddrSoapIn">
+    <wsdl:part name="parameters" element="tns:getActuateParamByAddr" />
+  </wsdl:message>
+  <wsdl:message name="getActuateParamByAddrSoapOut">
+    <wsdl:part name="parameters" element="tns:getActuateParamByAddrResponse" />
+  </wsdl:message>
+  <wsdl:message name="setActuateTypeParamSoapIn">
+    <wsdl:part name="parameters" element="tns:setActuateTypeParam" />
+  </wsdl:message>
+  <wsdl:message name="setActuateTypeParamSoapOut">
+    <wsdl:part name="parameters" element="tns:setActuateTypeParamResponse" />
+  </wsdl:message>
+  <wsdl:message name="setActuateTypeParamByAddrSoapIn">
+    <wsdl:part name="parameters" element="tns:setActuateTypeParamByAddr" />
+  </wsdl:message>
+  <wsdl:message name="setActuateTypeParamByAddrSoapOut">
+    <wsdl:part name="parameters" element="tns:setActuateTypeParamByAddrResponse" />
+  </wsdl:message>
+  <wsdl:message name="getActuateTypeParamSoapIn">
+    <wsdl:part name="parameters" element="tns:getActuateTypeParam" />
+  </wsdl:message>
+  <wsdl:message name="getActuateTypeParamSoapOut">
+    <wsdl:part name="parameters" element="tns:getActuateTypeParamResponse" />
+  </wsdl:message>
+  <wsdl:message name="getDayActuateParamByAddrSoapIn">
+    <wsdl:part name="parameters" element="tns:getDayActuateParamByAddr" />
+  </wsdl:message>
+  <wsdl:message name="getDayActuateParamByAddrSoapOut">
+    <wsdl:part name="parameters" element="tns:getDayActuateParamByAddrResponse" />
+  </wsdl:message>
+  <wsdl:message name="setSpecialActuateParamSoapIn">
+    <wsdl:part name="parameters" element="tns:setSpecialActuateParam" />
+  </wsdl:message>
+  <wsdl:message name="setSpecialActuateParamSoapOut">
+    <wsdl:part name="parameters" element="tns:setSpecialActuateParamResponse" />
+  </wsdl:message>
+  <wsdl:message name="setSpecialActuateParamByAddrSoapIn">
+    <wsdl:part name="parameters" element="tns:setSpecialActuateParamByAddr" />
+  </wsdl:message>
+  <wsdl:message name="setSpecialActuateParamByAddrSoapOut">
+    <wsdl:part name="parameters" element="tns:setSpecialActuateParamByAddrResponse" />
+  </wsdl:message>
+  <wsdl:message name="querySpecialActuateParamSoapIn">
+    <wsdl:part name="parameters" element="tns:querySpecialActuateParam" />
+  </wsdl:message>
+  <wsdl:message name="querySpecialActuateParamSoapOut">
+    <wsdl:part name="parameters" element="tns:querySpecialActuateParamResponse" />
+  </wsdl:message>
+  <wsdl:message name="querySpecialActuateParamByAddrSoapIn">
+    <wsdl:part name="parameters" element="tns:querySpecialActuateParamByAddr" />
+  </wsdl:message>
+  <wsdl:message name="querySpecialActuateParamByAddrSoapOut">
+    <wsdl:part name="parameters" element="tns:querySpecialActuateParamByAddrResponse" />
+  </wsdl:message>
+  <wsdl:message name="setStepMangerSoapIn">
+    <wsdl:part name="parameters" element="tns:setStepManger" />
+  </wsdl:message>
+  <wsdl:message name="setStepMangerSoapOut">
+    <wsdl:part name="parameters" element="tns:setStepMangerResponse" />
+  </wsdl:message>
+  <wsdl:message name="setStepMangerByAddrSoapIn">
+    <wsdl:part name="parameters" element="tns:setStepMangerByAddr" />
+  </wsdl:message>
+  <wsdl:message name="setStepMangerByAddrSoapOut">
+    <wsdl:part name="parameters" element="tns:setStepMangerByAddrResponse" />
+  </wsdl:message>
+  <wsdl:message name="getStepMangerSoapIn">
+    <wsdl:part name="parameters" element="tns:getStepManger" />
+  </wsdl:message>
+  <wsdl:message name="getStepMangerSoapOut">
+    <wsdl:part name="parameters" element="tns:getStepMangerResponse" />
+  </wsdl:message>
+  <wsdl:message name="getStepMangerByAddrSoapIn">
+    <wsdl:part name="parameters" element="tns:getStepMangerByAddr" />
+  </wsdl:message>
+  <wsdl:message name="getStepMangerByAddrSoapOut">
+    <wsdl:part name="parameters" element="tns:getStepMangerByAddrResponse" />
+  </wsdl:message>
+  <wsdl:message name="setLimitRoadSoapIn">
+    <wsdl:part name="parameters" element="tns:setLimitRoad" />
+  </wsdl:message>
+  <wsdl:message name="setLimitRoadSoapOut">
+    <wsdl:part name="parameters" element="tns:setLimitRoadResponse" />
+  </wsdl:message>
+  <wsdl:message name="setLimitRoadByAddrSoapIn">
+    <wsdl:part name="parameters" element="tns:setLimitRoadByAddr" />
+  </wsdl:message>
+  <wsdl:message name="setLimitRoadByAddrSoapOut">
+    <wsdl:part name="parameters" element="tns:setLimitRoadByAddrResponse" />
+  </wsdl:message>
+  <wsdl:message name="setStepCycleSoapIn">
+    <wsdl:part name="parameters" element="tns:setStepCycle" />
+  </wsdl:message>
+  <wsdl:message name="setStepCycleSoapOut">
+    <wsdl:part name="parameters" element="tns:setStepCycleResponse" />
+  </wsdl:message>
+  <wsdl:message name="setStepCycleByAddrSoapIn">
+    <wsdl:part name="parameters" element="tns:setStepCycleByAddr" />
+  </wsdl:message>
+  <wsdl:message name="setStepCycleByAddrSoapOut">
+    <wsdl:part name="parameters" element="tns:setStepCycleByAddrResponse" />
+  </wsdl:message>
+  <wsdl:message name="getTransmitTypeSoapIn">
+    <wsdl:part name="parameters" element="tns:getTransmitType" />
+  </wsdl:message>
+  <wsdl:message name="getTransmitTypeSoapOut">
+    <wsdl:part name="parameters" element="tns:getTransmitTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="getTransmitTypeByAddrSoapIn">
+    <wsdl:part name="parameters" element="tns:getTransmitTypeByAddr" />
+  </wsdl:message>
+  <wsdl:message name="getTransmitTypeByAddrSoapOut">
+    <wsdl:part name="parameters" element="tns:getTransmitTypeByAddrResponse" />
+  </wsdl:message>
+  <wsdl:portType name="tcServiceSoap">
+    <wsdl:operation name="setControlManger">
+      <wsdl:input message="tns:setControlMangerSoapIn" />
+      <wsdl:output message="tns:setControlMangerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="setControlMangerByAddr">
+      <wsdl:input message="tns:setControlMangerByAddrSoapIn" />
+      <wsdl:output message="tns:setControlMangerByAddrSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getControlManger">
+      <wsdl:input message="tns:getControlMangerSoapIn" />
+      <wsdl:output message="tns:getControlMangerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getControlMangerByAddr">
+      <wsdl:input message="tns:getControlMangerByAddrSoapIn" />
+      <wsdl:output message="tns:getControlMangerByAddrSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="setDirectControl">
+      <wsdl:input message="tns:setDirectControlSoapIn" />
+      <wsdl:output message="tns:setDirectControlSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="setDirectControlByAddr">
+      <wsdl:input message="tns:setDirectControlByAddrSoapIn" />
+      <wsdl:output message="tns:setDirectControlByAddrSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getDirectControl">
+      <wsdl:input message="tns:getDirectControlSoapIn" />
+      <wsdl:output message="tns:getDirectControlSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getDirectControlByAddr">
+      <wsdl:input message="tns:getDirectControlByAddrSoapIn" />
+      <wsdl:output message="tns:getDirectControlByAddrSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="setSpeciaDirectControl">
+      <wsdl:input message="tns:setSpeciaDirectControlSoapIn" />
+      <wsdl:output message="tns:setSpeciaDirectControlSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="setSpeciaDirectControlByAddr">
+      <wsdl:input message="tns:setSpeciaDirectControlByAddrSoapIn" />
+      <wsdl:output message="tns:setSpeciaDirectControlByAddrSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="setSpecialDirectControl">
+      <wsdl:input message="tns:setSpecialDirectControlSoapIn" />
+      <wsdl:output message="tns:setSpecialDirectControlSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getSpeciaDirectControlByAddr">
+      <wsdl:input message="tns:getSpeciaDirectControlByAddrSoapIn" />
+      <wsdl:output message="tns:getSpeciaDirectControlByAddrSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getSignalControl">
+      <wsdl:input message="tns:getSignalControlSoapIn" />
+      <wsdl:output message="tns:getSignalControlSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getSignalControlByAddr">
+      <wsdl:input message="tns:getSignalControlByAddrSoapIn" />
+      <wsdl:output message="tns:getSignalControlByAddrSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="setSignalParam">
+      <wsdl:input message="tns:setSignalParamSoapIn" />
+      <wsdl:output message="tns:setSignalParamSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="setSignalParamByAddr">
+      <wsdl:input message="tns:setSignalParamByAddrSoapIn" />
+      <wsdl:output message="tns:setSignalParamByAddrSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getSignalParam">
+      <wsdl:input message="tns:getSignalParamSoapIn" />
+      <wsdl:output message="tns:getSignalParamSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getSignalParamByAddr">
+      <wsdl:input message="tns:getSignalParamByAddrSoapIn" />
+      <wsdl:output message="tns:getSignalParamByAddrSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="setPlanParam">
+      <wsdl:input message="tns:setPlanParamSoapIn" />
+      <wsdl:output message="tns:setPlanParamSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="setPlanParamByAddr">
+      <wsdl:input message="tns:setPlanParamByAddrSoapIn" />
+      <wsdl:output message="tns:setPlanParamByAddrSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getPlanParam">
+      <wsdl:input message="tns:getPlanParamSoapIn" />
+      <wsdl:output message="tns:getPlanParamSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getPlanParamByAddr">
+      <wsdl:input message="tns:getPlanParamByAddrSoapIn" />
+      <wsdl:output message="tns:getPlanParamByAddrSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="setSegmentType">
+      <wsdl:input message="tns:setSegmentTypeSoapIn" />
+      <wsdl:output message="tns:setSegmentTypeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="setSegmentTypeByAddr">
+      <wsdl:input message="tns:setSegmentTypeByAddrSoapIn" />
+      <wsdl:output message="tns:setSegmentTypeByAddrSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getSegmentType">
+      <wsdl:input message="tns:getSegmentTypeSoapIn" />
+      <wsdl:output message="tns:getSegmentTypeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getSegmentTypeByAddr">
+      <wsdl:input message="tns:getSegmentTypeByAddrSoapIn" />
+      <wsdl:output message="tns:getSegmentTypeByAddrSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="setSpecialSegmentType">
+      <wsdl:input message="tns:setSpecialSegmentTypeSoapIn" />
+      <wsdl:output message="tns:setSpecialSegmentTypeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="setSpecialSegmentTypeByAddr">
+      <wsdl:input message="tns:setSpecialSegmentTypeByAddrSoapIn" />
+      <wsdl:output message="tns:setSpecialSegmentTypeByAddrSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getSpecialSegmentType">
+      <wsdl:input message="tns:getSpecialSegmentTypeSoapIn" />
+      <wsdl:output message="tns:getSpecialSegmentTypeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getSpecialSegmentTypeByAddr">
+      <wsdl:input message="tns:getSpecialSegmentTypeByAddrSoapIn" />
+      <wsdl:output message="tns:getSpecialSegmentTypeByAddrSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="setRunningPlan">
+      <wsdl:input message="tns:setRunningPlanSoapIn" />
+      <wsdl:output message="tns:setRunningPlanSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="setRunningPlanByAddr">
+      <wsdl:input message="tns:setRunningPlanByAddrSoapIn" />
+      <wsdl:output message="tns:setRunningPlanByAddrSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getRunningPlan">
+      <wsdl:input message="tns:getRunningPlanSoapIn" />
+      <wsdl:output message="tns:getRunningPlanSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getRunningPlanByAddr">
+      <wsdl:input message="tns:getRunningPlanByAddrSoapIn" />
+      <wsdl:output message="tns:getRunningPlanByAddrSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="setActuateParam">
+      <wsdl:input message="tns:setActuateParamSoapIn" />
+      <wsdl:output message="tns:setActuateParamSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="setActuateParamByAddr">
+      <wsdl:input message="tns:setActuateParamByAddrSoapIn" />
+      <wsdl:output message="tns:setActuateParamByAddrSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getActuateParam">
+      <wsdl:input message="tns:getActuateParamSoapIn" />
+      <wsdl:output message="tns:getActuateParamSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getActuateParamByAddr">
+      <wsdl:input message="tns:getActuateParamByAddrSoapIn" />
+      <wsdl:output message="tns:getActuateParamByAddrSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="setActuateTypeParam">
+      <wsdl:input message="tns:setActuateTypeParamSoapIn" />
+      <wsdl:output message="tns:setActuateTypeParamSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="setActuateTypeParamByAddr">
+      <wsdl:input message="tns:setActuateTypeParamByAddrSoapIn" />
+      <wsdl:output message="tns:setActuateTypeParamByAddrSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getActuateTypeParam">
+      <wsdl:input message="tns:getActuateTypeParamSoapIn" />
+      <wsdl:output message="tns:getActuateTypeParamSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getDayActuateParamByAddr">
+      <wsdl:input message="tns:getDayActuateParamByAddrSoapIn" />
+      <wsdl:output message="tns:getDayActuateParamByAddrSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="setSpecialActuateParam">
+      <wsdl:input message="tns:setSpecialActuateParamSoapIn" />
+      <wsdl:output message="tns:setSpecialActuateParamSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="setSpecialActuateParamByAddr">
+      <wsdl:input message="tns:setSpecialActuateParamByAddrSoapIn" />
+      <wsdl:output message="tns:setSpecialActuateParamByAddrSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="querySpecialActuateParam">
+      <wsdl:input message="tns:querySpecialActuateParamSoapIn" />
+      <wsdl:output message="tns:querySpecialActuateParamSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="querySpecialActuateParamByAddr">
+      <wsdl:input message="tns:querySpecialActuateParamByAddrSoapIn" />
+      <wsdl:output message="tns:querySpecialActuateParamByAddrSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="setStepManger">
+      <wsdl:input message="tns:setStepMangerSoapIn" />
+      <wsdl:output message="tns:setStepMangerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="setStepMangerByAddr">
+      <wsdl:input message="tns:setStepMangerByAddrSoapIn" />
+      <wsdl:output message="tns:setStepMangerByAddrSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getStepManger">
+      <wsdl:input message="tns:getStepMangerSoapIn" />
+      <wsdl:output message="tns:getStepMangerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getStepMangerByAddr">
+      <wsdl:input message="tns:getStepMangerByAddrSoapIn" />
+      <wsdl:output message="tns:getStepMangerByAddrSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="setLimitRoad">
+      <wsdl:input message="tns:setLimitRoadSoapIn" />
+      <wsdl:output message="tns:setLimitRoadSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="setLimitRoadByAddr">
+      <wsdl:input message="tns:setLimitRoadByAddrSoapIn" />
+      <wsdl:output message="tns:setLimitRoadByAddrSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="setStepCycle">
+      <wsdl:input message="tns:setStepCycleSoapIn" />
+      <wsdl:output message="tns:setStepCycleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="setStepCycleByAddr">
+      <wsdl:input message="tns:setStepCycleByAddrSoapIn" />
+      <wsdl:output message="tns:setStepCycleByAddrSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getTransmitType">
+      <wsdl:input message="tns:getTransmitTypeSoapIn" />
+      <wsdl:output message="tns:getTransmitTypeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getTransmitTypeByAddr">
+      <wsdl:input message="tns:getTransmitTypeByAddrSoapIn" />
+      <wsdl:output message="tns:getTransmitTypeByAddrSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="tcServiceSoap" type="tns:tcServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="setControlManger">
+      <soap:operation soapAction="http://tempuri.org/setControlManger" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setControlMangerByAddr">
+      <soap:operation soapAction="http://tempuri.org/setControlMangerByAddr" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getControlManger">
+      <soap:operation soapAction="http://tempuri.org/getControlManger" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getControlMangerByAddr">
+      <soap:operation soapAction="http://tempuri.org/getControlMangerByAddr" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setDirectControl">
+      <soap:operation soapAction="http://tempuri.org/setDirectControl" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setDirectControlByAddr">
+      <soap:operation soapAction="http://tempuri.org/setDirectControlByAddr" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDirectControl">
+      <soap:operation soapAction="http://tempuri.org/getDirectControl" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDirectControlByAddr">
+      <soap:operation soapAction="http://tempuri.org/getDirectControlByAddr" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setSpeciaDirectControl">
+      <soap:operation soapAction="http://tempuri.org/setSpeciaDirectControl" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setSpeciaDirectControlByAddr">
+      <soap:operation soapAction="http://tempuri.org/setSpeciaDirectControlByAddr" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setSpecialDirectControl">
+      <soap:operation soapAction="http://tempuri.org/setSpecialDirectControl" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSpeciaDirectControlByAddr">
+      <soap:operation soapAction="http://tempuri.org/getSpeciaDirectControlByAddr" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSignalControl">
+      <soap:operation soapAction="http://tempuri.org/getSignalControl" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSignalControlByAddr">
+      <soap:operation soapAction="http://tempuri.org/getSignalControlByAddr" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setSignalParam">
+      <soap:operation soapAction="http://tempuri.org/setSignalParam" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setSignalParamByAddr">
+      <soap:operation soapAction="http://tempuri.org/setSignalParamByAddr" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSignalParam">
+      <soap:operation soapAction="http://tempuri.org/getSignalParam" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSignalParamByAddr">
+      <soap:operation soapAction="http://tempuri.org/getSignalParamByAddr" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setPlanParam">
+      <soap:operation soapAction="http://tempuri.org/setPlanParam" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setPlanParamByAddr">
+      <soap:operation soapAction="http://tempuri.org/setPlanParamByAddr" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPlanParam">
+      <soap:operation soapAction="http://tempuri.org/getPlanParam" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPlanParamByAddr">
+      <soap:operation soapAction="http://tempuri.org/getPlanParamByAddr" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setSegmentType">
+      <soap:operation soapAction="http://tempuri.org/setSegmentType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setSegmentTypeByAddr">
+      <soap:operation soapAction="http://tempuri.org/setSegmentTypeByAddr" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSegmentType">
+      <soap:operation soapAction="http://tempuri.org/getSegmentType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSegmentTypeByAddr">
+      <soap:operation soapAction="http://tempuri.org/getSegmentTypeByAddr" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setSpecialSegmentType">
+      <soap:operation soapAction="http://tempuri.org/setSpecialSegmentType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setSpecialSegmentTypeByAddr">
+      <soap:operation soapAction="http://tempuri.org/setSpecialSegmentTypeByAddr" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSpecialSegmentType">
+      <soap:operation soapAction="http://tempuri.org/getSpecialSegmentType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSpecialSegmentTypeByAddr">
+      <soap:operation soapAction="http://tempuri.org/getSpecialSegmentTypeByAddr" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setRunningPlan">
+      <soap:operation soapAction="http://tempuri.org/setRunningPlan" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setRunningPlanByAddr">
+      <soap:operation soapAction="http://tempuri.org/setRunningPlanByAddr" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRunningPlan">
+      <soap:operation soapAction="http://tempuri.org/getRunningPlan" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRunningPlanByAddr">
+      <soap:operation soapAction="http://tempuri.org/getRunningPlanByAddr" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setActuateParam">
+      <soap:operation soapAction="http://tempuri.org/setActuateParam" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setActuateParamByAddr">
+      <soap:operation soapAction="http://tempuri.org/setActuateParamByAddr" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getActuateParam">
+      <soap:operation soapAction="http://tempuri.org/getActuateParam" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getActuateParamByAddr">
+      <soap:operation soapAction="http://tempuri.org/getActuateParamByAddr" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setActuateTypeParam">
+      <soap:operation soapAction="http://tempuri.org/setActuateTypeParam" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setActuateTypeParamByAddr">
+      <soap:operation soapAction="http://tempuri.org/setActuateTypeParamByAddr" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getActuateTypeParam">
+      <soap:operation soapAction="http://tempuri.org/getActuateTypeParam" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDayActuateParamByAddr">
+      <soap:operation soapAction="http://tempuri.org/getDayActuateParamByAddr" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setSpecialActuateParam">
+      <soap:operation soapAction="http://tempuri.org/setSpecialActuateParam" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setSpecialActuateParamByAddr">
+      <soap:operation soapAction="http://tempuri.org/setSpecialActuateParamByAddr" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="querySpecialActuateParam">
+      <soap:operation soapAction="http://tempuri.org/querySpecialActuateParam" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="querySpecialActuateParamByAddr">
+      <soap:operation soapAction="http://tempuri.org/querySpecialActuateParamByAddr" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setStepManger">
+      <soap:operation soapAction="http://tempuri.org/setStepManger" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setStepMangerByAddr">
+      <soap:operation soapAction="http://tempuri.org/setStepMangerByAddr" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getStepManger">
+      <soap:operation soapAction="http://tempuri.org/getStepManger" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getStepMangerByAddr">
+      <soap:operation soapAction="http://tempuri.org/getStepMangerByAddr" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setLimitRoad">
+      <soap:operation soapAction="http://tempuri.org/setLimitRoad" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setLimitRoadByAddr">
+      <soap:operation soapAction="http://tempuri.org/setLimitRoadByAddr" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setStepCycle">
+      <soap:operation soapAction="http://tempuri.org/setStepCycle" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setStepCycleByAddr">
+      <soap:operation soapAction="http://tempuri.org/setStepCycleByAddr" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTransmitType">
+      <soap:operation soapAction="http://tempuri.org/getTransmitType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTransmitTypeByAddr">
+      <soap:operation soapAction="http://tempuri.org/getTransmitTypeByAddr" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="tcServiceSoap12" type="tns:tcServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="setControlManger">
+      <soap12:operation soapAction="http://tempuri.org/setControlManger" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setControlMangerByAddr">
+      <soap12:operation soapAction="http://tempuri.org/setControlMangerByAddr" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getControlManger">
+      <soap12:operation soapAction="http://tempuri.org/getControlManger" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getControlMangerByAddr">
+      <soap12:operation soapAction="http://tempuri.org/getControlMangerByAddr" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setDirectControl">
+      <soap12:operation soapAction="http://tempuri.org/setDirectControl" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setDirectControlByAddr">
+      <soap12:operation soapAction="http://tempuri.org/setDirectControlByAddr" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDirectControl">
+      <soap12:operation soapAction="http://tempuri.org/getDirectControl" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDirectControlByAddr">
+      <soap12:operation soapAction="http://tempuri.org/getDirectControlByAddr" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setSpeciaDirectControl">
+      <soap12:operation soapAction="http://tempuri.org/setSpeciaDirectControl" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setSpeciaDirectControlByAddr">
+      <soap12:operation soapAction="http://tempuri.org/setSpeciaDirectControlByAddr" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setSpecialDirectControl">
+      <soap12:operation soapAction="http://tempuri.org/setSpecialDirectControl" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSpeciaDirectControlByAddr">
+      <soap12:operation soapAction="http://tempuri.org/getSpeciaDirectControlByAddr" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSignalControl">
+      <soap12:operation soapAction="http://tempuri.org/getSignalControl" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSignalControlByAddr">
+      <soap12:operation soapAction="http://tempuri.org/getSignalControlByAddr" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setSignalParam">
+      <soap12:operation soapAction="http://tempuri.org/setSignalParam" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setSignalParamByAddr">
+      <soap12:operation soapAction="http://tempuri.org/setSignalParamByAddr" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSignalParam">
+      <soap12:operation soapAction="http://tempuri.org/getSignalParam" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSignalParamByAddr">
+      <soap12:operation soapAction="http://tempuri.org/getSignalParamByAddr" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setPlanParam">
+      <soap12:operation soapAction="http://tempuri.org/setPlanParam" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setPlanParamByAddr">
+      <soap12:operation soapAction="http://tempuri.org/setPlanParamByAddr" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPlanParam">
+      <soap12:operation soapAction="http://tempuri.org/getPlanParam" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPlanParamByAddr">
+      <soap12:operation soapAction="http://tempuri.org/getPlanParamByAddr" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setSegmentType">
+      <soap12:operation soapAction="http://tempuri.org/setSegmentType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setSegmentTypeByAddr">
+      <soap12:operation soapAction="http://tempuri.org/setSegmentTypeByAddr" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSegmentType">
+      <soap12:operation soapAction="http://tempuri.org/getSegmentType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSegmentTypeByAddr">
+      <soap12:operation soapAction="http://tempuri.org/getSegmentTypeByAddr" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setSpecialSegmentType">
+      <soap12:operation soapAction="http://tempuri.org/setSpecialSegmentType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setSpecialSegmentTypeByAddr">
+      <soap12:operation soapAction="http://tempuri.org/setSpecialSegmentTypeByAddr" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSpecialSegmentType">
+      <soap12:operation soapAction="http://tempuri.org/getSpecialSegmentType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSpecialSegmentTypeByAddr">
+      <soap12:operation soapAction="http://tempuri.org/getSpecialSegmentTypeByAddr" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setRunningPlan">
+      <soap12:operation soapAction="http://tempuri.org/setRunningPlan" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setRunningPlanByAddr">
+      <soap12:operation soapAction="http://tempuri.org/setRunningPlanByAddr" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRunningPlan">
+      <soap12:operation soapAction="http://tempuri.org/getRunningPlan" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRunningPlanByAddr">
+      <soap12:operation soapAction="http://tempuri.org/getRunningPlanByAddr" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setActuateParam">
+      <soap12:operation soapAction="http://tempuri.org/setActuateParam" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setActuateParamByAddr">
+      <soap12:operation soapAction="http://tempuri.org/setActuateParamByAddr" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getActuateParam">
+      <soap12:operation soapAction="http://tempuri.org/getActuateParam" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getActuateParamByAddr">
+      <soap12:operation soapAction="http://tempuri.org/getActuateParamByAddr" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setActuateTypeParam">
+      <soap12:operation soapAction="http://tempuri.org/setActuateTypeParam" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setActuateTypeParamByAddr">
+      <soap12:operation soapAction="http://tempuri.org/setActuateTypeParamByAddr" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getActuateTypeParam">
+      <soap12:operation soapAction="http://tempuri.org/getActuateTypeParam" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDayActuateParamByAddr">
+      <soap12:operation soapAction="http://tempuri.org/getDayActuateParamByAddr" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setSpecialActuateParam">
+      <soap12:operation soapAction="http://tempuri.org/setSpecialActuateParam" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setSpecialActuateParamByAddr">
+      <soap12:operation soapAction="http://tempuri.org/setSpecialActuateParamByAddr" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="querySpecialActuateParam">
+      <soap12:operation soapAction="http://tempuri.org/querySpecialActuateParam" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="querySpecialActuateParamByAddr">
+      <soap12:operation soapAction="http://tempuri.org/querySpecialActuateParamByAddr" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setStepManger">
+      <soap12:operation soapAction="http://tempuri.org/setStepManger" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setStepMangerByAddr">
+      <soap12:operation soapAction="http://tempuri.org/setStepMangerByAddr" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getStepManger">
+      <soap12:operation soapAction="http://tempuri.org/getStepManger" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getStepMangerByAddr">
+      <soap12:operation soapAction="http://tempuri.org/getStepMangerByAddr" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setLimitRoad">
+      <soap12:operation soapAction="http://tempuri.org/setLimitRoad" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setLimitRoadByAddr">
+      <soap12:operation soapAction="http://tempuri.org/setLimitRoadByAddr" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setStepCycle">
+      <soap12:operation soapAction="http://tempuri.org/setStepCycle" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setStepCycleByAddr">
+      <soap12:operation soapAction="http://tempuri.org/setStepCycleByAddr" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTransmitType">
+      <soap12:operation soapAction="http://tempuri.org/getTransmitType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTransmitTypeByAddr">
+      <soap12:operation soapAction="http://tempuri.org/getTransmitTypeByAddr" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="tcService">
+    <wsdl:port name="tcServiceSoap" binding="tns:tcServiceSoap">
+      <soap:address location="http://117.56.84.8:8080/orderservice/tcService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="tcServiceSoap12" binding="tns:tcServiceSoap12">
+      <soap12:address location="http://117.56.84.8:8080/orderservice/tcService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

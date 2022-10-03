@@ -1,0 +1,2061 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="setDiplayTime">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deviceID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="displayTime" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="textID" type="tns:ArrayOfInt" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfInt">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="int" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="setDiplayTimeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="setDiplayTimeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setDiplayTimeByAddr">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deviceID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="displayTime" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="textID" type="tns:ArrayOfInt" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setDiplayTimeByAddrResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="setDiplayTimeByAddrResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getDiplayTime">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deviceID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getDiplayTimeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getDiplayTimeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getDiplayTimeByAddr">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deviceID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getDiplayTimeByAddrResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getDiplayTimeByAddrResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setDefaultText">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deviceID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="textID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="show" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="word" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setDefaultTextResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="setDefaultTextResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setDefaultTextCode">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deviceID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="code" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setDefaultTextCodeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="setDefaultTextCodeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setDefaultTextByAddr">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deviceID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="textID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="show" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="word" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setDefaultTextByAddrResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="setDefaultTextByAddrResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getDefaultText">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deviceID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="textID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getDefaultTextResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getDefaultTextResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getDefaultTextByAddr">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deviceID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="textID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getDefaultTextByAddrResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getDefaultTextByAddrResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setDefaultTextColorParamsByByte">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deviceID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="textID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Color" type="s:base64Binary" />
+            <s:element minOccurs="1" maxOccurs="1" name="VBound" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="HBound" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="VSpace" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="HSpace" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setDefaultTextColorParamsByByteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="setDefaultTextColorParamsByByteResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setDefaultTextColorParams">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deviceID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="textID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Color" type="tns:ArrayOfInt" />
+            <s:element minOccurs="1" maxOccurs="1" name="VBound" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="HBound" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="VSpace" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="HSpace" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setDefaultTextColorParamsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="setDefaultTextColorParamsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setDefaultTextColorParamsByAddr">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deviceID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="textID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Color" type="s:base64Binary" />
+            <s:element minOccurs="1" maxOccurs="1" name="VBound" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="HBound" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="VSpace" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="HSpace" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setDefaultTextColorParamsByAddrResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="setDefaultTextColorParamsByAddrResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getDefaultTextColorParams">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deviceID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="textID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getDefaultTextColorParamsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getDefaultTextColorParamsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getDefaultTextColorParamsByAddr">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deviceID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="textID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getDefaultTextColorParamsByAddrResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getDefaultTextColorParamsByAddrResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setTextShow">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deviceID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="textID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setTextShowResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="setTextShowResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setTextShowByAddr">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deviceID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="textID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setTextShowByAddrResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="setTextShowByAddrResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getTextShow">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deviceID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getTextShowResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getTextShowResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getTextShowByAddr">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deviceID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getTextShowByAddrResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getTextShowByAddrResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="delTextShow">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deviceID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="delTextShowResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="delTextShowResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="delTextShowByAddr">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deviceID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="delTextShowByAddrResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="delTextShowByAddrResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getTextColorParamsShow">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deviceID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getTextColorParamsShowResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getTextColorParamsShowResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getTextColorParamsShowByAddr">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deviceID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getTextColorParamsShowByAddrResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getTextColorParamsShowByAddrResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setTextMove">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deviceID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="startX" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="startY" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="windowWide" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="windowHigh" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="stepX" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="stepY" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="Speed" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="Loops" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setTextMoveResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="setTextMoveResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setTextMoveByAddr">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deviceID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="startX" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="startY" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="windowWide" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="windowHigh" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="stepX" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="stepY" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="Speed" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="Loops" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setTextMoveByAddrResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="setTextMoveByAddrResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getTextMove">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deviceID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getTextMoveResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getTextMoveResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getTextMoveByAddr">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deviceID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getTextMoveByAddrResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getTextMoveByAddrResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setTextFont">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deviceID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Big5Code" type="s:base64Binary" />
+            <s:element minOccurs="1" maxOccurs="1" name="FrameColumn" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="FrameRow" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="FrameNumber" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="FrameTotal" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="BitMap" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setTextFontResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="setTextFontResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setTextFontByAddr">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deviceID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Big5Code" type="s:base64Binary" />
+            <s:element minOccurs="1" maxOccurs="1" name="FrameColumn" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="FrameRow" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="FrameNumber" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="FrameTotal" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="BitMap" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setTextFontByAddrResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="setTextFontByAddrResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getTextFont">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deviceID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Big5Code" type="s:base64Binary" />
+            <s:element minOccurs="1" maxOccurs="1" name="FrameColumn" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="FrameRow" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="FrameNumber" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getTextFontResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getTextFontResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getTextFontByAddr">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deviceID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Big5Code" type="s:base64Binary" />
+            <s:element minOccurs="1" maxOccurs="1" name="FrameColumn" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="FrameRow" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="FrameNumber" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getTextFontByAddrResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getTextFontByAddrResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="delTextFont">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deviceID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Big5Code" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="delTextFontResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="delTextFontResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="delTextFontByAddr">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deviceID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Big5Code" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="delTextFontByAddrResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="delTextFontByAddrResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deviceID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getStatusResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getStatusByAddr">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deviceID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getStatusByAddrResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getStatusByAddrResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setImage">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deviceID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PattemCode" type="s:base64Binary" />
+            <s:element minOccurs="1" maxOccurs="1" name="FrameColumn" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="FrameRow" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="FrameNumber" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="FrameTotal" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ColorMap" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setImageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="setImageResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setImageByAddr">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deviceID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PattemCode" type="s:base64Binary" />
+            <s:element minOccurs="1" maxOccurs="1" name="FrameColumn" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="FrameRow" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="FrameNumber" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="FrameTotal" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ColorMap" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setImageByAddrResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="setImageByAddrResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getImage">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deviceID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PattemCode" type="s:base64Binary" />
+            <s:element minOccurs="1" maxOccurs="1" name="FrameColumn" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="FrameRow" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="FrameNumber" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getImageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getImageResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getImageByAddr">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deviceID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PattemCode" type="s:base64Binary" />
+            <s:element minOccurs="1" maxOccurs="1" name="FrameColumn" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="FrameRow" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="FrameNumber" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getImageByAddrResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getImageByAddrResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setOffline">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deviceID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="offlineDisplyMode" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setOfflineResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="setOfflineResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setOfflineByAddr">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deviceID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="offlineDisplyMode" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setOfflineByAddrResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="setOfflineByAddrResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getOffline">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deviceID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getOfflineResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getOfflineResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getOfflineByAddr">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deviceID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getOfflineByAddrResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getOfflineByAddrResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setBright">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deviceID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Bright" type="s:unsignedByte" />
+            <s:element minOccurs="1" maxOccurs="1" name="startTime" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="endTime" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setBrightResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="setBrightResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setBrightByAddr">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deviceID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Bright" type="s:unsignedByte" />
+            <s:element minOccurs="1" maxOccurs="1" name="startTime" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="endTime" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setBrightByAddrResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="setBrightByAddrResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getBright">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deviceID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getBrightResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getBrightResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getBrightByAddr">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deviceID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getBrightByAddrResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getBrightByAddrResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="setDiplayTimeSoapIn">
+    <wsdl:part name="parameters" element="tns:setDiplayTime" />
+  </wsdl:message>
+  <wsdl:message name="setDiplayTimeSoapOut">
+    <wsdl:part name="parameters" element="tns:setDiplayTimeResponse" />
+  </wsdl:message>
+  <wsdl:message name="setDiplayTimeByAddrSoapIn">
+    <wsdl:part name="parameters" element="tns:setDiplayTimeByAddr" />
+  </wsdl:message>
+  <wsdl:message name="setDiplayTimeByAddrSoapOut">
+    <wsdl:part name="parameters" element="tns:setDiplayTimeByAddrResponse" />
+  </wsdl:message>
+  <wsdl:message name="getDiplayTimeSoapIn">
+    <wsdl:part name="parameters" element="tns:getDiplayTime" />
+  </wsdl:message>
+  <wsdl:message name="getDiplayTimeSoapOut">
+    <wsdl:part name="parameters" element="tns:getDiplayTimeResponse" />
+  </wsdl:message>
+  <wsdl:message name="getDiplayTimeByAddrSoapIn">
+    <wsdl:part name="parameters" element="tns:getDiplayTimeByAddr" />
+  </wsdl:message>
+  <wsdl:message name="getDiplayTimeByAddrSoapOut">
+    <wsdl:part name="parameters" element="tns:getDiplayTimeByAddrResponse" />
+  </wsdl:message>
+  <wsdl:message name="setDefaultTextSoapIn">
+    <wsdl:part name="parameters" element="tns:setDefaultText" />
+  </wsdl:message>
+  <wsdl:message name="setDefaultTextSoapOut">
+    <wsdl:part name="parameters" element="tns:setDefaultTextResponse" />
+  </wsdl:message>
+  <wsdl:message name="setDefaultTextCodeSoapIn">
+    <wsdl:part name="parameters" element="tns:setDefaultTextCode" />
+  </wsdl:message>
+  <wsdl:message name="setDefaultTextCodeSoapOut">
+    <wsdl:part name="parameters" element="tns:setDefaultTextCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="setDefaultTextByAddrSoapIn">
+    <wsdl:part name="parameters" element="tns:setDefaultTextByAddr" />
+  </wsdl:message>
+  <wsdl:message name="setDefaultTextByAddrSoapOut">
+    <wsdl:part name="parameters" element="tns:setDefaultTextByAddrResponse" />
+  </wsdl:message>
+  <wsdl:message name="getDefaultTextSoapIn">
+    <wsdl:part name="parameters" element="tns:getDefaultText" />
+  </wsdl:message>
+  <wsdl:message name="getDefaultTextSoapOut">
+    <wsdl:part name="parameters" element="tns:getDefaultTextResponse" />
+  </wsdl:message>
+  <wsdl:message name="getDefaultTextByAddrSoapIn">
+    <wsdl:part name="parameters" element="tns:getDefaultTextByAddr" />
+  </wsdl:message>
+  <wsdl:message name="getDefaultTextByAddrSoapOut">
+    <wsdl:part name="parameters" element="tns:getDefaultTextByAddrResponse" />
+  </wsdl:message>
+  <wsdl:message name="setDefaultTextColorParamsByByteSoapIn">
+    <wsdl:part name="parameters" element="tns:setDefaultTextColorParamsByByte" />
+  </wsdl:message>
+  <wsdl:message name="setDefaultTextColorParamsByByteSoapOut">
+    <wsdl:part name="parameters" element="tns:setDefaultTextColorParamsByByteResponse" />
+  </wsdl:message>
+  <wsdl:message name="setDefaultTextColorParamsSoapIn">
+    <wsdl:part name="parameters" element="tns:setDefaultTextColorParams" />
+  </wsdl:message>
+  <wsdl:message name="setDefaultTextColorParamsSoapOut">
+    <wsdl:part name="parameters" element="tns:setDefaultTextColorParamsResponse" />
+  </wsdl:message>
+  <wsdl:message name="setDefaultTextColorParamsByAddrSoapIn">
+    <wsdl:part name="parameters" element="tns:setDefaultTextColorParamsByAddr" />
+  </wsdl:message>
+  <wsdl:message name="setDefaultTextColorParamsByAddrSoapOut">
+    <wsdl:part name="parameters" element="tns:setDefaultTextColorParamsByAddrResponse" />
+  </wsdl:message>
+  <wsdl:message name="getDefaultTextColorParamsSoapIn">
+    <wsdl:part name="parameters" element="tns:getDefaultTextColorParams" />
+  </wsdl:message>
+  <wsdl:message name="getDefaultTextColorParamsSoapOut">
+    <wsdl:part name="parameters" element="tns:getDefaultTextColorParamsResponse" />
+  </wsdl:message>
+  <wsdl:message name="getDefaultTextColorParamsByAddrSoapIn">
+    <wsdl:part name="parameters" element="tns:getDefaultTextColorParamsByAddr" />
+  </wsdl:message>
+  <wsdl:message name="getDefaultTextColorParamsByAddrSoapOut">
+    <wsdl:part name="parameters" element="tns:getDefaultTextColorParamsByAddrResponse" />
+  </wsdl:message>
+  <wsdl:message name="setTextShowSoapIn">
+    <wsdl:part name="parameters" element="tns:setTextShow" />
+  </wsdl:message>
+  <wsdl:message name="setTextShowSoapOut">
+    <wsdl:part name="parameters" element="tns:setTextShowResponse" />
+  </wsdl:message>
+  <wsdl:message name="setTextShowByAddrSoapIn">
+    <wsdl:part name="parameters" element="tns:setTextShowByAddr" />
+  </wsdl:message>
+  <wsdl:message name="setTextShowByAddrSoapOut">
+    <wsdl:part name="parameters" element="tns:setTextShowByAddrResponse" />
+  </wsdl:message>
+  <wsdl:message name="getTextShowSoapIn">
+    <wsdl:part name="parameters" element="tns:getTextShow" />
+  </wsdl:message>
+  <wsdl:message name="getTextShowSoapOut">
+    <wsdl:part name="parameters" element="tns:getTextShowResponse" />
+  </wsdl:message>
+  <wsdl:message name="getTextShowByAddrSoapIn">
+    <wsdl:part name="parameters" element="tns:getTextShowByAddr" />
+  </wsdl:message>
+  <wsdl:message name="getTextShowByAddrSoapOut">
+    <wsdl:part name="parameters" element="tns:getTextShowByAddrResponse" />
+  </wsdl:message>
+  <wsdl:message name="delTextShowSoapIn">
+    <wsdl:part name="parameters" element="tns:delTextShow" />
+  </wsdl:message>
+  <wsdl:message name="delTextShowSoapOut">
+    <wsdl:part name="parameters" element="tns:delTextShowResponse" />
+  </wsdl:message>
+  <wsdl:message name="delTextShowByAddrSoapIn">
+    <wsdl:part name="parameters" element="tns:delTextShowByAddr" />
+  </wsdl:message>
+  <wsdl:message name="delTextShowByAddrSoapOut">
+    <wsdl:part name="parameters" element="tns:delTextShowByAddrResponse" />
+  </wsdl:message>
+  <wsdl:message name="getTextColorParamsShowSoapIn">
+    <wsdl:part name="parameters" element="tns:getTextColorParamsShow" />
+  </wsdl:message>
+  <wsdl:message name="getTextColorParamsShowSoapOut">
+    <wsdl:part name="parameters" element="tns:getTextColorParamsShowResponse" />
+  </wsdl:message>
+  <wsdl:message name="getTextColorParamsShowByAddrSoapIn">
+    <wsdl:part name="parameters" element="tns:getTextColorParamsShowByAddr" />
+  </wsdl:message>
+  <wsdl:message name="getTextColorParamsShowByAddrSoapOut">
+    <wsdl:part name="parameters" element="tns:getTextColorParamsShowByAddrResponse" />
+  </wsdl:message>
+  <wsdl:message name="setTextMoveSoapIn">
+    <wsdl:part name="parameters" element="tns:setTextMove" />
+  </wsdl:message>
+  <wsdl:message name="setTextMoveSoapOut">
+    <wsdl:part name="parameters" element="tns:setTextMoveResponse" />
+  </wsdl:message>
+  <wsdl:message name="setTextMoveByAddrSoapIn">
+    <wsdl:part name="parameters" element="tns:setTextMoveByAddr" />
+  </wsdl:message>
+  <wsdl:message name="setTextMoveByAddrSoapOut">
+    <wsdl:part name="parameters" element="tns:setTextMoveByAddrResponse" />
+  </wsdl:message>
+  <wsdl:message name="getTextMoveSoapIn">
+    <wsdl:part name="parameters" element="tns:getTextMove" />
+  </wsdl:message>
+  <wsdl:message name="getTextMoveSoapOut">
+    <wsdl:part name="parameters" element="tns:getTextMoveResponse" />
+  </wsdl:message>
+  <wsdl:message name="getTextMoveByAddrSoapIn">
+    <wsdl:part name="parameters" element="tns:getTextMoveByAddr" />
+  </wsdl:message>
+  <wsdl:message name="getTextMoveByAddrSoapOut">
+    <wsdl:part name="parameters" element="tns:getTextMoveByAddrResponse" />
+  </wsdl:message>
+  <wsdl:message name="setTextFontSoapIn">
+    <wsdl:part name="parameters" element="tns:setTextFont" />
+  </wsdl:message>
+  <wsdl:message name="setTextFontSoapOut">
+    <wsdl:part name="parameters" element="tns:setTextFontResponse" />
+  </wsdl:message>
+  <wsdl:message name="setTextFontByAddrSoapIn">
+    <wsdl:part name="parameters" element="tns:setTextFontByAddr" />
+  </wsdl:message>
+  <wsdl:message name="setTextFontByAddrSoapOut">
+    <wsdl:part name="parameters" element="tns:setTextFontByAddrResponse" />
+  </wsdl:message>
+  <wsdl:message name="getTextFontSoapIn">
+    <wsdl:part name="parameters" element="tns:getTextFont" />
+  </wsdl:message>
+  <wsdl:message name="getTextFontSoapOut">
+    <wsdl:part name="parameters" element="tns:getTextFontResponse" />
+  </wsdl:message>
+  <wsdl:message name="getTextFontByAddrSoapIn">
+    <wsdl:part name="parameters" element="tns:getTextFontByAddr" />
+  </wsdl:message>
+  <wsdl:message name="getTextFontByAddrSoapOut">
+    <wsdl:part name="parameters" element="tns:getTextFontByAddrResponse" />
+  </wsdl:message>
+  <wsdl:message name="delTextFontSoapIn">
+    <wsdl:part name="parameters" element="tns:delTextFont" />
+  </wsdl:message>
+  <wsdl:message name="delTextFontSoapOut">
+    <wsdl:part name="parameters" element="tns:delTextFontResponse" />
+  </wsdl:message>
+  <wsdl:message name="delTextFontByAddrSoapIn">
+    <wsdl:part name="parameters" element="tns:delTextFontByAddr" />
+  </wsdl:message>
+  <wsdl:message name="delTextFontByAddrSoapOut">
+    <wsdl:part name="parameters" element="tns:delTextFontByAddrResponse" />
+  </wsdl:message>
+  <wsdl:message name="getStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:getStatus" />
+  </wsdl:message>
+  <wsdl:message name="getStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:getStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="getStatusByAddrSoapIn">
+    <wsdl:part name="parameters" element="tns:getStatusByAddr" />
+  </wsdl:message>
+  <wsdl:message name="getStatusByAddrSoapOut">
+    <wsdl:part name="parameters" element="tns:getStatusByAddrResponse" />
+  </wsdl:message>
+  <wsdl:message name="setImageSoapIn">
+    <wsdl:part name="parameters" element="tns:setImage" />
+  </wsdl:message>
+  <wsdl:message name="setImageSoapOut">
+    <wsdl:part name="parameters" element="tns:setImageResponse" />
+  </wsdl:message>
+  <wsdl:message name="setImageByAddrSoapIn">
+    <wsdl:part name="parameters" element="tns:setImageByAddr" />
+  </wsdl:message>
+  <wsdl:message name="setImageByAddrSoapOut">
+    <wsdl:part name="parameters" element="tns:setImageByAddrResponse" />
+  </wsdl:message>
+  <wsdl:message name="getImageSoapIn">
+    <wsdl:part name="parameters" element="tns:getImage" />
+  </wsdl:message>
+  <wsdl:message name="getImageSoapOut">
+    <wsdl:part name="parameters" element="tns:getImageResponse" />
+  </wsdl:message>
+  <wsdl:message name="getImageByAddrSoapIn">
+    <wsdl:part name="parameters" element="tns:getImageByAddr" />
+  </wsdl:message>
+  <wsdl:message name="getImageByAddrSoapOut">
+    <wsdl:part name="parameters" element="tns:getImageByAddrResponse" />
+  </wsdl:message>
+  <wsdl:message name="setOfflineSoapIn">
+    <wsdl:part name="parameters" element="tns:setOffline" />
+  </wsdl:message>
+  <wsdl:message name="setOfflineSoapOut">
+    <wsdl:part name="parameters" element="tns:setOfflineResponse" />
+  </wsdl:message>
+  <wsdl:message name="setOfflineByAddrSoapIn">
+    <wsdl:part name="parameters" element="tns:setOfflineByAddr" />
+  </wsdl:message>
+  <wsdl:message name="setOfflineByAddrSoapOut">
+    <wsdl:part name="parameters" element="tns:setOfflineByAddrResponse" />
+  </wsdl:message>
+  <wsdl:message name="getOfflineSoapIn">
+    <wsdl:part name="parameters" element="tns:getOffline" />
+  </wsdl:message>
+  <wsdl:message name="getOfflineSoapOut">
+    <wsdl:part name="parameters" element="tns:getOfflineResponse" />
+  </wsdl:message>
+  <wsdl:message name="getOfflineByAddrSoapIn">
+    <wsdl:part name="parameters" element="tns:getOfflineByAddr" />
+  </wsdl:message>
+  <wsdl:message name="getOfflineByAddrSoapOut">
+    <wsdl:part name="parameters" element="tns:getOfflineByAddrResponse" />
+  </wsdl:message>
+  <wsdl:message name="setBrightSoapIn">
+    <wsdl:part name="parameters" element="tns:setBright" />
+  </wsdl:message>
+  <wsdl:message name="setBrightSoapOut">
+    <wsdl:part name="parameters" element="tns:setBrightResponse" />
+  </wsdl:message>
+  <wsdl:message name="setBrightByAddrSoapIn">
+    <wsdl:part name="parameters" element="tns:setBrightByAddr" />
+  </wsdl:message>
+  <wsdl:message name="setBrightByAddrSoapOut">
+    <wsdl:part name="parameters" element="tns:setBrightByAddrResponse" />
+  </wsdl:message>
+  <wsdl:message name="getBrightSoapIn">
+    <wsdl:part name="parameters" element="tns:getBright" />
+  </wsdl:message>
+  <wsdl:message name="getBrightSoapOut">
+    <wsdl:part name="parameters" element="tns:getBrightResponse" />
+  </wsdl:message>
+  <wsdl:message name="getBrightByAddrSoapIn">
+    <wsdl:part name="parameters" element="tns:getBrightByAddr" />
+  </wsdl:message>
+  <wsdl:message name="getBrightByAddrSoapOut">
+    <wsdl:part name="parameters" element="tns:getBrightByAddrResponse" />
+  </wsdl:message>
+  <wsdl:portType name="cmsServiceSoap">
+    <wsdl:operation name="setDiplayTime">
+      <wsdl:input message="tns:setDiplayTimeSoapIn" />
+      <wsdl:output message="tns:setDiplayTimeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="setDiplayTimeByAddr">
+      <wsdl:input message="tns:setDiplayTimeByAddrSoapIn" />
+      <wsdl:output message="tns:setDiplayTimeByAddrSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getDiplayTime">
+      <wsdl:input message="tns:getDiplayTimeSoapIn" />
+      <wsdl:output message="tns:getDiplayTimeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getDiplayTimeByAddr">
+      <wsdl:input message="tns:getDiplayTimeByAddrSoapIn" />
+      <wsdl:output message="tns:getDiplayTimeByAddrSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="setDefaultText">
+      <wsdl:input message="tns:setDefaultTextSoapIn" />
+      <wsdl:output message="tns:setDefaultTextSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="setDefaultTextCode">
+      <wsdl:input message="tns:setDefaultTextCodeSoapIn" />
+      <wsdl:output message="tns:setDefaultTextCodeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="setDefaultTextByAddr">
+      <wsdl:input message="tns:setDefaultTextByAddrSoapIn" />
+      <wsdl:output message="tns:setDefaultTextByAddrSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getDefaultText">
+      <wsdl:input message="tns:getDefaultTextSoapIn" />
+      <wsdl:output message="tns:getDefaultTextSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getDefaultTextByAddr">
+      <wsdl:input message="tns:getDefaultTextByAddrSoapIn" />
+      <wsdl:output message="tns:getDefaultTextByAddrSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="setDefaultTextColorParamsByByte">
+      <wsdl:input message="tns:setDefaultTextColorParamsByByteSoapIn" />
+      <wsdl:output message="tns:setDefaultTextColorParamsByByteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="setDefaultTextColorParams">
+      <wsdl:input message="tns:setDefaultTextColorParamsSoapIn" />
+      <wsdl:output message="tns:setDefaultTextColorParamsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="setDefaultTextColorParamsByAddr">
+      <wsdl:input message="tns:setDefaultTextColorParamsByAddrSoapIn" />
+      <wsdl:output message="tns:setDefaultTextColorParamsByAddrSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getDefaultTextColorParams">
+      <wsdl:input message="tns:getDefaultTextColorParamsSoapIn" />
+      <wsdl:output message="tns:getDefaultTextColorParamsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getDefaultTextColorParamsByAddr">
+      <wsdl:input message="tns:getDefaultTextColorParamsByAddrSoapIn" />
+      <wsdl:output message="tns:getDefaultTextColorParamsByAddrSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="setTextShow">
+      <wsdl:input message="tns:setTextShowSoapIn" />
+      <wsdl:output message="tns:setTextShowSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="setTextShowByAddr">
+      <wsdl:input message="tns:setTextShowByAddrSoapIn" />
+      <wsdl:output message="tns:setTextShowByAddrSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getTextShow">
+      <wsdl:input message="tns:getTextShowSoapIn" />
+      <wsdl:output message="tns:getTextShowSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getTextShowByAddr">
+      <wsdl:input message="tns:getTextShowByAddrSoapIn" />
+      <wsdl:output message="tns:getTextShowByAddrSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="delTextShow">
+      <wsdl:input message="tns:delTextShowSoapIn" />
+      <wsdl:output message="tns:delTextShowSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="delTextShowByAddr">
+      <wsdl:input message="tns:delTextShowByAddrSoapIn" />
+      <wsdl:output message="tns:delTextShowByAddrSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getTextColorParamsShow">
+      <wsdl:input message="tns:getTextColorParamsShowSoapIn" />
+      <wsdl:output message="tns:getTextColorParamsShowSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getTextColorParamsShowByAddr">
+      <wsdl:input message="tns:getTextColorParamsShowByAddrSoapIn" />
+      <wsdl:output message="tns:getTextColorParamsShowByAddrSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="setTextMove">
+      <wsdl:input message="tns:setTextMoveSoapIn" />
+      <wsdl:output message="tns:setTextMoveSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="setTextMoveByAddr">
+      <wsdl:input message="tns:setTextMoveByAddrSoapIn" />
+      <wsdl:output message="tns:setTextMoveByAddrSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getTextMove">
+      <wsdl:input message="tns:getTextMoveSoapIn" />
+      <wsdl:output message="tns:getTextMoveSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getTextMoveByAddr">
+      <wsdl:input message="tns:getTextMoveByAddrSoapIn" />
+      <wsdl:output message="tns:getTextMoveByAddrSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="setTextFont">
+      <wsdl:input message="tns:setTextFontSoapIn" />
+      <wsdl:output message="tns:setTextFontSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="setTextFontByAddr">
+      <wsdl:input message="tns:setTextFontByAddrSoapIn" />
+      <wsdl:output message="tns:setTextFontByAddrSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getTextFont">
+      <wsdl:input message="tns:getTextFontSoapIn" />
+      <wsdl:output message="tns:getTextFontSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getTextFontByAddr">
+      <wsdl:input message="tns:getTextFontByAddrSoapIn" />
+      <wsdl:output message="tns:getTextFontByAddrSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="delTextFont">
+      <wsdl:input message="tns:delTextFontSoapIn" />
+      <wsdl:output message="tns:delTextFontSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="delTextFontByAddr">
+      <wsdl:input message="tns:delTextFontByAddrSoapIn" />
+      <wsdl:output message="tns:delTextFontByAddrSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getStatus">
+      <wsdl:input message="tns:getStatusSoapIn" />
+      <wsdl:output message="tns:getStatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getStatusByAddr">
+      <wsdl:input message="tns:getStatusByAddrSoapIn" />
+      <wsdl:output message="tns:getStatusByAddrSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="setImage">
+      <wsdl:input message="tns:setImageSoapIn" />
+      <wsdl:output message="tns:setImageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="setImageByAddr">
+      <wsdl:input message="tns:setImageByAddrSoapIn" />
+      <wsdl:output message="tns:setImageByAddrSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getImage">
+      <wsdl:input message="tns:getImageSoapIn" />
+      <wsdl:output message="tns:getImageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getImageByAddr">
+      <wsdl:input message="tns:getImageByAddrSoapIn" />
+      <wsdl:output message="tns:getImageByAddrSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="setOffline">
+      <wsdl:input message="tns:setOfflineSoapIn" />
+      <wsdl:output message="tns:setOfflineSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="setOfflineByAddr">
+      <wsdl:input message="tns:setOfflineByAddrSoapIn" />
+      <wsdl:output message="tns:setOfflineByAddrSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getOffline">
+      <wsdl:input message="tns:getOfflineSoapIn" />
+      <wsdl:output message="tns:getOfflineSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getOfflineByAddr">
+      <wsdl:input message="tns:getOfflineByAddrSoapIn" />
+      <wsdl:output message="tns:getOfflineByAddrSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="setBright">
+      <wsdl:input message="tns:setBrightSoapIn" />
+      <wsdl:output message="tns:setBrightSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="setBrightByAddr">
+      <wsdl:input message="tns:setBrightByAddrSoapIn" />
+      <wsdl:output message="tns:setBrightByAddrSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getBright">
+      <wsdl:input message="tns:getBrightSoapIn" />
+      <wsdl:output message="tns:getBrightSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getBrightByAddr">
+      <wsdl:input message="tns:getBrightByAddrSoapIn" />
+      <wsdl:output message="tns:getBrightByAddrSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="cmsServiceSoap" type="tns:cmsServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="setDiplayTime">
+      <soap:operation soapAction="http://tempuri.org/setDiplayTime" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setDiplayTimeByAddr">
+      <soap:operation soapAction="http://tempuri.org/setDiplayTimeByAddr" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDiplayTime">
+      <soap:operation soapAction="http://tempuri.org/getDiplayTime" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDiplayTimeByAddr">
+      <soap:operation soapAction="http://tempuri.org/getDiplayTimeByAddr" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setDefaultText">
+      <soap:operation soapAction="http://tempuri.org/setDefaultText" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setDefaultTextCode">
+      <soap:operation soapAction="http://tempuri.org/setDefaultTextCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setDefaultTextByAddr">
+      <soap:operation soapAction="http://tempuri.org/setDefaultTextByAddr" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDefaultText">
+      <soap:operation soapAction="http://tempuri.org/getDefaultText" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDefaultTextByAddr">
+      <soap:operation soapAction="http://tempuri.org/getDefaultTextByAddr" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setDefaultTextColorParamsByByte">
+      <soap:operation soapAction="http://tempuri.org/setDefaultTextColorParamsByByte" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setDefaultTextColorParams">
+      <soap:operation soapAction="http://tempuri.org/setDefaultTextColorParams" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setDefaultTextColorParamsByAddr">
+      <soap:operation soapAction="http://tempuri.org/setDefaultTextColorParamsByAddr" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDefaultTextColorParams">
+      <soap:operation soapAction="http://tempuri.org/getDefaultTextColorParams" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDefaultTextColorParamsByAddr">
+      <soap:operation soapAction="http://tempuri.org/getDefaultTextColorParamsByAddr" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setTextShow">
+      <soap:operation soapAction="http://tempuri.org/setTextShow" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setTextShowByAddr">
+      <soap:operation soapAction="http://tempuri.org/setTextShowByAddr" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTextShow">
+      <soap:operation soapAction="http://tempuri.org/getTextShow" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTextShowByAddr">
+      <soap:operation soapAction="http://tempuri.org/getTextShowByAddr" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="delTextShow">
+      <soap:operation soapAction="http://tempuri.org/delTextShow" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="delTextShowByAddr">
+      <soap:operation soapAction="http://tempuri.org/delTextShowByAddr" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTextColorParamsShow">
+      <soap:operation soapAction="http://tempuri.org/getTextColorParamsShow" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTextColorParamsShowByAddr">
+      <soap:operation soapAction="http://tempuri.org/getTextColorParamsShowByAddr" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setTextMove">
+      <soap:operation soapAction="http://tempuri.org/setTextMove" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setTextMoveByAddr">
+      <soap:operation soapAction="http://tempuri.org/setTextMoveByAddr" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTextMove">
+      <soap:operation soapAction="http://tempuri.org/getTextMove" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTextMoveByAddr">
+      <soap:operation soapAction="http://tempuri.org/getTextMoveByAddr" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setTextFont">
+      <soap:operation soapAction="http://tempuri.org/setTextFont" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setTextFontByAddr">
+      <soap:operation soapAction="http://tempuri.org/setTextFontByAddr" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTextFont">
+      <soap:operation soapAction="http://tempuri.org/getTextFont" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTextFontByAddr">
+      <soap:operation soapAction="http://tempuri.org/getTextFontByAddr" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="delTextFont">
+      <soap:operation soapAction="http://tempuri.org/delTextFont" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="delTextFontByAddr">
+      <soap:operation soapAction="http://tempuri.org/delTextFontByAddr" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getStatus">
+      <soap:operation soapAction="http://tempuri.org/getStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getStatusByAddr">
+      <soap:operation soapAction="http://tempuri.org/getStatusByAddr" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setImage">
+      <soap:operation soapAction="http://tempuri.org/setImage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setImageByAddr">
+      <soap:operation soapAction="http://tempuri.org/setImageByAddr" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getImage">
+      <soap:operation soapAction="http://tempuri.org/getImage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getImageByAddr">
+      <soap:operation soapAction="http://tempuri.org/getImageByAddr" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setOffline">
+      <soap:operation soapAction="http://tempuri.org/setOffline" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setOfflineByAddr">
+      <soap:operation soapAction="http://tempuri.org/setOfflineByAddr" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getOffline">
+      <soap:operation soapAction="http://tempuri.org/getOffline" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getOfflineByAddr">
+      <soap:operation soapAction="http://tempuri.org/getOfflineByAddr" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setBright">
+      <soap:operation soapAction="http://tempuri.org/setBright" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setBrightByAddr">
+      <soap:operation soapAction="http://tempuri.org/setBrightByAddr" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getBright">
+      <soap:operation soapAction="http://tempuri.org/getBright" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getBrightByAddr">
+      <soap:operation soapAction="http://tempuri.org/getBrightByAddr" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="cmsServiceSoap12" type="tns:cmsServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="setDiplayTime">
+      <soap12:operation soapAction="http://tempuri.org/setDiplayTime" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setDiplayTimeByAddr">
+      <soap12:operation soapAction="http://tempuri.org/setDiplayTimeByAddr" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDiplayTime">
+      <soap12:operation soapAction="http://tempuri.org/getDiplayTime" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDiplayTimeByAddr">
+      <soap12:operation soapAction="http://tempuri.org/getDiplayTimeByAddr" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setDefaultText">
+      <soap12:operation soapAction="http://tempuri.org/setDefaultText" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setDefaultTextCode">
+      <soap12:operation soapAction="http://tempuri.org/setDefaultTextCode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setDefaultTextByAddr">
+      <soap12:operation soapAction="http://tempuri.org/setDefaultTextByAddr" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDefaultText">
+      <soap12:operation soapAction="http://tempuri.org/getDefaultText" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDefaultTextByAddr">
+      <soap12:operation soapAction="http://tempuri.org/getDefaultTextByAddr" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setDefaultTextColorParamsByByte">
+      <soap12:operation soapAction="http://tempuri.org/setDefaultTextColorParamsByByte" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setDefaultTextColorParams">
+      <soap12:operation soapAction="http://tempuri.org/setDefaultTextColorParams" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setDefaultTextColorParamsByAddr">
+      <soap12:operation soapAction="http://tempuri.org/setDefaultTextColorParamsByAddr" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDefaultTextColorParams">
+      <soap12:operation soapAction="http://tempuri.org/getDefaultTextColorParams" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDefaultTextColorParamsByAddr">
+      <soap12:operation soapAction="http://tempuri.org/getDefaultTextColorParamsByAddr" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setTextShow">
+      <soap12:operation soapAction="http://tempuri.org/setTextShow" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setTextShowByAddr">
+      <soap12:operation soapAction="http://tempuri.org/setTextShowByAddr" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTextShow">
+      <soap12:operation soapAction="http://tempuri.org/getTextShow" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTextShowByAddr">
+      <soap12:operation soapAction="http://tempuri.org/getTextShowByAddr" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="delTextShow">
+      <soap12:operation soapAction="http://tempuri.org/delTextShow" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="delTextShowByAddr">
+      <soap12:operation soapAction="http://tempuri.org/delTextShowByAddr" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTextColorParamsShow">
+      <soap12:operation soapAction="http://tempuri.org/getTextColorParamsShow" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTextColorParamsShowByAddr">
+      <soap12:operation soapAction="http://tempuri.org/getTextColorParamsShowByAddr" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setTextMove">
+      <soap12:operation soapAction="http://tempuri.org/setTextMove" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setTextMoveByAddr">
+      <soap12:operation soapAction="http://tempuri.org/setTextMoveByAddr" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTextMove">
+      <soap12:operation soapAction="http://tempuri.org/getTextMove" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTextMoveByAddr">
+      <soap12:operation soapAction="http://tempuri.org/getTextMoveByAddr" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setTextFont">
+      <soap12:operation soapAction="http://tempuri.org/setTextFont" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setTextFontByAddr">
+      <soap12:operation soapAction="http://tempuri.org/setTextFontByAddr" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTextFont">
+      <soap12:operation soapAction="http://tempuri.org/getTextFont" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTextFontByAddr">
+      <soap12:operation soapAction="http://tempuri.org/getTextFontByAddr" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="delTextFont">
+      <soap12:operation soapAction="http://tempuri.org/delTextFont" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="delTextFontByAddr">
+      <soap12:operation soapAction="http://tempuri.org/delTextFontByAddr" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getStatus">
+      <soap12:operation soapAction="http://tempuri.org/getStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getStatusByAddr">
+      <soap12:operation soapAction="http://tempuri.org/getStatusByAddr" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setImage">
+      <soap12:operation soapAction="http://tempuri.org/setImage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setImageByAddr">
+      <soap12:operation soapAction="http://tempuri.org/setImageByAddr" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getImage">
+      <soap12:operation soapAction="http://tempuri.org/getImage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getImageByAddr">
+      <soap12:operation soapAction="http://tempuri.org/getImageByAddr" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setOffline">
+      <soap12:operation soapAction="http://tempuri.org/setOffline" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setOfflineByAddr">
+      <soap12:operation soapAction="http://tempuri.org/setOfflineByAddr" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getOffline">
+      <soap12:operation soapAction="http://tempuri.org/getOffline" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getOfflineByAddr">
+      <soap12:operation soapAction="http://tempuri.org/getOfflineByAddr" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setBright">
+      <soap12:operation soapAction="http://tempuri.org/setBright" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setBrightByAddr">
+      <soap12:operation soapAction="http://tempuri.org/setBrightByAddr" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getBright">
+      <soap12:operation soapAction="http://tempuri.org/getBright" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getBrightByAddr">
+      <soap12:operation soapAction="http://tempuri.org/getBrightByAddr" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="cmsService">
+    <wsdl:port name="cmsServiceSoap" binding="tns:cmsServiceSoap">
+      <soap:address location="http://117.56.84.8:8080/orderservice/cmsService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="cmsServiceSoap12" binding="tns:cmsServiceSoap12">
+      <soap12:address location="http://117.56.84.8:8080/orderservice/cmsService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

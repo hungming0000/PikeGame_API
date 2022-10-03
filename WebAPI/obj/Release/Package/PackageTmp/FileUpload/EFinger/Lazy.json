@@ -1,0 +1,65 @@
+[
+  {
+    "LazyId": "d833c3b9ae4d499ba2cdf762ff494b00",
+    "LazyTitle": "地政懶人包",
+    "ModifyDate": "2021-09-16T16:33:48.75",
+    "CreateZipDate": null,
+    "SysOrganizationID": "9b0f8386675e43a89d1a2f355103d5e4"
+  },
+  {
+    "LazyId": "2f05953073c34d19bdadb814932a8c06",
+    "LazyTitle": "工程受益費懶人包",
+    "ModifyDate": "2021-07-13T17:44:35.03",
+    "CreateZipDate": null,
+    "SysOrganizationID": "edb5d89f446a416ca755b0af5bd4b091"
+  },
+  {
+    "LazyId": "b662e4bdbe774388b77bb7254df723ff",
+    "LazyTitle": "非都市土地變更懶人包",
+    "ModifyDate": "2021-07-12T17:32:15.623",
+    "CreateZipDate": null,
+    "SysOrganizationID": "022832bda4294a7288d92602ce445f23"
+  },
+  {
+    "LazyId": "11c2130126a6485cbfdab285091cb3b7",
+    "LazyTitle": "電子簽章法則懶人包",
+    "ModifyDate": "2021-07-12T11:55:01.473",
+    "CreateZipDate": null,
+    "SysOrganizationID": "9b0f8386675e43a89d1a2f355103d5e4"
+  },
+  {
+    "LazyId": "44260533d6fa42c382247ae3a89726cf",
+    "LazyTitle": "林政",
+    "ModifyDate": "2021-01-26T15:18:36.707",
+    "CreateZipDate": null,
+    "SysOrganizationID": "9b0f8386675e43a89d1a2f355103d5e4"
+  },
+  {
+    "LazyId": "86951dfc05a24971b95d27d1b3bd16eb",
+    "LazyTitle": "水源涵養",
+    "ModifyDate": "2021-01-11T10:57:31.02",
+    "CreateZipDate": null,
+    "SysOrganizationID": "9b0f8386675e43a89d1a2f355103d5e4"
+  },
+  {
+    "LazyId": "836C56A1983D4F30A4992C26D4D32A77",
+    "LazyTitle": "續約",
+    "ModifyDate": "2020-12-10T12:02:27.16",
+    "CreateZipDate": null,
+    "SysOrganizationID": "9b0f8386675e43a89d1a2f355103d5e4"
+  },
+  {
+    "LazyId": "26A71075D4324FB4A805490B64394DC4",
+    "LazyTitle": "工寮",
+    "ModifyDate": "2020-12-10T12:02:27.16",
+    "CreateZipDate": null,
+    "SysOrganizationID": "9b0f8386675e43a89d1a2f355103d5e4"
+  },
+  {
+    "LazyId": "5069A13B95974606ABD5D680B3004079",
+    "LazyTitle": "承租權",
+    "ModifyDate": "2020-12-10T12:02:03.643",
+    "CreateZipDate": null,
+    "SysOrganizationID": "9b0f8386675e43a89d1a2f355103d5e4"
+  }
+]

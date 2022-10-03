@@ -1,0 +1,461 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="GetValidateCode">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetValidateCodeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetValidateCodeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="encodeMD5">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="input" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="encodeMD5Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="encodeMD5Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AcPwValidate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="input" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AcPwValidateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AcPwValidateResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEmloy">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="input" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEmloyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetEmloyResult" type="tns:emloy" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="emloy">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="employ_no" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="department_id" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="department_name" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetMessage">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Emp_Id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Sender" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Subject" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Body" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Urlfiles" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMessageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMessageResult" type="tns:Newmail" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Newmail">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Result" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="strResult" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="string" nillable="true" type="s:string" />
+      <s:element name="emloy" nillable="true" type="tns:emloy" />
+      <s:element name="Newmail" nillable="true" type="tns:Newmail" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetValidateCodeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetValidateCode" />
+  </wsdl:message>
+  <wsdl:message name="GetValidateCodeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetValidateCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="encodeMD5SoapIn">
+    <wsdl:part name="parameters" element="tns:encodeMD5" />
+  </wsdl:message>
+  <wsdl:message name="encodeMD5SoapOut">
+    <wsdl:part name="parameters" element="tns:encodeMD5Response" />
+  </wsdl:message>
+  <wsdl:message name="AcPwValidateSoapIn">
+    <wsdl:part name="parameters" element="tns:AcPwValidate" />
+  </wsdl:message>
+  <wsdl:message name="AcPwValidateSoapOut">
+    <wsdl:part name="parameters" element="tns:AcPwValidateResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetEmloySoapIn">
+    <wsdl:part name="parameters" element="tns:GetEmloy" />
+  </wsdl:message>
+  <wsdl:message name="GetEmloySoapOut">
+    <wsdl:part name="parameters" element="tns:GetEmloyResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMessageSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMessage" />
+  </wsdl:message>
+  <wsdl:message name="GetMessageSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMessageResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetValidateCodeHttpGetIn" />
+  <wsdl:message name="GetValidateCodeHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="encodeMD5HttpGetIn">
+    <wsdl:part name="input" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="encodeMD5HttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="AcPwValidateHttpGetIn">
+    <wsdl:part name="input" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AcPwValidateHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetEmloyHttpGetIn">
+    <wsdl:part name="input" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetEmloyHttpGetOut">
+    <wsdl:part name="Body" element="tns:emloy" />
+  </wsdl:message>
+  <wsdl:message name="GetMessageHttpGetIn">
+    <wsdl:part name="Emp_Id" type="s:string" />
+    <wsdl:part name="Sender" type="s:string" />
+    <wsdl:part name="Subject" type="s:string" />
+    <wsdl:part name="Body" type="s:string" />
+    <wsdl:part name="Urlfiles" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetMessageHttpGetOut">
+    <wsdl:part name="Body" element="tns:Newmail" />
+  </wsdl:message>
+  <wsdl:message name="GetValidateCodeHttpPostIn" />
+  <wsdl:message name="GetValidateCodeHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="encodeMD5HttpPostIn">
+    <wsdl:part name="input" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="encodeMD5HttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="AcPwValidateHttpPostIn">
+    <wsdl:part name="input" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AcPwValidateHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetEmloyHttpPostIn">
+    <wsdl:part name="input" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetEmloyHttpPostOut">
+    <wsdl:part name="Body" element="tns:emloy" />
+  </wsdl:message>
+  <wsdl:message name="GetMessageHttpPostIn">
+    <wsdl:part name="Emp_Id" type="s:string" />
+    <wsdl:part name="Sender" type="s:string" />
+    <wsdl:part name="Subject" type="s:string" />
+    <wsdl:part name="Body" type="s:string" />
+    <wsdl:part name="Urlfiles" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetMessageHttpPostOut">
+    <wsdl:part name="Body" element="tns:Newmail" />
+  </wsdl:message>
+  <wsdl:portType name="statusAcPwValidateSoap">
+    <wsdl:operation name="GetValidateCode">
+      <wsdl:input message="tns:GetValidateCodeSoapIn" />
+      <wsdl:output message="tns:GetValidateCodeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="encodeMD5">
+      <wsdl:input message="tns:encodeMD5SoapIn" />
+      <wsdl:output message="tns:encodeMD5SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AcPwValidate">
+      <wsdl:input message="tns:AcPwValidateSoapIn" />
+      <wsdl:output message="tns:AcPwValidateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEmloy">
+      <wsdl:input message="tns:GetEmloySoapIn" />
+      <wsdl:output message="tns:GetEmloySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMessage">
+      <wsdl:input message="tns:GetMessageSoapIn" />
+      <wsdl:output message="tns:GetMessageSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="statusAcPwValidateHttpGet">
+    <wsdl:operation name="GetValidateCode">
+      <wsdl:input message="tns:GetValidateCodeHttpGetIn" />
+      <wsdl:output message="tns:GetValidateCodeHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="encodeMD5">
+      <wsdl:input message="tns:encodeMD5HttpGetIn" />
+      <wsdl:output message="tns:encodeMD5HttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AcPwValidate">
+      <wsdl:input message="tns:AcPwValidateHttpGetIn" />
+      <wsdl:output message="tns:AcPwValidateHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEmloy">
+      <wsdl:input message="tns:GetEmloyHttpGetIn" />
+      <wsdl:output message="tns:GetEmloyHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMessage">
+      <wsdl:input message="tns:GetMessageHttpGetIn" />
+      <wsdl:output message="tns:GetMessageHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="statusAcPwValidateHttpPost">
+    <wsdl:operation name="GetValidateCode">
+      <wsdl:input message="tns:GetValidateCodeHttpPostIn" />
+      <wsdl:output message="tns:GetValidateCodeHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="encodeMD5">
+      <wsdl:input message="tns:encodeMD5HttpPostIn" />
+      <wsdl:output message="tns:encodeMD5HttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AcPwValidate">
+      <wsdl:input message="tns:AcPwValidateHttpPostIn" />
+      <wsdl:output message="tns:AcPwValidateHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEmloy">
+      <wsdl:input message="tns:GetEmloyHttpPostIn" />
+      <wsdl:output message="tns:GetEmloyHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMessage">
+      <wsdl:input message="tns:GetMessageHttpPostIn" />
+      <wsdl:output message="tns:GetMessageHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="statusAcPwValidateSoap" type="tns:statusAcPwValidateSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetValidateCode">
+      <soap:operation soapAction="http://tempuri.org/GetValidateCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="encodeMD5">
+      <soap:operation soapAction="http://tempuri.org/encodeMD5" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AcPwValidate">
+      <soap:operation soapAction="http://tempuri.org/AcPwValidate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmloy">
+      <soap:operation soapAction="http://tempuri.org/GetEmloy" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMessage">
+      <soap:operation soapAction="http://tempuri.org/GetMessage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="statusAcPwValidateSoap12" type="tns:statusAcPwValidateSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetValidateCode">
+      <soap12:operation soapAction="http://tempuri.org/GetValidateCode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="encodeMD5">
+      <soap12:operation soapAction="http://tempuri.org/encodeMD5" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AcPwValidate">
+      <soap12:operation soapAction="http://tempuri.org/AcPwValidate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmloy">
+      <soap12:operation soapAction="http://tempuri.org/GetEmloy" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMessage">
+      <soap12:operation soapAction="http://tempuri.org/GetMessage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="statusAcPwValidateHttpGet" type="tns:statusAcPwValidateHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="GetValidateCode">
+      <http:operation location="/GetValidateCode" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="encodeMD5">
+      <http:operation location="/encodeMD5" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AcPwValidate">
+      <http:operation location="/AcPwValidate" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmloy">
+      <http:operation location="/GetEmloy" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMessage">
+      <http:operation location="/GetMessage" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="statusAcPwValidateHttpPost" type="tns:statusAcPwValidateHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="GetValidateCode">
+      <http:operation location="/GetValidateCode" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="encodeMD5">
+      <http:operation location="/encodeMD5" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AcPwValidate">
+      <http:operation location="/AcPwValidate" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmloy">
+      <http:operation location="/GetEmloy" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMessage">
+      <http:operation location="/GetMessage" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="statusAcPwValidate">
+    <wsdl:port name="statusAcPwValidateSoap" binding="tns:statusAcPwValidateSoap">
+      <soap:address location="http://10.51.31.153/statusAcPwValidateWS/statusAcPwValidate.asmx" />
+    </wsdl:port>
+    <wsdl:port name="statusAcPwValidateSoap12" binding="tns:statusAcPwValidateSoap12">
+      <soap12:address location="http://10.51.31.153/statusAcPwValidateWS/statusAcPwValidate.asmx" />
+    </wsdl:port>
+    <wsdl:port name="statusAcPwValidateHttpGet" binding="tns:statusAcPwValidateHttpGet">
+      <http:address location="http://10.51.31.153/statusAcPwValidateWS/statusAcPwValidate.asmx" />
+    </wsdl:port>
+    <wsdl:port name="statusAcPwValidateHttpPost" binding="tns:statusAcPwValidateHttpPost">
+      <http:address location="http://10.51.31.153/statusAcPwValidateWS/statusAcPwValidate.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,730 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>POSBO</name>
+    </assembly>
+    <members>
+        <member name="T:POSBO.BaseData.County">
+            <summary>
+            縣市
+            </summary>
+        </member>
+        <member name="T:POSBO.BaseData.Town">
+            <summary>
+            鄉鎮
+            </summary>
+        </member>
+        <member name="T:POSBO.BaseData.CountyRoad">
+            <summary>
+            路名
+            </summary>
+        </member>
+        <member name="M:POSBO.BaseData.SharedClass.GetCounty">
+            <summary>
+            取得縣市
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:POSBO.BaseData.SharedClass.GetTown(POSBO.BaseData.County)">
+            <summary>
+            取得某縣市的鄉鎮
+            </summary>
+            <param name="ci">縣市代碼</param>
+            <returns></returns>
+        </member>
+        <member name="M:POSBO.BaseData.SharedClass.GetRoad(POSBO.BaseData.CountyRoad)">
+            <summary>
+            取得某鄉鎮的路名
+            </summary>
+            <param name="cri">縣市與鄉鎮代碼</param>
+            <returns></returns>
+        </member>
+        <member name="T:POSBO.BaseData.TestDeviceInfo">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:POSBO.BaseData.TestDevice">
+            <summary>
+            周邊設備
+            </summary>
+        </member>
+        <member name="M:POSBO.BaseData.TestDevice.PrintPaper(POSBO.BaseData.TestDeviceInfo)">
+            <summary>
+            出單機列印
+            </summary>
+            <param name="Order"></param>
+            <returns></returns>
+        </member>
+        <member name="M:POSBO.BaseData.TestDevice.PrintTag(POSBO.BaseData.TestDeviceInfo)">
+            <summary>
+            標籤機列印
+            </summary>
+            <param name="Order"></param>
+            <returns></returns>
+        </member>
+        <member name="M:POSBO.BaseData.TestDevice.ReadMyFareCard">
+            <summary>
+            讀取員工MyFare卡卡號
+            </summary>
+            <param name="Saleid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:POSBO.BaseData.TestDevice.ReadNewCardID">
+            <summary>
+            讀取新的MyFare卡號
+            </summary>
+            <param name="Saleid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:POSBO.BaseData.TestDevice.OpenCashDrawer">
+            <summary>
+            開啟錢箱 (error)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:POSBO.BaseData.TestDevice.PrintCoupon(POSBO.BaseData.TestDeviceInfo)">
+            <summary>
+            優惠卷列印
+            </summary>
+            <param name="Order"></param>
+            <returns></returns>
+        </member>
+        <member name="M:POSBO.BaseData.TestDevice.PrintReceipt(POSBO.BaseData.TestDeviceInfo)">
+            <summary>
+            收執聯列印
+            </summary>
+            <param name="Order"></param>
+            <returns></returns>
+        </member>
+        <member name="M:POSBO.BaseData.TestDevice.PrintKitchen(POSBO.BaseData.TestDeviceInfo)">
+            <summary>
+            廚房單列印
+            </summary>
+            <param name="Order"></param>
+            <returns></returns>
+        </member>
+        <member name="T:POSBO.BaseData.WareHouseInfo">
+            <summary>
+            倉庫的基本資料
+            </summary>
+        </member>
+        <member name="T:POSBO.BaseData.WareHouse">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:POSBO.BaseData.WareHouse.GetData">
+            <summary>
+            取得所有資料
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:POSBO.BaseData.WareHouse.Delete(POSBO.BaseData.WareHouseInfo)">
+            <summary>
+            刪除一筆資料
+            </summary>
+            <param name=""></param>
+            <returns></returns>
+        </member>
+        <member name="M:POSBO.BaseData.WareHouse.Add(POSBO.BaseData.WareHouseInfo)">
+            <summary>
+            新增
+            </summary>
+            <param name=""></param>
+            <returns></returns>
+        </member>
+        <member name="M:POSBO.BaseData.WareHouse.Update(POSBO.BaseData.WareHouseInfo)">
+            <summary>
+            更新資料
+            </summary>
+            <param name="whi"></param>
+            <returns></returns>
+        </member>
+        <member name="M:POSBO.BaseData.WareHouse.LoadOneData(POSBO.BaseData.WareHouseInfo)">
+            <summary>
+            依照guid取得一筆特定資料
+            </summary>
+            <param name=""></param>
+            <returns></returns>
+        </member>
+        <member name="M:POSBO.BaseData.WareHouse.GetSaveType">
+            <summary>
+            取得倉庫的儲存類型
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:POSBO.Device.CashDrawer.CashDrawer">
+            <summary>
+            錢箱
+            </summary>
+        </member>
+        <member name="T:POSBO.Device.MiFare.CardID.E680API">
+            <summary>
+            mifare讀卡機 API
+            </summary>
+        </member>
+        <member name="T:POSBO.Device.MiFare.MiFareCard.E680API">
+            <summary>
+            mifare讀卡機 API
+            </summary>
+        </member>
+        <member name="T:POSBO.Device.Printer.PrinterCoupon.PrinterCoupon">
+            <summary>
+            優惠折價券
+            </summary>
+        </member>
+        <member name="M:POSBO.Device.Printer.PrinterCoupon.PrinterCoupon.Export(Microsoft.Reporting.WinForms.LocalReport)">
+            <summary>
+            產生報表
+            </summary>
+            <param name="report"></param>
+        </member>
+        <member name="M:POSBO.Device.Printer.PrinterCoupon.PrinterCoupon.Dispose">
+            <summary>
+            關閉連接
+            </summary>
+        </member>
+        <member name="M:POSBO.Device.Printer.PrinterCoupon.PrinterCoupon.CouponStyle1(Microsoft.Reporting.WinForms.ReportViewer,System.String,System.String)">
+            <summary>
+            優惠卷樣板(白底黑字)
+            </summary>
+        </member>
+        <member name="T:POSBO.Device.Printer.PrinterKitchen.PrinterKitchen">
+            <summary>
+            廚房單樣板
+            </summary>
+        </member>
+        <member name="M:POSBO.Device.Printer.PrinterKitchen.PrinterKitchen.Export(Microsoft.Reporting.WinForms.LocalReport)">
+            <summary>
+            產生報表
+            </summary>
+            <param name="report"></param>
+        </member>
+        <member name="M:POSBO.Device.Printer.PrinterKitchen.PrinterKitchen.GetData(System.String)">
+            <summary>
+            利用OrderID 搜尋資料庫訂單資料
+            </summary>
+            <param name="OrderID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:POSBO.Device.Printer.PrinterKitchen.PrinterKitchen.Dispose">
+            <summary>
+            關閉連接
+            </summary>
+        </member>
+        <member name="M:POSBO.Device.Printer.PrinterKitchen.PrinterKitchen.KitchenStyle1(Microsoft.Reporting.WinForms.ReportViewer,System.String,Microsoft.Reporting.WinForms.ReportDataSource,System.String)">
+            <summary>
+            廚房單樣板(白底黑字)
+            </summary>
+            <param name="reportViewer1"></param>
+            <param name="path"></param>
+            <param name="datasource"></param>
+            <param name="printer"></param>
+        </member>
+        <member name="M:POSBO.Device.Printer.PrinterKitchen.PrinterKitchen.KitchenStyle2(Microsoft.Reporting.WinForms.ReportViewer,System.String,Microsoft.Reporting.WinForms.ReportDataSource,System.String)">
+            <summary>
+            廚房單樣板(黑底白字)
+            </summary>
+            <param name="reportViewer1"></param>
+            <param name="path"></param>
+            <param name="datasource"></param>
+            <param name="printer"></param>
+        </member>
+        <member name="T:POSBO.Device.Printer.PrinterKitchen.SalesDataSet">
+             <summary>
+            Represents a strongly typed in-memory cache of data.
+            </summary>
+        </member>
+        <member name="T:POSBO.Device.Printer.PrinterKitchen.SalesDataSet.SalseDetailDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:POSBO.Device.Printer.PrinterKitchen.SalesDataSet.SalseDetailRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:POSBO.Device.Printer.PrinterKitchen.SalesDataSet.SalseDetailRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:POSBO.Device.Printer.PrinterPaper.SalesDataSet">
+             <summary>
+            Represents a strongly typed in-memory cache of data.
+            </summary>
+        </member>
+        <member name="T:POSBO.Device.Printer.PrinterPaper.SalesDataSet.SalseDetailDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:POSBO.Device.Printer.PrinterPaper.SalesDataSet.SalseDetailRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:POSBO.Device.Printer.PrinterPaper.SalesDataSet.SalseDetailRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="F:POSBO.Device.Printer.PrinterPaper.PrinterPaper.OrderNO">
+             出單紙 寬:8cm 長:自動裁切
+            
+        </member>
+        <member name="M:POSBO.Device.Printer.PrinterPaper.PrinterPaper.Printer_Load(System.String,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            2018/01/22，第一版API 總和所有接收的參數
+            </summary>
+            <param name="SystemID"></param>
+            <param name="OrderID"></param>
+            <param name="Template"></param>
+            <param name="Base64String"></param>
+            <param name="EInvoiceNumber"></param>
+            <param name="ModeType"></param>
+        </member>
+        <member name="M:POSBO.Device.Printer.PrinterPaper.PrinterPaper.Export(Microsoft.Reporting.WinForms.LocalReport)">
+            <summary>
+            產生報表
+            </summary>
+            <param name="report"></param>
+        </member>
+        <member name="M:POSBO.Device.Printer.PrinterPaper.PrinterPaper.ExportByTag(Microsoft.Reporting.WinForms.LocalReport)">
+            <summary>
+            產生報表
+            </summary>
+            <param name="report"></param>
+        </member>
+        <member name="M:POSBO.Device.Printer.PrinterPaper.PrinterPaper.barcade(System.String,System.String)">
+            <summary>
+            一維條碼 code39
+            </summary>
+            <param name="code"></param>
+            <param name="path"></param>
+        </member>
+        <member name="M:POSBO.Device.Printer.PrinterPaper.PrinterPaper.GetData(System.String)">
+            <summary>
+            利用OrderID 搜尋資料庫訂單資料(含明細)
+            </summary>
+            <param name="OrderID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:POSBO.Device.Printer.PrinterPaper.PrinterPaper.GetKitchenData(System.String,System.String)">
+            <summary>
+            利用OrderID 搜尋廚房單資料
+            </summary>
+            <param name="OrderID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:POSBO.Device.Printer.PrinterPaper.PrinterPaper.GetSimpleData(System.String,System.String)">
+            <summary>
+            利用OrderID 搜尋資料庫訂單資料(不含明細)
+            </summary>
+            <param name="OrderID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:POSBO.Device.Printer.PrinterPaper.PrinterPaper.GetDataByTag(System.String)">
+            <summary>
+            利用OrderID 搜尋資料庫訂單資料
+            </summary>
+            <param name="OrderID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:POSBO.Device.Printer.PrinterPaper.PrinterPaper.Dispose">
+            <summary>
+            關閉連接
+            </summary>
+        </member>
+        <member name="M:POSBO.Device.Printer.PrinterPaper.PrinterPaper.CustomerStyle1(Microsoft.Reporting.WinForms.ReportViewer,System.String,Microsoft.Reporting.WinForms.ReportDataSource,System.String)">
+            <summary>
+            顧客單樣板(白底黑字)
+            </summary>
+        </member>
+        <member name="M:POSBO.Device.Printer.PrinterPaper.PrinterPaper.CustomerStyle2(Microsoft.Reporting.WinForms.ReportViewer,System.String,Microsoft.Reporting.WinForms.ReportDataSource,System.String)">
+            <summary>
+            顧客單樣板(黑底白字)
+            </summary>
+        </member>
+        <member name="M:POSBO.Device.Printer.PrinterPaper.PrinterPaper.CustomerStyleBC(Microsoft.Reporting.WinForms.ReportViewer,System.String,Microsoft.Reporting.WinForms.ReportDataSource,System.String)">
+            <summary>
+            顧客單樣板(白底黑字)
+            </summary>
+        </member>
+        <member name="M:POSBO.Device.Printer.PrinterPaper.PrinterPaper.KitchenStyle1(Microsoft.Reporting.WinForms.ReportViewer,System.String,Microsoft.Reporting.WinForms.ReportDataSource,System.String)">
+            <summary>
+            廚房單樣板(白底黑字)
+            </summary>
+            <param name="reportViewer1"></param>
+            <param name="path"></param>
+            <param name="datasource"></param>
+            <param name="printer"></param>
+        </member>
+        <member name="M:POSBO.Device.Printer.PrinterPaper.PrinterPaper.KitchenStyle2(Microsoft.Reporting.WinForms.ReportViewer,System.String,Microsoft.Reporting.WinForms.ReportDataSource,System.String)">
+            <summary>
+            廚房單樣板(黑底白字)
+            </summary>
+            <param name="reportViewer1"></param>
+            <param name="path"></param>
+            <param name="datasource"></param>
+            <param name="printer"></param>
+        </member>
+        <member name="M:POSBO.Device.Printer.PrinterPaper.PrinterPaper.TagStyle1(Microsoft.Reporting.WinForms.ReportViewer,System.String,System.String)">
+            <summary>
+            標籤樣板(白底黑字)
+            </summary>
+            <param name="reportViewer1"></param>
+            <param name="path"></param>
+            <param name="datasource"></param>
+            <param name="printer"></param>
+        </member>
+        <member name="M:POSBO.Device.Printer.PrinterPaper.PrinterPaper.TagStyle2(Microsoft.Reporting.WinForms.ReportViewer,System.String,System.String,System.String)">
+            <summary>
+            標籤樣板(白底黑字)
+            </summary>
+            <param name="reportViewer1"></param>
+            <param name="path"></param>
+            <param name="OrderDetailID"></param>
+            <param name="printer"></param>
+        </member>
+        <member name="M:POSBO.Device.Printer.PrinterPaper.PrinterPaper.EInvoiceStyle1(System.String,System.String,System.String)">
+            <summary>
+            電子發票
+            </summary>
+        </member>
+        <member name="M:POSBO.Device.Printer.PrinterPaper.PrinterPaper.CouponStyle1(Microsoft.Reporting.WinForms.ReportViewer,System.String,System.String,System.String)">
+            <summary>
+            優惠卷樣板(白底黑字)
+            </summary>
+        </member>
+        <member name="M:POSBO.Device.Printer.PrinterPaper.PrinterPaper.CouponStyle2(Microsoft.Reporting.WinForms.ReportViewer,System.String,System.String,System.String)">
+            <summary>
+            優惠卷樣板(白底黑字)
+            </summary>
+        </member>
+        <member name="M:POSBO.Device.Printer.PrinterPaper.PrinterPaper.Delivery1(Microsoft.Reporting.WinForms.ReportViewer,System.String,Microsoft.Reporting.WinForms.ReportDataSource,System.String,System.String)">
+            <summary>
+            外送單樣板(白底黑字)
+            </summary>
+            <param name="reportViewer1"></param>
+            <param name="path"></param>
+            <param name="datasource"></param>
+            <param name="printer"></param>
+            <param name="orderID"></param>
+        </member>
+        <member name="T:POSBO.Device.Printer.PrinterReceipt.PrinterReceipt">
+            <summary>
+            收執聯樣板
+            </summary>
+        </member>
+        <member name="M:POSBO.Device.Printer.PrinterReceipt.PrinterReceipt.GetData(System.String)">
+            <summary>
+            利用OrderID 搜尋資料庫訂單資料
+            </summary>
+            <param name="OrderID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:POSBO.Device.Printer.PrinterReceipt.PrinterReceipt.Export(Microsoft.Reporting.WinForms.LocalReport)">
+            <summary>
+            產生報表
+            </summary>
+            <param name="report"></param>
+        </member>
+        <member name="M:POSBO.Device.Printer.PrinterReceipt.PrinterReceipt.Dispose">
+            <summary>
+            關閉連接
+            </summary>
+        </member>
+        <member name="M:POSBO.Device.Printer.PrinterReceipt.PrinterReceipt.ReceiptStyle1(Microsoft.Reporting.WinForms.ReportViewer,System.String,Microsoft.Reporting.WinForms.ReportDataSource,System.String)">
+            <summary>
+            收執聯樣板(白底黑字)
+            </summary>
+        </member>
+        <member name="T:POSBO.Device.Printer.PrinterReceipt.SalesDataSet">
+             <summary>
+            Represents a strongly typed in-memory cache of data.
+            </summary>
+        </member>
+        <member name="T:POSBO.Device.Printer.PrinterReceipt.SalesDataSet.SalseDetailDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:POSBO.Device.Printer.PrinterReceipt.SalesDataSet.SalseDetailRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:POSBO.Device.Printer.PrinterReceipt.SalesDataSet.SalseDetailRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:POSBO.Device.Printer.PrinterTag.PrinterTag.globalData">
+            使用網路印表機時若要讀取印表機的參數內容(長、寬、列印方向(angle)等..)////
+            則有IIS應用程式集區權限問題                                          ////
+            rdlc size:3.87042cm, 2.97626cm                                       ////
+        </member>
+        <member name="M:POSBO.Device.Printer.PrinterTag.PrinterTag.Export(Microsoft.Reporting.WinForms.LocalReport)">
+            <summary>
+            產生報表
+            </summary>
+            <param name="report"></param>
+        </member>
+        <member name="M:POSBO.Device.Printer.PrinterTag.PrinterTag.GetData(System.String)">
+            <summary>
+            利用OrderID 搜尋資料庫訂單資料
+            </summary>
+            <param name="OrderID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:POSBO.Device.Printer.PrinterTag.PrinterTag.Dispose">
+            <summary>
+            關閉連接
+            </summary>
+        </member>
+        <member name="M:POSBO.Device.Printer.PrinterTag.PrinterTag.TagStyle1(Microsoft.Reporting.WinForms.ReportViewer,System.String,System.String)">
+            <summary>
+            標籤樣板(白底黑字)
+            </summary>
+            <param name="reportViewer1"></param>
+            <param name="path"></param>
+            <param name="datasource"></param>
+            <param name="printer"></param>
+        </member>
+        <member name="T:POSBO.General.TBabuTools">
+            <summary>
+            處理動態相關的ㄅㄚㄅㄨ工具類別
+            </summary>
+        </member>
+        <member name="M:POSBO.General.TBabuTools.FillProperty(System.Object,System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            把 Dictionary 的值填入任意類別的屬性裡
+            Class 必須為 public，只有 Class.Property 才會被填寫
+            </summary>
+            <param name="obj">要填入的類別實例</param>
+            <param name="aPropertyValue">Dictionary 格式的屬性-值</param>
+        </member>
+        <member name="M:POSBO.General.TBabuTools.CreateInstance``1(System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            產生一個任意類別的實例，並把 Dictionary 裡面的值填到屬性裡
+            範例：
+            Dictionary&lt;string,string&gt; dic = new Dictionary&lt;string,string&gt; ();
+            dic["p1"] = "v1";
+            dic["p2"] = "v2";
+            TClass cls = CreateInstance&lt;TClass&gt;(dic);
+            </summary>
+            <typeparam name="T">Class Type</typeparam>
+            <param name="aPropertyValue">Dictionary 格式的屬性-值</param>
+            <returns></returns>
+        </member>
+        <member name="T:POSBO.General.TBabuClass">
+            <summary>
+            動態類別的基礎類別
+            </summary>
+        </member>
+        <member name="M:POSBO.General.TBabuClass.CreateInstance(System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            將 Dictionary 的值拿來產生新 Type 並把 Key 當屬性
+            第一次呼叫時會自動產生新 Type，往後的呼叫都使用此 Type 產生實例
+            </summary>
+            <param name="aPropertyValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:POSBO.General.TBabuClass.CreateInstance">
+            <summary>
+            使用內部已存在的 ClassType 產生一個實例
+            如果內部 ClsssType 不存在，傳回 null
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:POSBO.General.TBabuClass.CreateTypeAndInstance(System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            產生一個以 Dictionary 的 Key 為 Property, Value 為值的動態類別實例
+            </summary>
+            <param name="aPropertyValue">要拿來當 Property 的內容</param>
+            <returns>動態產生的類別</returns>
+        </member>
+        <member name="M:POSBO.General.TBabuClass.CreateType(System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            產生一個以 Dictionary 的 Key 為 Property 的動態類別型態
+            </summary>
+            <param name="aPropertyValue">要拿來當 Property 的內容</param>
+            <returns></returns>
+        </member>
+        <member name="M:POSBO.General.TBabuClass.Assign(POSBO.General.TBabuClass)">
+            <summary>
+            將 aSource 的屬性內容逐一設定過來
+            </summary>
+            <param name="aSource">要複製屬性值的來源</param>
+        </member>
+        <member name="M:POSBO.General.TBabuClass.AppendProperties(System.String[],System.Type[])">
+            <summary>
+            新增 Property 到 Babu 裡面，並傳回新實體
+            </summary>
+            <param name="aProperties">要新增的 Property</param>
+            <param name="aPropertiesType">要新增的 Property Type</param>
+            <returns></returns>
+        </member>
+        <member name="M:POSBO.General.TBabuClass.GetProperty(System.String)">
+            <summary>
+            取得 Property (object 型態)
+            </summary>
+            <param name="aPropertyName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:POSBO.General.TBabuClass.SetPropertyValue(System.String,System.Object)">
+            <summary>
+            設定 Property 的值
+            </summary>
+            <param name="aPropertyName">Property Name</param>
+            <param name="aValue">Value</param>
+        </member>
+        <member name="T:POSBO.General.CommonLib">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:POSBO.General.CommonLib.MakeBabuList(System.Collections.Generic.List{System.Collections.Generic.Dictionary{System.String,System.String}},System.Boolean)">
+            <summary>
+            客戶端使用
+            </summary>
+            <param name="aDataList"></param>
+            <param name="aDateTimeOnlyDate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:POSBO.General.CommonLib.OnlyDate(System.Collections.Generic.List{System.Collections.Generic.Dictionary{System.String,System.String}})">
+            <summary>
+            客戶端使用
+            </summary>
+            <param name="aDataList"></param>
+        </member>
+        <member name="M:POSBO.General.CommonLib.GetDataTable(System.String,System.String)">
+            <summary>
+            依指定的語法，取回 DataTable
+            </summary>
+            <param name="SQLStr"></param>
+            <returns></returns>
+        </member>
+        <member name="M:POSBO.General.CommonLib.GetValue(System.String,System.String)">
+            <summary>
+            依指定的語法，取回 DataTable
+            </summary>
+            <param name="SQLStr"></param>
+            <returns></returns>
+        </member>
+        <member name="M:POSBO.General.CommonLib.ActSQL(System.String)">
+            <summary>
+            執行指定的 SQL 語法非 Select 的 DML
+            </summary>
+            <param name="SQLStr"></param>
+            <returns></returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:POSBO.General.CommonLib.DataTableToList(System.Data.DataTable)" -->
+        <member name="T:POSBO.General.CommonLib.DataStore">
+            <summary>
+            資料包裝
+            </summary>
+        </member>
+        <member name="F:POSBO.General.CommonLib.DataStore.Data">
+            <summary>
+            資料結果實體
+            </summary>
+        </member>
+        <member name="F:POSBO.General.CommonLib.DataStore.DataList">
+            <summary>
+            資料結果實體
+            </summary>
+        </member>
+        <member name="F:POSBO.General.CommonLib.DataStore.FieldList">
+            <summary>
+            欄位資訊
+            </summary>
+        </member>
+        <member name="F:POSBO.General.CommonLib.DateTimeList">
+            <summary>
+            日期公用函數
+            </summary>
+        </member>
+        <member name="M:POSBO.General.CommonLib.ChackIdentityCard(System.String)">
+            <summary>
+            檢查身分證的合法性
+            </summary>
+            <param name="vid"></param>
+            <returns>1：字數不到10，2：第二碼非1,2，3：首碼有誤，4：查碼不對，０：正確</returns>
+        </member>
+        <member name="M:POSBO.General.CommonLib.CheckCompanyID(System.String)">
+            <summary>
+            檢查統一編號合法性
+            </summary>
+            <param name="sCompanyID"></param>
+            <returns></returns>
+        </member>
+        <member name="P:TSqlMaker.TableName">
+            <summary>
+            要操作的 Table
+            </summary>
+        </member>
+        <member name="M:TSqlMaker.AddFieldValue(System.String,System.String,System.String)">
+            <summary>
+            增加欄位和欄位的值
+            </summary>
+            <param name="aField">欄位</param>
+            <param name="aValue">欄位的值</param>
+            <param name="aValueSymbol">欄位的值用什麼符號括起來，一般為單引號</param>
+        </member>
+        <member name="M:TSqlMaker.AddWhereFieldValue(System.String,System.String,System.String)">
+            <summary>
+            增加 Select 或 Update Where 條件欄位和欄位的值
+            </summary>
+            <param name="aField">欄位</param>
+            <param name="aValue">欄位的值</param>
+            <param name="aValueSymbol">欄位的值用什麼符號括起來，一般為單引號</param>
+        </member>
+        <member name="M:TSqlMaker.AddLikeFieldValue(System.String,System.String,System.String)">
+            <summary>
+            增加 Select 或 Update Where-Like 條件欄位和欄位的值
+            </summary>
+            <param name="aField">欄位</param>
+            <param name="aValue">欄位的值</param>
+            <param name="aValueSymbol">欄位的值用什麼符號括起來，一般為單引號</param>
+        </member>
+        <member name="M:TSqlMaker.Clear">
+            <summary>
+            清除所有欄位和欄位的值
+            </summary>
+        </member>
+        <member name="M:TSqlMaker.GenUpdate">
+            <summary>
+            產生 Update 的語法
+            </summary>
+            <returns>產生的語法</returns>
+        </member>
+        <member name="M:TSqlMaker.GenInsert">
+            <summary>
+            產生 Insert 的語法
+            </summary>
+            <returns>產生的語法</returns>
+        </member>
+        <member name="M:TSqlMaker.GenCount">
+            <summary>
+            產生 Count 的語法
+            </summary>
+            <returns>產生的語法</returns>
+        </member>
+        <member name="M:TSqlMaker.GenDelete">
+            <summary>
+            產生 Delete 的語法
+            </summary>
+            <returns>產生的語法</returns>
+        </member>
+        <member name="M:TSqlMaker.GenSelect">
+            <summary>
+            產生 Select 的語法
+            </summary>
+            <returns>產生的語法</returns>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,798 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="NT_PlantTreeModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="tbAppContractTypeDoc">
+    <Key>
+      <PropertyRef Name="AppContractTypeDocID" />
+    </Key>
+    <Property Name="AppContractTypeDocID" Type="char" MaxLength="32" Nullable="false" />
+    <Property Name="AppContractType" Type="nvarchar" MaxLength="50" />
+    <Property Name="DocumentName" Type="nvarchar" MaxLength="100" />
+    <Property Name="DocumentDesc" Type="nvarchar" MaxLength="500" />
+    <Property Name="MustHaveType" Type="nvarchar" MaxLength="10" />
+    <Property Name="CopiesNumber" Type="int" />
+    <Property Name="DispType" Type="nvarchar" MaxLength="10" />
+    <Property Name="OrderKey" Type="int" />
+    <Property Name="ItemNumber" Type="int" />
+    <Property Name="DocumentData" Type="text" />
+  </EntityType>
+  <EntityType Name="tbAppSaplingAllocation">
+    <Key>
+      <PropertyRef Name="AppSaplingAllocationID" />
+    </Key>
+    <Property Name="AppSaplingAllocationID" Type="char" MaxLength="32" Nullable="false" />
+    <Property Name="AppContractTypeID" Type="char" MaxLength="32" Nullable="false" />
+    <Property Name="AllocationNum" Type="nvarchar" MaxLength="200" />
+    <Property Name="AllocationNo" Type="nvarchar" MaxLength="100" />
+    <Property Name="ForecastDate" Type="date" />
+    <Property Name="Memo" Type="nvarchar" MaxLength="500" />
+    <Property Name="ModifyUser" Type="varchar" MaxLength="30" />
+    <Property Name="ModifyDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tbAppSaplingAllocationItem">
+    <Key>
+      <PropertyRef Name="AppSaplingAllocationItemID" />
+    </Key>
+    <Property Name="AppSaplingAllocationItemID" Type="char" MaxLength="32" Nullable="false" />
+    <Property Name="AppSaplingAllocationID" Type="char" MaxLength="32" Nullable="false" />
+    <Property Name="TreeID" Type="char" MaxLength="32" />
+    <Property Name="SaplingType" Type="nvarchar" MaxLength="10" />
+    <Property Name="Area" Type="numeric" Precision="9" Scale="4" />
+    <Property Name="Quantity" Type="int" />
+    <Property Name="ModifyUser" Type="varchar" MaxLength="30" />
+    <Property Name="ModifyDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tbAppSurvey">
+    <Key>
+      <PropertyRef Name="AppSurveyID" />
+    </Key>
+    <Property Name="AppSurveyID" Type="char" MaxLength="32" Nullable="false" />
+    <Property Name="AppSurveyNo" Type="nvarchar" MaxLength="100" />
+    <Property Name="AppSurveyStartDate" Type="datetime" />
+    <Property Name="AppSurveyEndDate" Type="datetime" />
+    <Property Name="AppSurveyPurpose" Type="nvarchar" MaxLength="50" />
+    <Property Name="AppSurveyStatus" Type="char" MaxLength="2" />
+    <Property Name="AppSurveyStateName" Type="nvarchar" MaxLength="10" />
+    <Property Name="ModifyUser" Type="varchar" MaxLength="30" />
+    <Property Name="ModifyDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tbAppSurveyTable">
+    <Key>
+      <PropertyRef Name="AppSurveyTableID" />
+    </Key>
+    <Property Name="AppSurveyTableID" Type="char" MaxLength="32" Nullable="false" />
+    <Property Name="AppSurveyID" Type="char" MaxLength="32" Nullable="false" />
+    <Property Name="TableAlias" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="TableName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ForeignKey" Type="char" MaxLength="32" />
+    <Property Name="IsMustHave" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbAppSurveyUser">
+    <Key>
+      <PropertyRef Name="AppSurveyUserID" />
+    </Key>
+    <Property Name="AppSurveyUserID" Type="char" MaxLength="32" Nullable="false" />
+    <Property Name="AppSurveyID" Type="char" MaxLength="32" Nullable="false" />
+    <Property Name="UserID" Type="varchar" MaxLength="30" />
+    <Property Name="Sort" Type="int" />
+    <Property Name="ModifyUser" Type="varchar" MaxLength="30" />
+    <Property Name="ModifyDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tbContractFruit">
+    <Key>
+      <PropertyRef Name="ContractFruitID" />
+    </Key>
+    <Property Name="ContractFruitID" Type="char" MaxLength="32" Nullable="false" />
+    <Property Name="ContractID" Type="char" MaxLength="32" />
+    <Property Name="TreeTableName" Type="nvarchar" MaxLength="50" />
+    <Property Name="TreeTableKey" Type="char" MaxLength="32" />
+    <Property Name="TreeFruitID" Type="char" MaxLength="32" />
+    <Property Name="AppSurveyID" Type="char" MaxLength="32" />
+    <Property Name="AppSurveyPlantTreeID" Type="char" MaxLength="32" />
+    <Property Name="AppSurveyStatus" Type="char" MaxLength="2" />
+    <Property Name="TreeID" Type="char" MaxLength="32" />
+    <Property Name="Area" Type="numeric" Precision="9" Scale="4" />
+    <Property Name="PlantDate" Type="date" />
+    <Property Name="Quantity" Type="numeric" Precision="9" Scale="0" />
+    <Property Name="CollectTenor" Type="numeric" Precision="8" Scale="4" />
+    <Property Name="TransferTenor" Type="numeric" Precision="8" Scale="4" />
+    <Property Name="Memo" Type="nvarchar" MaxLength="500" />
+    <Property Name="ModifyUser" Type="varchar" MaxLength="30" />
+    <Property Name="ModifyDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tbContractLand">
+    <Key>
+      <PropertyRef Name="ContractLandID" />
+    </Key>
+    <Property Name="ContractLandID" Type="char" MaxLength="32" Nullable="false" />
+    <Property Name="ContractID" Type="char" MaxLength="32" />
+    <Property Name="Area" Type="numeric" Precision="15" Scale="6" />
+    <Property Name="UsePurpose" Type="nvarchar" MaxLength="100" />
+    <Property Name="LandName" Type="nvarchar" MaxLength="50" />
+    <Property Name="InOutWorkAreaName" Type="nvarchar" MaxLength="10" />
+    <Property Name="ZoneNo" Type="nvarchar" MaxLength="20" />
+    <Property Name="Memo" Type="nvarchar" MaxLength="500" />
+    <Property Name="ModifyUser" Type="varchar" MaxLength="30" />
+    <Property Name="ModifyDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tbContractLandCadastral">
+    <Key>
+      <PropertyRef Name="ContractLandCadastralID" />
+    </Key>
+    <Property Name="ContractLandCadastralID" Type="char" MaxLength="32" Nullable="false" />
+    <Property Name="ContractLandID" Type="char" MaxLength="32" Nullable="false" />
+    <Property Name="LandCadastralID" Type="char" MaxLength="32" Nullable="false" />
+    <Property Name="IsAllRent" Type="bit" Nullable="false" />
+    <Property Name="PrivateLandNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="Area" Type="numeric" Precision="15" Scale="6" />
+    <Property Name="ModifyUser" Type="varchar" MaxLength="30" />
+    <Property Name="ModifyDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tbContractLandForest">
+    <Key>
+      <PropertyRef Name="ContractLandForestID" />
+    </Key>
+    <Property Name="ContractLandForestID" Type="char" MaxLength="32" Nullable="false" />
+    <Property Name="ContractLandID" Type="char" MaxLength="32" Nullable="false" />
+    <Property Name="WorkAreaID" Type="varchar" MaxLength="3" />
+    <Property Name="SegMentLandNo" Type="nvarchar" MaxLength="10" />
+    <Property Name="PrivateLandNo" Type="nvarchar" MaxLength="10" />
+    <Property Name="ModifyUser" Type="varchar" MaxLength="30" />
+    <Property Name="ModifyDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tbContractTree">
+    <Key>
+      <PropertyRef Name="ContractTreeID" />
+    </Key>
+    <Property Name="ContractTreeID" Type="char" MaxLength="32" Nullable="false" />
+    <Property Name="ContractID" Type="char" MaxLength="32" />
+    <Property Name="TreeID" Type="char" MaxLength="32" />
+    <Property Name="Area" Type="decimal" Precision="18" Scale="6" Nullable="false" />
+    <Property Name="PlantDate" Type="date" />
+    <Property Name="Quantity" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="ModifyUser" Type="varchar" MaxLength="30" />
+    <Property Name="ModifyDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tbMeasureBoundaryPile">
+    <Key>
+      <PropertyRef Name="BoundaryPileID" />
+    </Key>
+    <Property Name="BoundaryPileID" Type="char" MaxLength="32" Nullable="false" />
+    <Property Name="BoundaryLocID" Type="char" MaxLength="32" Nullable="false" />
+    <Property Name="PileSort" Type="int" />
+    <Property Name="PileNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="PileX" Type="decimal" Precision="18" Scale="6" />
+    <Property Name="PileY" Type="decimal" Precision="18" Scale="6" />
+    <Property Name="PileZ" Type="decimal" Precision="18" Scale="6" />
+    <Property Name="ModifyUser" Type="varchar" MaxLength="30" />
+    <Property Name="ModifyDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tbNSAllotDetail">
+    <Key>
+      <PropertyRef Name="NSAllotDetailID" />
+    </Key>
+    <Property Name="NSAllotDetailID" Type="char" MaxLength="32" Nullable="false" />
+    <Property Name="NSAllotID" Type="char" MaxLength="32" Nullable="false" />
+    <Property Name="NSCultivateTreeID" Type="char" MaxLength="32" Nullable="false" />
+    <Property Name="Quantity" Type="int" Nullable="false" />
+    <Property Name="Memo" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="tbNSAllotReceive">
+    <Key>
+      <PropertyRef Name="NSAllotReceiveID" />
+    </Key>
+    <Property Name="NSAllotReceiveID" Type="char" MaxLength="32" Nullable="false" />
+    <Property Name="NSAllotID" Type="char" MaxLength="32" />
+    <Property Name="NSAllotDetailID" Type="char" MaxLength="32" />
+    <Property Name="NSCultivateTreeID" Type="char" MaxLength="32" Nullable="false" />
+    <Property Name="ReceiveQuantity" Type="int" Nullable="false" />
+    <Property Name="ReceiveDate" Type="date" Nullable="false" />
+    <Property Name="SeedlingHigh" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="SeedlingDiameter" Type="float" Nullable="false" />
+    <Property Name="IsLock" Type="bit" Nullable="false" />
+    <Property Name="ModifyUser" Type="nvarchar" MaxLength="50" />
+    <Property Name="ModifyDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tbNSCultivateWorkItem">
+    <Key>
+      <PropertyRef Name="NSCultivateWorkItemID" />
+    </Key>
+    <Property Name="NSCultivateWorkItemID" Type="char" MaxLength="32" Nullable="false" />
+    <Property Name="NSScheduleDataPlanID" Type="char" MaxLength="32" Nullable="false" />
+    <Property Name="Category" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="WorkItemName" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="RecordItemName" Type="nvarchar" MaxLength="500" />
+    <Property Name="IsPurchase" Type="bit" Nullable="false" />
+    <Property Name="OrderKey" Type="int" Nullable="false" />
+    <Property Name="Total" Type="float" Nullable="false" />
+    <Property Name="Unit" Type="nvarchar" MaxLength="5" />
+    <Property Name="Fee" Type="nvarchar" MaxLength="200" />
+    <Property Name="ModifyUser" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="ModifyDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbNSCultivateWorkItemTemplate">
+    <Key>
+      <PropertyRef Name="NSCultivateWorkItemTemplateID" />
+    </Key>
+    <Property Name="NSCultivateWorkItemTemplateID" Type="char" MaxLength="32" Nullable="false" />
+    <Property Name="NSScheduleTemplateID" Type="char" MaxLength="32" Nullable="false" />
+    <Property Name="Category" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="WorkItemName" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="RecordItemName" Type="nvarchar" MaxLength="500" />
+    <Property Name="IsPurchase" Type="bit" Nullable="false" />
+    <Property Name="OrderKey" Type="int" Nullable="false" />
+    <Property Name="Total" Type="float" Nullable="false" />
+    <Property Name="Unit" Type="nvarchar" MaxLength="5" />
+    <Property Name="Fee" Type="nvarchar" MaxLength="200" />
+    <Property Name="ModifyUser" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="ModifyDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbNSCultivateWorkPeriod">
+    <Key>
+      <PropertyRef Name="NSCultivateWorkPeriodID" />
+    </Key>
+    <Property Name="NSCultivateWorkPeriodID" Type="char" MaxLength="32" Nullable="false" />
+    <Property Name="NSScheduleDataPlanID" Type="char" MaxLength="32" Nullable="false" />
+    <Property Name="PeriodName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="StartDate" Type="date" Nullable="false" />
+    <Property Name="EndDate" Type="date" Nullable="false" />
+    <Property Name="OrderKey" Type="int" Nullable="false" />
+    <Property Name="ActualCompleteDate" Type="date" />
+    <Property Name="CompleteArea" Type="float" />
+    <Property Name="OverdueMemo" Type="nvarchar" MaxLength="100" />
+    <Property Name="ModifyUser" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="ModifyDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbNSCultivateWorkPeriodTemplate">
+    <Key>
+      <PropertyRef Name="NSCultivateWorkPeriodTemplateID" />
+    </Key>
+    <Property Name="NSCultivateWorkPeriodTemplateID" Type="char" MaxLength="32" Nullable="false" />
+    <Property Name="NSScheduleTemplateID" Type="char" MaxLength="32" Nullable="false" />
+    <Property Name="PeriodName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="OrderKey" Type="int" Nullable="false" />
+    <Property Name="ModifyUser" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="ModifyDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbNSCultivateWorkValue">
+    <Key>
+      <PropertyRef Name="NSCultivateWorkValueID" />
+    </Key>
+    <Property Name="NSCultivateWorkValueID" Type="char" MaxLength="32" Nullable="false" />
+    <Property Name="NSScheduleDataPlanID" Type="char" MaxLength="32" Nullable="false" />
+    <Property Name="NSCultivateWorkPeriodID" Type="char" MaxLength="32" Nullable="false" />
+    <Property Name="NSCultivateWorkItemID" Type="char" MaxLength="32" Nullable="false" />
+    <Property Name="WorkValue" Type="float" Nullable="false" />
+    <Property Name="OrderKey" Type="int" Nullable="false" />
+    <Property Name="ModifyUser" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="ModifyDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbNSCultivateWorkValueTemplate">
+    <Key>
+      <PropertyRef Name="NSCultivateWorkValueTemplateID" />
+    </Key>
+    <Property Name="NSCultivateWorkValueTemplateID" Type="char" MaxLength="32" Nullable="false" />
+    <Property Name="NSScheduleTemplateID" Type="char" MaxLength="32" Nullable="false" />
+    <Property Name="NSCultivateWorkPeriodTemplateID" Type="char" MaxLength="32" Nullable="false" />
+    <Property Name="NSCultivateWorkItemTemplateID" Type="char" MaxLength="32" Nullable="false" />
+    <Property Name="WorkValue" Type="float" Nullable="false" />
+    <Property Name="OrderKey" Type="int" Nullable="false" />
+    <Property Name="ModifyUser" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="ModifyDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbRelAppContractTypeSurvey">
+    <Key>
+      <PropertyRef Name="AppContractTypeID" />
+      <PropertyRef Name="AppSurveyID" />
+    </Key>
+    <Property Name="AppContractTypeID" Type="char" MaxLength="32" Nullable="false" />
+    <Property Name="AppSurveyID" Type="char" MaxLength="32" Nullable="false" />
+    <Property Name="IsNoSurvey" Type="char" MaxLength="1" />
+    <Property Name="IsSameOtherSurvey" Type="char" MaxLength="1" />
+    <Property Name="Memo" Type="nvarchar" MaxLength="500" />
+    <Property Name="ModifyUser" Type="varchar" MaxLength="30" />
+    <Property Name="ModifyDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tbRTLandValueTemp">
+    <Key>
+      <PropertyRef Name="RTLandValueSurveyID" />
+    </Key>
+    <Property Name="RTLandValueSurveyID" Type="char" MaxLength="32" Nullable="false" />
+    <Property Name="RTLandExtendID" Type="char" MaxLength="32" Nullable="false" />
+    <Property Name="LevyYear" Type="int" Nullable="false" />
+    <Property Name="RentYear" Type="int" Nullable="false" />
+    <Property Name="UNIT" Type="nvarchar" MaxLength="50" />
+    <Property Name="SEC" Type="nvarchar" MaxLength="50" />
+    <Property Name="NO" Type="nvarchar" MaxLength="50" />
+    <Property Name="PriceYear" Type="varchar" MaxLength="3" />
+    <Property Name="LandPrice" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="CurrentValue" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="AppraisalLandValue" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="ResponseResult" Type="nvarchar" MaxLength="50" />
+    <Property Name="ResultExplain" Type="nvarchar" MaxLength="50" />
+    <Property Name="ResponseDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbSysUserData">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="Password" Type="varchar" MaxLength="20" />
+    <Property Name="SysOrganizationID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="SysGroupID" Type="varchar" MaxLength="50" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="50" />
+    <Property Name="SubOrganizationName" Type="nvarchar" MaxLength="50" />
+    <Property Name="IsEnable" Type="bit" />
+    <Property Name="IsDirector" Type="bit" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+    <Property Name="Tel" Type="nvarchar" MaxLength="50" />
+    <Property Name="CellPhone" Type="nvarchar" MaxLength="50" />
+    <Property Name="Memo" Type="nvarchar" MaxLength="500" />
+    <Property Name="LastResetPwTime" Type="datetime" />
+    <Property Name="ModifyUser" Type="varchar" MaxLength="30" />
+    <Property Name="ModifyDate" Type="datetime" />
+    <Property Name="IsDel" Type="nvarchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="tbTMLandList">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Guid" Type="nvarchar" MaxLength="255" />
+    <Property Name="MyKey" Type="nvarchar" MaxLength="255" />
+    <Property Name="UnifiedNo" Type="nvarchar" MaxLength="255" />
+    <Property Name="Name" Type="nvarchar" MaxLength="255" />
+    <Property Name="CityCode" Type="nvarchar" MaxLength="255" />
+    <Property Name="City" Type="nvarchar" MaxLength="255" />
+    <Property Name="CityAreaCode" Type="nvarchar" MaxLength="255" />
+    <Property Name="CityArea" Type="nvarchar" MaxLength="255" />
+    <Property Name="DistrictCode" Type="nvarchar" MaxLength="255" />
+    <Property Name="District" Type="nvarchar" MaxLength="255" />
+    <Property Name="LandNumber" Type="nvarchar" MaxLength="255" />
+    <Property Name="SurfaceArea" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="RegistrationOrder" Type="nvarchar" MaxLength="255" />
+    <Property Name="Owner" Type="nvarchar" MaxLength="255" />
+    <Property Name="RightRegion" Type="nvarchar" MaxLength="255" />
+    <Property Name="LandUseZoning" Type="nvarchar" MaxLength="255" />
+    <Property Name="LandUseClassification" Type="nvarchar" MaxLength="255" />
+    <Property Name="CurrentLandValue" Type="nvarchar" MaxLength="255" />
+    <Property Name="DeclaredLandValueDate" Type="nvarchar" MaxLength="255" />
+    <Property Name="DeclaredLandValue" Type="nvarchar" MaxLength="255" />
+    <Property Name="SerialNumber" Type="nvarchar" MaxLength="255" />
+    <Property Name="PropertyName" Type="nvarchar" MaxLength="255" />
+    <Property Name="CertificateNo" Type="nvarchar" MaxLength="255" />
+    <Property Name="Workstation" Type="nvarchar" MaxLength="255" />
+    <Property Name="Department" Type="nvarchar" MaxLength="255" />
+    <Property Name="ModalityIn" Type="nvarchar" MaxLength="255" />
+    <Property Name="StatusIn" Type="nvarchar" MaxLength="255" />
+    <Property Name="DocumentNo" Type="nvarchar" MaxLength="255" />
+    <Property Name="Date" Type="date" />
+    <Property Name="Transfer" Type="nvarchar" MaxLength="255" />
+    <Property Name="Modality" Type="nvarchar" MaxLength="255" />
+    <Property Name="Status" Type="nvarchar" MaxLength="255" />
+    <Property Name="Memo" Type="nvarchar" MaxLength="255" />
+    <Property Name="ImportDate" Type="datetime" />
+    <Property Name="IsDelete" Type="bit" Nullable="false" />
+    <Property Name="UserId" Type="nvarchar" MaxLength="255" />
+    <Property Name="UpdateDate" Type="datetime" />
+    <Property Name="UpdateStatus" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="tbTMLandListBackup">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Guid" Type="nvarchar" MaxLength="450" Nullable="false" />
+    <Property Name="MyKey" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="UnifiedNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="CityCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="City" Type="nvarchar" MaxLength="50" />
+    <Property Name="CityAreaCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="CityArea" Type="nvarchar" MaxLength="50" />
+    <Property Name="DistrictCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="District" Type="nvarchar" MaxLength="50" />
+    <Property Name="LandNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="SurfaceArea" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="RegistrationOrder" Type="nvarchar" MaxLength="50" />
+    <Property Name="Owner" Type="nvarchar" MaxLength="50" />
+    <Property Name="RightRegion" Type="nvarchar" MaxLength="50" />
+    <Property Name="LandUseZoning" Type="nvarchar" MaxLength="50" />
+    <Property Name="LandUseClassification" Type="nvarchar" MaxLength="50" />
+    <Property Name="CurrentLandValue" Type="nvarchar" MaxLength="50" />
+    <Property Name="DeclaredLandValueDate" Type="nvarchar" MaxLength="50" />
+    <Property Name="DeclaredLandValue" Type="nvarchar" MaxLength="50" />
+    <Property Name="SerialNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="PropertyName" Type="nvarchar" MaxLength="50" />
+    <Property Name="CertificateNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="Workstation" Type="nvarchar" MaxLength="50" />
+    <Property Name="Department" Type="nvarchar" MaxLength="50" />
+    <Property Name="ModalityIn" Type="nvarchar" MaxLength="50" />
+    <Property Name="StatusIn" Type="nvarchar" MaxLength="50" />
+    <Property Name="DocumentNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="Date" Type="date" />
+    <Property Name="Transfer" Type="nvarchar" MaxLength="50" />
+    <Property Name="Modality" Type="nvarchar" MaxLength="50" />
+    <Property Name="Status" Type="nvarchar" MaxLength="50" />
+    <Property Name="Memo" Type="nvarchar" MaxLength="500" />
+    <Property Name="UpdateStatus" Type="nvarchar" MaxLength="5" />
+    <Property Name="UpdateDate" Type="datetime" />
+    <Property Name="IsDelete" Type="bit" Nullable="false" />
+    <Property Name="UserId" Type="nvarchar" MaxLength="450" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbTMLandListRecord">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LandListGuid" Type="nvarchar" MaxLength="450" />
+    <Property Name="ImportDate" Type="datetime" />
+    <Property Name="ImportUserId" Type="nvarchar" MaxLength="50" />
+    <Property Name="ImportCount" Type="int" />
+    <Property Name="Increase" Type="int" />
+    <Property Name="Decrease" Type="int" />
+    <Property Name="BackupStatus" Type="nvarchar" MaxLength="5" />
+    <Property Name="BackupDate" Type="datetime" />
+    <Property Name="BackupUserId" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tbTMLandListResurvey">
+    <Key>
+      <PropertyRef Name="TMLandListResurveyID" />
+    </Key>
+    <Property Name="TMLandListResurveyID" Type="char" MaxLength="32" Nullable="false" />
+    <Property Name="TMLandListID" Type="int" Nullable="false" />
+    <Property Name="MyKey" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CityCode" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="City" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CityAreaCode" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CityArea" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="DistrictCode" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="District" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="LandNumber" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ModifyUser" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="ModifyDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbTree">
+    <Key>
+      <PropertyRef Name="TreeID" />
+    </Key>
+    <Property Name="TreeID" Type="char" MaxLength="32" Nullable="false" />
+    <Property Name="TreeTypeID" Type="char" MaxLength="32" />
+    <Property Name="SortNum" Type="int" />
+    <Property Name="TreeName" Type="nvarchar" MaxLength="200" />
+    <Property Name="UnitQty" Type="numeric" Precision="9" Scale="0" />
+    <Property Name="Purpose" Type="nvarchar" MaxLength="50" />
+    <Property Name="IsAwardTree" Type="bit" Nullable="false" />
+    <Property Name="IsEconomic" Type="bit" Nullable="false" />
+    <Property Name="HewAge" Type="int" />
+    <Property Name="IsProtect" Type="bit" Nullable="false" />
+    <Property Name="HewAgeProtect" Type="int" />
+    <Property Name="IsHasFruit" Type="bit" Nullable="false" />
+    <Property Name="Memo" Type="nvarchar" MaxLength="2000" />
+    <Property Name="TreePeriod" Type="varchar" MaxLength="20" />
+    <Property Name="GovRate" Type="numeric" Precision="3" Scale="0" />
+    <Property Name="ModifyUser" Type="varchar" MaxLength="30" />
+    <Property Name="ModifyDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tbTreeFruit">
+    <Key>
+      <PropertyRef Name="TreeFruitID" />
+    </Key>
+    <Property Name="TreeFruitID" Type="char" MaxLength="32" Nullable="false" />
+    <Property Name="TreeID" Type="char" MaxLength="32" Nullable="false" />
+    <Property Name="FruitName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ProduceUnitType" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ProduceUnit" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="ModifyUser" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="ModifyDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <!--產生期間發現錯誤:
+警告 6002: 資料表/檢視 'NT_PlantTree.dbo.V_ContractAccept' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
+  <EntityType Name="V_ContractAccept">
+    <Key>
+      <PropertyRef Name="ContractID" />
+      <PropertyRef Name="LandContractID" />
+      <PropertyRef Name="SourceContractID" />
+      <PropertyRef Name="AppFormID" />
+      <PropertyRef Name="AppContractTypeID" />
+    </Key>
+    <Property Name="ContractID" Type="char" MaxLength="32" Nullable="false" />
+    <Property Name="ContractStatusID" Type="char" MaxLength="2" />
+    <Property Name="LandContractID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="FromDate" Type="date" />
+    <Property Name="ExpirtyDate" Type="date" />
+    <Property Name="Area" Type="numeric" Precision="15" Scale="6" />
+    <Property Name="RentCode" Type="char" MaxLength="2" />
+    <Property Name="ContractClassify" Type="nvarchar" MaxLength="10" />
+    <Property Name="ContractChangeDate" Type="date" />
+    <Property Name="ContractChangeNo" Type="nvarchar" MaxLength="1000" />
+    <Property Name="ContractChangePurpose" Type="nvarchar" MaxLength="50" />
+    <Property Name="AgreeOrder" Type="int" />
+    <Property Name="UsePurpose" Type="nvarchar" MaxLength="100" />
+    <Property Name="LandKindName" Type="nvarchar" MaxLength="10" />
+    <Property Name="WorkStationID" Type="char" MaxLength="2" />
+    <Property Name="Memo" Type="nvarchar" MaxLength="500" />
+    <Property Name="SourceContractID" Type="char" MaxLength="32" Nullable="false" />
+    <Property Name="LesseeName" Type="nvarchar" MaxLength="2000" />
+    <Property Name="AppFormID" Type="char" MaxLength="32" Nullable="false" />
+    <Property Name="AppContractStatus" Type="nvarchar" MaxLength="10" />
+    <Property Name="AppFormStatus" Type="nvarchar" MaxLength="10" />
+    <Property Name="IsAppFormDataOK" Type="nchar" MaxLength="1" />
+    <Property Name="AppTypeName" Type="varchar" MaxLength="400" />
+    <Property Name="AppTypeState" Type="nvarchar" MaxLength="50" />
+    <Property Name="AppTypeStateID" Type="nvarchar" MaxLength="50" />
+    <Property Name="AppContractTypeID" Type="char" MaxLength="32" Nullable="false" />
+    <Property Name="AcceptDate" Type="date" />
+    <Property Name="AcceptUser" Type="varchar" MaxLength="30" />
+    <Property Name="UnderTaker" Type="varchar" MaxLength="30" />
+  </EntityType>
+  <!--產生期間發現錯誤:
+警告 6002: 資料表/檢視 'NT_PlantTree.dbo.V_ContractLand' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
+  <EntityType Name="V_ContractLand">
+    <Key>
+      <PropertyRef Name="ContractLandID" />
+    </Key>
+    <Property Name="ContractLandID" Type="char" MaxLength="32" Nullable="false" />
+    <Property Name="ContractID" Type="char" MaxLength="32" />
+    <Property Name="LandName" Type="nvarchar" MaxLength="50" />
+    <Property Name="UsePurpose" Type="nvarchar" MaxLength="100" />
+    <Property Name="ZoneNo" Type="nvarchar" MaxLength="20" />
+    <Property Name="InOutWorkAreaName" Type="nvarchar" MaxLength="10" />
+    <Property Name="Memo" Type="nvarchar" MaxLength="500" />
+    <Property Name="Area" Type="numeric" Precision="15" Scale="6" />
+    <Property Name="ContractLandForestID" Type="char" MaxLength="32" />
+    <Property Name="WorkAreaID" Type="varchar" MaxLength="3" />
+    <Property Name="WorkAreaName" Type="nvarchar" MaxLength="10" />
+    <Property Name="SegMentLandNo" Type="nvarchar" MaxLength="10" />
+    <Property Name="PrivateLandNo" Type="nvarchar" MaxLength="10" />
+    <Property Name="ContractLandCadastralID" Type="char" MaxLength="32" />
+    <Property Name="LandCadastralID" Type="char" MaxLength="32" />
+    <Property Name="IsAllRent" Type="bit" />
+    <Property Name="CityID" Type="varchar" MaxLength="10" />
+    <Property Name="CityName" Type="nvarchar" MaxLength="10" />
+    <Property Name="TownID" Type="varchar" MaxLength="10" />
+    <Property Name="TownName" Type="nvarchar" MaxLength="10" />
+    <Property Name="MainSec" Type="nvarchar" MaxLength="50" />
+    <Property Name="SubSec" Type="nvarchar" MaxLength="50" />
+    <Property Name="LandNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="CadPrivateLandNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="CadArea" Type="numeric" Precision="15" Scale="6" />
+    <Property Name="FullLandCadastralName" Type="nvarchar" MaxLength="100" />
+    <Property Name="SimpLandCadastralName" Type="nvarchar" MaxLength="100" />
+    <Property Name="FullLandForestName" Type="nvarchar" MaxLength="100" />
+    <Property Name="SimpLandForestName" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <!--產生期間發現錯誤:
+警告 6002: 資料表/檢視 'NT_PlantTree.dbo.V_ContractLandCadastral' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
+  <EntityType Name="V_ContractLandCadastral">
+    <Key>
+      <PropertyRef Name="ContractLandCadastralID" />
+      <PropertyRef Name="ContractLandID" />
+      <PropertyRef Name="LandCadastralID" />
+    </Key>
+    <Property Name="ContractLandCadastralID" Type="char" MaxLength="32" Nullable="false" />
+    <Property Name="ContractLandID" Type="char" MaxLength="32" Nullable="false" />
+    <Property Name="LandCadastralID" Type="char" MaxLength="32" Nullable="false" />
+    <Property Name="IsAllRent" Type="bit" />
+    <Property Name="PrivateLandNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="Area" Type="numeric" Precision="15" Scale="6" />
+    <Property Name="CityID" Type="varchar" MaxLength="10" />
+    <Property Name="CityName" Type="nvarchar" MaxLength="10" />
+    <Property Name="TownID" Type="varchar" MaxLength="10" />
+    <Property Name="TownName" Type="nvarchar" MaxLength="10" />
+    <Property Name="MainSec" Type="nvarchar" MaxLength="50" />
+    <Property Name="SubSec" Type="nvarchar" MaxLength="50" />
+    <Property Name="LandNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="FullLandCadastralName" Type="nvarchar" MaxLength="100" />
+    <Property Name="SimpLandCadastralName" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <!--產生期間發現錯誤:
+警告 6002: 資料表/檢視 'NT_PlantTree.dbo.V_ContractLandForest' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
+  <EntityType Name="V_ContractLandForest">
+    <Key>
+      <PropertyRef Name="ContractLandForestID" />
+      <PropertyRef Name="ContractLandID" />
+    </Key>
+    <Property Name="ContractLandForestID" Type="char" MaxLength="32" Nullable="false" />
+    <Property Name="ContractLandID" Type="char" MaxLength="32" Nullable="false" />
+    <Property Name="WorkAreaID" Type="varchar" MaxLength="3" />
+    <Property Name="WorkAreaName" Type="nvarchar" MaxLength="10" />
+    <Property Name="SegMentLandNo" Type="nvarchar" MaxLength="10" />
+    <Property Name="PrivateLandNo" Type="nvarchar" MaxLength="10" />
+    <Property Name="FullLandForestName" Type="nvarchar" MaxLength="100" />
+    <Property Name="SimpLandForestName" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <!--產生期間發現錯誤:
+警告 6002: 資料表/檢視 'NT_PlantTree.dbo.V_RTUpdateLandPrice' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
+  <EntityType Name="V_RTUpdateLandPrice">
+    <Key>
+      <PropertyRef Name="ContractID" />
+      <PropertyRef Name="LandContractID" />
+      <PropertyRef Name="RTLandExtendID" />
+      <PropertyRef Name="ContractLandCadastralID" />
+      <PropertyRef Name="RentCalcType" />
+    </Key>
+    <Property Name="ContractID" Type="char" MaxLength="32" Nullable="false" />
+    <Property Name="LandContractID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="RTLandExtendID" Type="char" MaxLength="32" Nullable="false" />
+    <Property Name="ContractLandCadastralID" Type="char" MaxLength="32" Nullable="false" />
+    <Property Name="WorkStationID" Type="char" MaxLength="2" />
+    <Property Name="RentCalcType" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="CityID" Type="varchar" MaxLength="10" />
+    <Property Name="TownID" Type="varchar" MaxLength="10" />
+    <Property Name="MainSec" Type="nvarchar" MaxLength="50" />
+    <Property Name="SubSec" Type="nvarchar" MaxLength="50" />
+    <Property Name="LandNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="Unit" Type="nvarchar" MaxLength="10" />
+    <Property Name="SecCode" Type="nvarchar" MaxLength="10" />
+    <Property Name="LevyYear" Type="int" />
+    <Property Name="RentYear" Type="int" />
+    <Property Name="PriceYear" Type="varchar" MaxLength="3" />
+    <Property Name="LandPrice" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="CurrentValue" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="AppraisalLandValue" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="ResponseResult" Type="nvarchar" MaxLength="50" />
+    <Property Name="ResultExplain" Type="nvarchar" MaxLength="50" />
+    <Property Name="RTLandValueSurveyID" Type="char" MaxLength="32" />
+  </EntityType>
+  <Function Name="SP_TM_UpdateLandByResurvey" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="TMLandListID" Type="char" Mode="In" />
+    <Parameter Name="TMLandListResurveyID" Type="char" Mode="In" />
+  </Function>
+  <Function Name="TM_GetQueryVA77099" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="nvarchar">
+    <Parameter Name="MYKEY" Type="nvarchar" Mode="In" />
+  </Function>
+  <EntityContainer Name="NT_PlantTreeModelStoreContainer">
+    <EntitySet Name="tbAppContractTypeDoc" EntityType="Self.tbAppContractTypeDoc" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbAppSaplingAllocation" EntityType="Self.tbAppSaplingAllocation" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbAppSaplingAllocationItem" EntityType="Self.tbAppSaplingAllocationItem" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbAppSurvey" EntityType="Self.tbAppSurvey" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbAppSurveyTable" EntityType="Self.tbAppSurveyTable" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbAppSurveyUser" EntityType="Self.tbAppSurveyUser" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbContractFruit" EntityType="Self.tbContractFruit" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbContractLand" EntityType="Self.tbContractLand" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbContractLandCadastral" EntityType="Self.tbContractLandCadastral" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbContractLandForest" EntityType="Self.tbContractLandForest" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbContractTree" EntityType="Self.tbContractTree" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbMeasureBoundaryPile" EntityType="Self.tbMeasureBoundaryPile" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbNSAllotDetail" EntityType="Self.tbNSAllotDetail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbNSAllotReceive" EntityType="Self.tbNSAllotReceive" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbNSCultivateWorkItem" EntityType="Self.tbNSCultivateWorkItem" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbNSCultivateWorkItemTemplate" EntityType="Self.tbNSCultivateWorkItemTemplate" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbNSCultivateWorkPeriod" EntityType="Self.tbNSCultivateWorkPeriod" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbNSCultivateWorkPeriodTemplate" EntityType="Self.tbNSCultivateWorkPeriodTemplate" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbNSCultivateWorkValue" EntityType="Self.tbNSCultivateWorkValue" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbNSCultivateWorkValueTemplate" EntityType="Self.tbNSCultivateWorkValueTemplate" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbRelAppContractTypeSurvey" EntityType="Self.tbRelAppContractTypeSurvey" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbRTLandValueTemp" EntityType="Self.tbRTLandValueTemp" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbSysUserData" EntityType="Self.tbSysUserData" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbTMLandList" EntityType="Self.tbTMLandList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbTMLandListBackup" EntityType="Self.tbTMLandListBackup" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbTMLandListRecord" EntityType="Self.tbTMLandListRecord" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbTMLandListResurvey" EntityType="Self.tbTMLandListResurvey" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbTree" EntityType="Self.tbTree" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbTreeFruit" EntityType="Self.tbTreeFruit" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="V_ContractAccept" EntityType="Self.V_ContractAccept" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [V_ContractAccept].[ContractID] AS [ContractID], 
+    [V_ContractAccept].[ContractStatusID] AS [ContractStatusID], 
+    [V_ContractAccept].[LandContractID] AS [LandContractID], 
+    [V_ContractAccept].[FromDate] AS [FromDate], 
+    [V_ContractAccept].[ExpirtyDate] AS [ExpirtyDate], 
+    [V_ContractAccept].[Area] AS [Area], 
+    [V_ContractAccept].[RentCode] AS [RentCode], 
+    [V_ContractAccept].[ContractClassify] AS [ContractClassify], 
+    [V_ContractAccept].[ContractChangeDate] AS [ContractChangeDate], 
+    [V_ContractAccept].[ContractChangeNo] AS [ContractChangeNo], 
+    [V_ContractAccept].[ContractChangePurpose] AS [ContractChangePurpose], 
+    [V_ContractAccept].[AgreeOrder] AS [AgreeOrder], 
+    [V_ContractAccept].[UsePurpose] AS [UsePurpose], 
+    [V_ContractAccept].[LandKindName] AS [LandKindName], 
+    [V_ContractAccept].[WorkStationID] AS [WorkStationID], 
+    [V_ContractAccept].[Memo] AS [Memo], 
+    [V_ContractAccept].[SourceContractID] AS [SourceContractID], 
+    [V_ContractAccept].[LesseeName] AS [LesseeName], 
+    [V_ContractAccept].[AppFormID] AS [AppFormID], 
+    [V_ContractAccept].[AppContractStatus] AS [AppContractStatus], 
+    [V_ContractAccept].[AppFormStatus] AS [AppFormStatus], 
+    [V_ContractAccept].[IsAppFormDataOK] AS [IsAppFormDataOK], 
+    [V_ContractAccept].[AppTypeName] AS [AppTypeName], 
+    [V_ContractAccept].[AppTypeState] AS [AppTypeState], 
+    [V_ContractAccept].[AppTypeStateID] AS [AppTypeStateID], 
+    [V_ContractAccept].[AppContractTypeID] AS [AppContractTypeID], 
+    [V_ContractAccept].[AcceptDate] AS [AcceptDate], 
+    [V_ContractAccept].[AcceptUser] AS [AcceptUser], 
+    [V_ContractAccept].[UnderTaker] AS [UnderTaker]
+    FROM [dbo].[V_ContractAccept] AS [V_ContractAccept]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="V_ContractLand" EntityType="Self.V_ContractLand" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [V_ContractLand].[ContractLandID] AS [ContractLandID], 
+    [V_ContractLand].[ContractID] AS [ContractID], 
+    [V_ContractLand].[LandName] AS [LandName], 
+    [V_ContractLand].[UsePurpose] AS [UsePurpose], 
+    [V_ContractLand].[ZoneNo] AS [ZoneNo], 
+    [V_ContractLand].[InOutWorkAreaName] AS [InOutWorkAreaName], 
+    [V_ContractLand].[Memo] AS [Memo], 
+    [V_ContractLand].[Area] AS [Area], 
+    [V_ContractLand].[ContractLandForestID] AS [ContractLandForestID], 
+    [V_ContractLand].[WorkAreaID] AS [WorkAreaID], 
+    [V_ContractLand].[WorkAreaName] AS [WorkAreaName], 
+    [V_ContractLand].[SegMentLandNo] AS [SegMentLandNo], 
+    [V_ContractLand].[PrivateLandNo] AS [PrivateLandNo], 
+    [V_ContractLand].[ContractLandCadastralID] AS [ContractLandCadastralID], 
+    [V_ContractLand].[LandCadastralID] AS [LandCadastralID], 
+    [V_ContractLand].[IsAllRent] AS [IsAllRent], 
+    [V_ContractLand].[CityID] AS [CityID], 
+    [V_ContractLand].[CityName] AS [CityName], 
+    [V_ContractLand].[TownID] AS [TownID], 
+    [V_ContractLand].[TownName] AS [TownName], 
+    [V_ContractLand].[MainSec] AS [MainSec], 
+    [V_ContractLand].[SubSec] AS [SubSec], 
+    [V_ContractLand].[LandNo] AS [LandNo], 
+    [V_ContractLand].[CadPrivateLandNo] AS [CadPrivateLandNo], 
+    [V_ContractLand].[CadArea] AS [CadArea], 
+    [V_ContractLand].[FullLandCadastralName] AS [FullLandCadastralName], 
+    [V_ContractLand].[SimpLandCadastralName] AS [SimpLandCadastralName], 
+    [V_ContractLand].[FullLandForestName] AS [FullLandForestName], 
+    [V_ContractLand].[SimpLandForestName] AS [SimpLandForestName]
+    FROM [dbo].[V_ContractLand] AS [V_ContractLand]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="V_ContractLandCadastral" EntityType="Self.V_ContractLandCadastral" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [V_ContractLandCadastral].[ContractLandCadastralID] AS [ContractLandCadastralID], 
+    [V_ContractLandCadastral].[ContractLandID] AS [ContractLandID], 
+    [V_ContractLandCadastral].[LandCadastralID] AS [LandCadastralID], 
+    [V_ContractLandCadastral].[IsAllRent] AS [IsAllRent], 
+    [V_ContractLandCadastral].[PrivateLandNo] AS [PrivateLandNo], 
+    [V_ContractLandCadastral].[Area] AS [Area], 
+    [V_ContractLandCadastral].[CityID] AS [CityID], 
+    [V_ContractLandCadastral].[CityName] AS [CityName], 
+    [V_ContractLandCadastral].[TownID] AS [TownID], 
+    [V_ContractLandCadastral].[TownName] AS [TownName], 
+    [V_ContractLandCadastral].[MainSec] AS [MainSec], 
+    [V_ContractLandCadastral].[SubSec] AS [SubSec], 
+    [V_ContractLandCadastral].[LandNo] AS [LandNo], 
+    [V_ContractLandCadastral].[FullLandCadastralName] AS [FullLandCadastralName], 
+    [V_ContractLandCadastral].[SimpLandCadastralName] AS [SimpLandCadastralName]
+    FROM [dbo].[V_ContractLandCadastral] AS [V_ContractLandCadastral]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="V_ContractLandForest" EntityType="Self.V_ContractLandForest" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [V_ContractLandForest].[ContractLandForestID] AS [ContractLandForestID], 
+    [V_ContractLandForest].[ContractLandID] AS [ContractLandID], 
+    [V_ContractLandForest].[WorkAreaID] AS [WorkAreaID], 
+    [V_ContractLandForest].[WorkAreaName] AS [WorkAreaName], 
+    [V_ContractLandForest].[SegMentLandNo] AS [SegMentLandNo], 
+    [V_ContractLandForest].[PrivateLandNo] AS [PrivateLandNo], 
+    [V_ContractLandForest].[FullLandForestName] AS [FullLandForestName], 
+    [V_ContractLandForest].[SimpLandForestName] AS [SimpLandForestName]
+    FROM [dbo].[V_ContractLandForest] AS [V_ContractLandForest]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="V_RTUpdateLandPrice" EntityType="Self.V_RTUpdateLandPrice" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [V_RTUpdateLandPrice].[ContractID] AS [ContractID], 
+    [V_RTUpdateLandPrice].[LandContractID] AS [LandContractID], 
+    [V_RTUpdateLandPrice].[RTLandExtendID] AS [RTLandExtendID], 
+    [V_RTUpdateLandPrice].[ContractLandCadastralID] AS [ContractLandCadastralID], 
+    [V_RTUpdateLandPrice].[WorkStationID] AS [WorkStationID], 
+    [V_RTUpdateLandPrice].[RentCalcType] AS [RentCalcType], 
+    [V_RTUpdateLandPrice].[CityID] AS [CityID], 
+    [V_RTUpdateLandPrice].[TownID] AS [TownID], 
+    [V_RTUpdateLandPrice].[MainSec] AS [MainSec], 
+    [V_RTUpdateLandPrice].[SubSec] AS [SubSec], 
+    [V_RTUpdateLandPrice].[LandNo] AS [LandNo], 
+    [V_RTUpdateLandPrice].[Unit] AS [Unit], 
+    [V_RTUpdateLandPrice].[SecCode] AS [SecCode], 
+    [V_RTUpdateLandPrice].[LevyYear] AS [LevyYear], 
+    [V_RTUpdateLandPrice].[RentYear] AS [RentYear], 
+    [V_RTUpdateLandPrice].[PriceYear] AS [PriceYear], 
+    [V_RTUpdateLandPrice].[LandPrice] AS [LandPrice], 
+    [V_RTUpdateLandPrice].[CurrentValue] AS [CurrentValue], 
+    [V_RTUpdateLandPrice].[AppraisalLandValue] AS [AppraisalLandValue], 
+    [V_RTUpdateLandPrice].[ResponseResult] AS [ResponseResult], 
+    [V_RTUpdateLandPrice].[ResultExplain] AS [ResultExplain], 
+    [V_RTUpdateLandPrice].[RTLandValueSurveyID] AS [RTLandValueSurveyID]
+    FROM [dbo].[V_RTUpdateLandPrice] AS [V_RTUpdateLandPrice]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

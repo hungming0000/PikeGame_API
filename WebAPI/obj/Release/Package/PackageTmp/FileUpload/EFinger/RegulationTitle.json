@@ -1,0 +1,154 @@
+[
+  {
+    "RegulationId": "cdeff649d8f440779e663a005af2c0fc",
+    "title": "0916測試法規",
+    "RegulationType": "基本法規",
+    "HistoryId": "88713f1eb0694c16bc216c92afe0ee02",
+    "IssueDate": "民國110年09月15日",
+    "SysOrganizationID": "9b0f8386675e43a89d1a2f355103d5e4"
+  },
+  {
+    "RegulationId": "5d1973e0fcd74c17a764b3f18196801d",
+    "title": "農業用地興建農舍辦法",
+    "RegulationType": "行政類",
+    "HistoryId": "18a3734f554a4af1910cf6d3758e7827",
+    "IssueDate": "民國104年09月04日",
+    "SysOrganizationID": "edb5d89f446a416ca755b0af5bd4b091"
+  },
+  {
+    "RegulationId": "ee2f2207158840a5bb7fb28e2abcad33",
+    "title": "\t工程受益費徵收條例",
+    "RegulationType": "行政類",
+    "HistoryId": "a8e947e5718041fb83f46cdddff0e054",
+    "IssueDate": "民國89年11月08日",
+    "SysOrganizationID": "edb5d89f446a416ca755b0af5bd4b091"
+  },
+  {
+    "RegulationId": "ebda48f130ca49d6af5589c20f74ed0c",
+    "title": "戶政事務所辦理印鑑登記作業規定",
+    "RegulationType": "戶政類",
+    "HistoryId": "ffcb0b7ef74246cdaa1e580da140e204",
+    "IssueDate": "民國103年01月29日",
+    "SysOrganizationID": "edb5d89f446a416ca755b0af5bd4b091"
+  },
+  {
+    "RegulationId": "87d1e0d6f8944271bbfda18c72ea52fb",
+    "title": "嘉義測試",
+    "RegulationType": "森林企劃類",
+    "HistoryId": null,
+    "IssueDate": "民國109年11月07日",
+    "SysOrganizationID": "edb5d89f446a416ca755b0af5bd4b091"
+  },
+  {
+    "RegulationId": "1a20a4405cb949e0947a6a0aede5492c",
+    "title": "非都市土地使用管制規則",
+    "RegulationType": "森林企劃類",
+    "HistoryId": "1124841a6169473083a2d05447e4bffb",
+    "IssueDate": "民國109年03月30日",
+    "SysOrganizationID": "022832bda4294a7288d92602ce445f23"
+  },
+  {
+    "RegulationId": "073bc7bad41542e4bf966524f9091850",
+    "title": "電子簽章法",
+    "RegulationType": "基本法規",
+    "HistoryId": "102e2cce1f9d41a19e50c64878da4bf7",
+    "IssueDate": "民國90年11月14日",
+    "SysOrganizationID": "9b0f8386675e43a89d1a2f355103d5e4"
+  },
+  {
+    "RegulationId": "a0e9188bfc324d74a88ab4ba6614dca7",
+    "title": "土地登記規則",
+    "RegulationType": "林政管理類",
+    "HistoryId": "70de037810f74c94953ecbb2ad3695a3",
+    "IssueDate": "民國110年07月09日",
+    "SysOrganizationID": "9b0f8386675e43a89d1a2f355103d5e4"
+  },
+  {
+    "RegulationId": "e2d44f095caf47ed860e4b71afead617",
+    "title": "羅東台北測試",
+    "RegulationType": "基本法規",
+    "HistoryId": null,
+    "IssueDate": "民國110年07月08日",
+    "SysOrganizationID": "022832bda4294a7288d92602ce445f23"
+  },
+  {
+    "RegulationId": "311360fd30794832938abdde0de1f860",
+    "title": "國有財產法",
+    "RegulationType": "基本法規",
+    "HistoryId": "0ff1fa6be96b4769a063918c1a9b4cc4",
+    "IssueDate": "民國107年11月21日",
+    "SysOrganizationID": "9b0f8386675e43a89d1a2f355103d5e4"
+  },
+  {
+    "RegulationId": "8e797d6aa65142189604d1692c568809",
+    "title": "具生產性私有林限制採伐補償要點",
+    "RegulationType": "造林生產類",
+    "HistoryId": "bb23f801f53549a59e176a1db86a79e0",
+    "IssueDate": "民國109年10月20日",
+    "SysOrganizationID": "9b0f8386675e43a89d1a2f355103d5e4"
+  },
+  {
+    "RegulationId": "a228b108ddf4424f890943a0b0af23d3",
+    "title": "各林區管理處暫行組織規程",
+    "RegulationType": "林政管理類",
+    "HistoryId": "1adad35d80a847ea8c282aa1356dee04",
+    "IssueDate": "民國93年10月16日",
+    "SysOrganizationID": "d0d08d50092141f8b5b39b5165ca4c29"
+  },
+  {
+    "RegulationId": "9ff6eb49b5b74b8a886182d1ce9720ce",
+    "title": "行政院農業委員會林務局各林區管理處暫行組織規程",
+    "RegulationType": "集水區治理類",
+    "HistoryId": "0d78fda744214370ab95fa0311a4cb76",
+    "IssueDate": "民國100年11月30日",
+    "SysOrganizationID": "d0d08d50092141f8b5b39b5165ca4c29"
+  },
+  {
+    "RegulationId": "dff28edfa9b24040bfa8042a38df7fa8",
+    "title": "申請進入自然保留區許可辦法",
+    "RegulationType": "林政管理類",
+    "HistoryId": "0e72bd3c8b5545678bb33f6e36ddabba",
+    "IssueDate": "民國106年10月26日",
+    "SysOrganizationID": "d0d08d50092141f8b5b39b5165ca4c29"
+  },
+  {
+    "RegulationId": "6E2850ECA35644A7942C81C0AB791D7F",
+    "title": "國有林林產物處分規則",
+    "RegulationType": "造林生產類",
+    "HistoryId": "9C2BD93572C746B29BFD593EF5C34642",
+    "IssueDate": "民國102年12月06日",
+    "SysOrganizationID": "9b0f8386675e43a89d1a2f355103d5e4"
+  },
+  {
+    "RegulationId": "d9a8638d324d4d51a359595f4a8a629a",
+    "title": "國有林林產物處分規則 ",
+    "RegulationType": "造林生產類",
+    "HistoryId": "20a7d58fbeae4fc081c17f72bd6794f9",
+    "IssueDate": "民國102年12月06日",
+    "SysOrganizationID": "d0d08d50092141f8b5b39b5165ca4c29"
+  },
+  {
+    "RegulationId": "1b24de1f985041a180d7bf9d23c497ba",
+    "title": "林產物伐採查驗規則",
+    "RegulationType": "森林企劃類",
+    "HistoryId": "51044578a12c47b0ac95660a6e4b3173",
+    "IssueDate": "民國109年11月01日",
+    "SysOrganizationID": "9b0f8386675e43a89d1a2f355103d5e4"
+  },
+  {
+    "RegulationId": "AB58545E2F424BB3A09E2DCDF75B0906",
+    "title": "獎勵輔導造林辦法",
+    "RegulationType": "造林生產類",
+    "HistoryId": "9C2BD93572C746B29BFD593EF5C34642",
+    "IssueDate": "民國103年07月07日",
+    "SysOrganizationID": "d0d08d50092141f8b5b39b5165ca4c29"
+  },
+  {
+    "RegulationId": "B7368501C94E45A78DF255C9AEBBA27A",
+    "title": "森林法",
+    "RegulationType": "基本法規",
+    "HistoryId": "9C2BD93572C746B29BFD593EF5C34642",
+    "IssueDate": "民國93年01月20日",
+    "SysOrganizationID": "d0d08d50092141f8b5b39b5165ca4c29"
+  }
+]

@@ -1,0 +1,667 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="NT_PlantTreeModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="tbAppContractTypeDoc">
+    <Key>
+      <PropertyRef Name="AppContractTypeDocID" />
+    </Key>
+    <Property Name="AppContractTypeDocID" Type="String" MaxLength="32" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="AppContractType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DocumentName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="DocumentDesc" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="MustHaveType" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="CopiesNumber" Type="Int32" />
+    <Property Name="DispType" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="OrderKey" Type="Int32" />
+    <Property Name="ItemNumber" Type="Int32" />
+    <Property Name="DocumentData" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tbAppSaplingAllocation">
+    <Key>
+      <PropertyRef Name="AppSaplingAllocationID" />
+    </Key>
+    <Property Name="AppSaplingAllocationID" Type="String" MaxLength="32" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="AppContractTypeID" Type="String" MaxLength="32" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="AllocationNum" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="AllocationNo" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ForecastDate" Type="DateTime" Precision="0" />
+    <Property Name="Memo" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="ModifyUser" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="ModifyDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="tbAppSurvey">
+    <Key>
+      <PropertyRef Name="AppSurveyID" />
+    </Key>
+    <Property Name="AppSurveyID" Type="String" MaxLength="32" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="AppSurveyNo" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="AppSurveyStartDate" Type="DateTime" Precision="3" />
+    <Property Name="AppSurveyEndDate" Type="DateTime" Precision="3" />
+    <Property Name="AppSurveyPurpose" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AppSurveyStatus" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+    <Property Name="AppSurveyStateName" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="ModifyUser" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="ModifyDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="tbAppSurveyTable">
+    <Key>
+      <PropertyRef Name="AppSurveyTableID" />
+    </Key>
+    <Property Name="AppSurveyTableID" Type="String" MaxLength="32" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="AppSurveyID" Type="String" MaxLength="32" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="TableAlias" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TableName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ForeignKey" Type="String" MaxLength="32" FixedLength="true" Unicode="false" />
+    <Property Name="IsMustHave" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbAppSurveyUser">
+    <Key>
+      <PropertyRef Name="AppSurveyUserID" />
+    </Key>
+    <Property Name="AppSurveyUserID" Type="String" MaxLength="32" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="AppSurveyID" Type="String" MaxLength="32" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="UserID" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="Sort" Type="Int32" />
+    <Property Name="ModifyUser" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="ModifyDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="tbContractFruit">
+    <Key>
+      <PropertyRef Name="ContractFruitID" />
+    </Key>
+    <Property Name="ContractFruitID" Type="String" MaxLength="32" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="ContractID" Type="String" MaxLength="32" FixedLength="true" Unicode="false" />
+    <Property Name="TreeTableName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TreeTableKey" Type="String" MaxLength="32" FixedLength="true" Unicode="false" />
+    <Property Name="TreeFruitID" Type="String" MaxLength="32" FixedLength="true" Unicode="false" />
+    <Property Name="AppSurveyID" Type="String" MaxLength="32" FixedLength="true" Unicode="false" />
+    <Property Name="AppSurveyPlantTreeID" Type="String" MaxLength="32" FixedLength="true" Unicode="false" />
+    <Property Name="AppSurveyStatus" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+    <Property Name="TreeID" Type="String" MaxLength="32" FixedLength="true" Unicode="false" />
+    <Property Name="Area" Type="Decimal" Precision="9" Scale="4" />
+    <Property Name="PlantDate" Type="DateTime" Precision="0" />
+    <Property Name="Quantity" Type="Decimal" Precision="9" Scale="0" />
+    <Property Name="CollectTenor" Type="Decimal" Precision="8" Scale="4" />
+    <Property Name="TransferTenor" Type="Decimal" Precision="8" Scale="4" />
+    <Property Name="Memo" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="ModifyUser" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="ModifyDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="tbContractLand">
+    <Key>
+      <PropertyRef Name="ContractLandID" />
+    </Key>
+    <Property Name="ContractLandID" Type="String" MaxLength="32" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="ContractID" Type="String" MaxLength="32" FixedLength="true" Unicode="false" />
+    <Property Name="Area" Type="Decimal" Precision="15" Scale="6" />
+    <Property Name="UsePurpose" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="LandName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="InOutWorkAreaName" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="ZoneNo" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Memo" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="ModifyUser" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="ModifyDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="tbContractLandCadastral">
+    <Key>
+      <PropertyRef Name="ContractLandCadastralID" />
+    </Key>
+    <Property Name="ContractLandCadastralID" Type="String" MaxLength="32" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="ContractLandID" Type="String" MaxLength="32" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="LandCadastralID" Type="String" MaxLength="32" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="IsAllRent" Type="Boolean" Nullable="false" />
+    <Property Name="PrivateLandNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Area" Type="Decimal" Precision="15" Scale="6" />
+    <Property Name="ModifyUser" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="ModifyDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="tbContractLandForest">
+    <Key>
+      <PropertyRef Name="ContractLandForestID" />
+    </Key>
+    <Property Name="ContractLandForestID" Type="String" MaxLength="32" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="ContractLandID" Type="String" MaxLength="32" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="WorkAreaID" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="SegMentLandNo" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="PrivateLandNo" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="ModifyUser" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="ModifyDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="tbContractTree">
+    <Key>
+      <PropertyRef Name="ContractTreeID" />
+    </Key>
+    <Property Name="ContractTreeID" Type="String" MaxLength="32" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="ContractID" Type="String" MaxLength="32" FixedLength="true" Unicode="false" />
+    <Property Name="TreeID" Type="String" MaxLength="32" FixedLength="true" Unicode="false" />
+    <Property Name="Area" Type="Decimal" Precision="18" Scale="6" Nullable="false" />
+    <Property Name="PlantDate" Type="DateTime" Precision="0" />
+    <Property Name="Quantity" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="ModifyUser" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="ModifyDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="tbMeasureBoundaryPile">
+    <Key>
+      <PropertyRef Name="BoundaryPileID" />
+    </Key>
+    <Property Name="BoundaryPileID" Type="String" MaxLength="32" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="BoundaryLocID" Type="String" MaxLength="32" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="PileSort" Type="Int32" />
+    <Property Name="PileNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PileX" Type="Decimal" Precision="18" Scale="6" />
+    <Property Name="PileY" Type="Decimal" Precision="18" Scale="6" />
+    <Property Name="PileZ" Type="Decimal" Precision="18" Scale="6" />
+    <Property Name="ModifyUser" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="ModifyDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="tbNSAllotDetail">
+    <Key>
+      <PropertyRef Name="NSAllotDetailID" />
+    </Key>
+    <Property Name="NSAllotDetailID" Type="String" MaxLength="32" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="NSAllotID" Type="String" MaxLength="32" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="NSCultivateTreeID" Type="String" MaxLength="32" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="Quantity" Type="Int32" Nullable="false" />
+    <Property Name="Memo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tbNSAllotReceive">
+    <Key>
+      <PropertyRef Name="NSAllotReceiveID" />
+    </Key>
+    <Property Name="NSAllotReceiveID" Type="String" MaxLength="32" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="NSAllotID" Type="String" MaxLength="32" FixedLength="true" Unicode="false" />
+    <Property Name="NSAllotDetailID" Type="String" MaxLength="32" FixedLength="true" Unicode="false" />
+    <Property Name="NSCultivateTreeID" Type="String" MaxLength="32" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="ReceiveQuantity" Type="Int32" Nullable="false" />
+    <Property Name="ReceiveDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="SeedlingHigh" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SeedlingDiameter" Type="Double" Nullable="false" />
+    <Property Name="IsLock" Type="Boolean" Nullable="false" />
+    <Property Name="ModifyUser" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ModifyDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="tbNSCultivateWorkItem">
+    <Key>
+      <PropertyRef Name="NSCultivateWorkItemID" />
+    </Key>
+    <Property Name="NSCultivateWorkItemID" Type="String" MaxLength="32" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="NSScheduleDataPlanID" Type="String" MaxLength="32" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="Category" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="WorkItemName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="RecordItemName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="IsPurchase" Type="Boolean" Nullable="false" />
+    <Property Name="OrderKey" Type="Int32" Nullable="false" />
+    <Property Name="Total" Type="Double" Nullable="false" />
+    <Property Name="Unit" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="Fee" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="ModifyUser" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ModifyDate" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="tbNSCultivateWorkItemTemplate">
+    <Key>
+      <PropertyRef Name="NSCultivateWorkItemTemplateID" />
+    </Key>
+    <Property Name="NSCultivateWorkItemTemplateID" Type="String" MaxLength="32" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="NSScheduleTemplateID" Type="String" MaxLength="32" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="Category" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="WorkItemName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="RecordItemName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="IsPurchase" Type="Boolean" Nullable="false" />
+    <Property Name="OrderKey" Type="Int32" Nullable="false" />
+    <Property Name="Total" Type="Double" Nullable="false" />
+    <Property Name="Unit" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="Fee" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="ModifyUser" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ModifyDate" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="tbNSCultivateWorkPeriod">
+    <Key>
+      <PropertyRef Name="NSCultivateWorkPeriodID" />
+    </Key>
+    <Property Name="NSCultivateWorkPeriodID" Type="String" MaxLength="32" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="NSScheduleDataPlanID" Type="String" MaxLength="32" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="PeriodName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="StartDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="EndDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="OrderKey" Type="Int32" Nullable="false" />
+    <Property Name="ActualCompleteDate" Type="DateTime" Precision="0" />
+    <Property Name="CompleteArea" Type="Double" />
+    <Property Name="OverdueMemo" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ModifyUser" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ModifyDate" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="tbNSCultivateWorkPeriodTemplate">
+    <Key>
+      <PropertyRef Name="NSCultivateWorkPeriodTemplateID" />
+    </Key>
+    <Property Name="NSCultivateWorkPeriodTemplateID" Type="String" MaxLength="32" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="NSScheduleTemplateID" Type="String" MaxLength="32" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="PeriodName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="OrderKey" Type="Int32" Nullable="false" />
+    <Property Name="ModifyUser" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ModifyDate" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="tbNSCultivateWorkValue">
+    <Key>
+      <PropertyRef Name="NSCultivateWorkValueID" />
+    </Key>
+    <Property Name="NSCultivateWorkValueID" Type="String" MaxLength="32" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="NSScheduleDataPlanID" Type="String" MaxLength="32" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="NSCultivateWorkPeriodID" Type="String" MaxLength="32" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="NSCultivateWorkItemID" Type="String" MaxLength="32" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="WorkValue" Type="Double" Nullable="false" />
+    <Property Name="OrderKey" Type="Int32" Nullable="false" />
+    <Property Name="ModifyUser" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ModifyDate" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="tbNSCultivateWorkValueTemplate">
+    <Key>
+      <PropertyRef Name="NSCultivateWorkValueTemplateID" />
+    </Key>
+    <Property Name="NSCultivateWorkValueTemplateID" Type="String" MaxLength="32" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="NSScheduleTemplateID" Type="String" MaxLength="32" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="NSCultivateWorkPeriodTemplateID" Type="String" MaxLength="32" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="NSCultivateWorkItemTemplateID" Type="String" MaxLength="32" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="WorkValue" Type="Double" Nullable="false" />
+    <Property Name="OrderKey" Type="Int32" Nullable="false" />
+    <Property Name="ModifyUser" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ModifyDate" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="tbRelAppContractTypeSurvey">
+    <Key>
+      <PropertyRef Name="AppContractTypeID" />
+      <PropertyRef Name="AppSurveyID" />
+    </Key>
+    <Property Name="AppContractTypeID" Type="String" MaxLength="32" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="AppSurveyID" Type="String" MaxLength="32" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="IsNoSurvey" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="IsSameOtherSurvey" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Memo" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="ModifyUser" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="ModifyDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="tbSysUserData">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="SysOrganizationID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="SysGroupID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SubOrganizationName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IsEnable" Type="Boolean" />
+    <Property Name="IsDirector" Type="Boolean" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Tel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CellPhone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Memo" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="LastResetPwTime" Type="DateTime" Precision="3" />
+    <Property Name="ModifyUser" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="ModifyDate" Type="DateTime" Precision="3" />
+    <Property Name="IsDel" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tbTMLandList">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Guid" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="MyKey" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="UnifiedNo" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="CityCode" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="City" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="CityAreaCode" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="CityArea" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="DistrictCode" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="District" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="LandNumber" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="SurfaceArea" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="RegistrationOrder" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Owner" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="RightRegion" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="LandUseZoning" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="LandUseClassification" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="CurrentLandValue" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="DeclaredLandValueDate" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="DeclaredLandValue" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="SerialNumber" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="PropertyName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="CertificateNo" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Workstation" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Department" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ModalityIn" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="StatusIn" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="DocumentNo" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Date" Type="DateTime" Precision="0" />
+    <Property Name="Transfer" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Modality" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Memo" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ImportDate" Type="DateTime" Precision="3" />
+    <Property Name="IsDelete" Type="Boolean" Nullable="false" />
+    <Property Name="UserId" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdateStatus" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tbTMLandListBackup">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Guid" Type="String" MaxLength="450" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="MyKey" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="UnifiedNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CityCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CityAreaCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CityArea" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DistrictCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="District" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LandNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SurfaceArea" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="RegistrationOrder" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Owner" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="RightRegion" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LandUseZoning" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LandUseClassification" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CurrentLandValue" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DeclaredLandValueDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DeclaredLandValue" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SerialNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PropertyName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CertificateNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Workstation" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Department" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ModalityIn" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="StatusIn" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DocumentNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Date" Type="DateTime" Precision="0" />
+    <Property Name="Transfer" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Modality" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Memo" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="UpdateStatus" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+    <Property Name="IsDelete" Type="Boolean" Nullable="false" />
+    <Property Name="UserId" Type="String" MaxLength="450" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbTMLandListRecord">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LandListGuid" Type="String" MaxLength="450" FixedLength="false" Unicode="true" />
+    <Property Name="ImportDate" Type="DateTime" Precision="3" />
+    <Property Name="ImportUserId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ImportCount" Type="Int32" />
+    <Property Name="Increase" Type="Int32" />
+    <Property Name="Decrease" Type="Int32" />
+    <Property Name="BackupStatus" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="BackupDate" Type="DateTime" Precision="3" />
+    <Property Name="BackupUserId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tbTMLandListResurvey">
+    <Key>
+      <PropertyRef Name="TMLandListResurveyID" />
+    </Key>
+    <Property Name="TMLandListResurveyID" Type="String" MaxLength="32" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="TMLandListID" Type="Int32" Nullable="false" />
+    <Property Name="MyKey" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CityCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CityAreaCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CityArea" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DistrictCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="District" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="LandNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ModifyUser" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ModifyDate" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="tbTree">
+    <Key>
+      <PropertyRef Name="TreeID" />
+    </Key>
+    <Property Name="TreeID" Type="String" MaxLength="32" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="TreeTypeID" Type="String" MaxLength="32" FixedLength="true" Unicode="false" />
+    <Property Name="SortNum" Type="Int32" />
+    <Property Name="TreeName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="UnitQty" Type="Decimal" Precision="9" Scale="0" />
+    <Property Name="Purpose" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IsAwardTree" Type="Boolean" Nullable="false" />
+    <Property Name="IsEconomic" Type="Boolean" Nullable="false" />
+    <Property Name="HewAge" Type="Int32" />
+    <Property Name="IsProtect" Type="Boolean" Nullable="false" />
+    <Property Name="HewAgeProtect" Type="Int32" />
+    <Property Name="IsHasFruit" Type="Boolean" Nullable="false" />
+    <Property Name="Memo" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Name="TreePeriod" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="GovRate" Type="Decimal" Precision="3" Scale="0" />
+    <Property Name="ModifyUser" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="ModifyDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="tbTreeFruit">
+    <Key>
+      <PropertyRef Name="TreeFruitID" />
+    </Key>
+    <Property Name="TreeFruitID" Type="String" MaxLength="32" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="TreeID" Type="String" MaxLength="32" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="FruitName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ProduceUnitType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ProduceUnit" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="ModifyUser" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ModifyDate" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="V_ContractLand">
+    <Key>
+      <PropertyRef Name="ContractLandID" />
+    </Key>
+    <Property Name="ContractLandID" Type="String" MaxLength="32" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="ContractID" Type="String" MaxLength="32" FixedLength="true" Unicode="false" />
+    <Property Name="LandName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UsePurpose" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ZoneNo" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="InOutWorkAreaName" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Memo" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Area" Type="Decimal" Precision="15" Scale="6" />
+    <Property Name="ContractLandForestID" Type="String" MaxLength="32" FixedLength="true" Unicode="false" />
+    <Property Name="WorkAreaID" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="WorkAreaName" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="SegMentLandNo" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="PrivateLandNo" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="ContractLandCadastralID" Type="String" MaxLength="32" FixedLength="true" Unicode="false" />
+    <Property Name="LandCadastralID" Type="String" MaxLength="32" FixedLength="true" Unicode="false" />
+    <Property Name="IsAllRent" Type="Boolean" />
+    <Property Name="CityID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="CityName" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="TownID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="TownName" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="MainSec" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SubSec" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LandNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CadPrivateLandNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CadArea" Type="Decimal" Precision="15" Scale="6" />
+    <Property Name="FullLandCadastralName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="SimpLandCadastralName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="FullLandForestName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="SimpLandForestName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="V_ContractLandCadastral">
+    <Key>
+      <PropertyRef Name="ContractLandCadastralID" />
+      <PropertyRef Name="ContractLandID" />
+      <PropertyRef Name="LandCadastralID" />
+    </Key>
+    <Property Name="ContractLandCadastralID" Type="String" MaxLength="32" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="ContractLandID" Type="String" MaxLength="32" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="LandCadastralID" Type="String" MaxLength="32" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="IsAllRent" Type="Boolean" />
+    <Property Name="PrivateLandNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Area" Type="Decimal" Precision="15" Scale="6" />
+    <Property Name="CityID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="CityName" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="TownID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="TownName" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="MainSec" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SubSec" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LandNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FullLandCadastralName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="SimpLandCadastralName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="V_ContractLandForest">
+    <Key>
+      <PropertyRef Name="ContractLandForestID" />
+      <PropertyRef Name="ContractLandID" />
+    </Key>
+    <Property Name="ContractLandForestID" Type="String" MaxLength="32" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="ContractLandID" Type="String" MaxLength="32" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="WorkAreaID" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="WorkAreaName" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="SegMentLandNo" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="PrivateLandNo" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="FullLandForestName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="SimpLandForestName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="tbAppContractTypeDoc" EntityType="Self.tbAppContractTypeDoc" />
+    <EntitySet Name="tbAppSaplingAllocation" EntityType="Self.tbAppSaplingAllocation" />
+    <EntitySet Name="tbAppSurvey" EntityType="Self.tbAppSurvey" />
+    <EntitySet Name="tbAppSurveyTable" EntityType="Self.tbAppSurveyTable" />
+    <EntitySet Name="tbAppSurveyUser" EntityType="Self.tbAppSurveyUser" />
+    <EntitySet Name="tbContractFruit" EntityType="Self.tbContractFruit" />
+    <EntitySet Name="tbContractLand" EntityType="Self.tbContractLand" />
+    <EntitySet Name="tbContractLandCadastral" EntityType="Self.tbContractLandCadastral" />
+    <EntitySet Name="tbContractLandForest" EntityType="Self.tbContractLandForest" />
+    <EntitySet Name="tbContractTree" EntityType="Self.tbContractTree" />
+    <EntitySet Name="tbMeasureBoundaryPile" EntityType="Self.tbMeasureBoundaryPile" />
+    <EntitySet Name="tbNSAllotDetail" EntityType="Self.tbNSAllotDetail" />
+    <EntitySet Name="tbNSAllotReceive" EntityType="Self.tbNSAllotReceive" />
+    <EntitySet Name="tbNSCultivateWorkItem" EntityType="Self.tbNSCultivateWorkItem" />
+    <EntitySet Name="tbNSCultivateWorkItemTemplate" EntityType="Self.tbNSCultivateWorkItemTemplate" />
+    <EntitySet Name="tbNSCultivateWorkPeriod" EntityType="Self.tbNSCultivateWorkPeriod" />
+    <EntitySet Name="tbNSCultivateWorkPeriodTemplate" EntityType="Self.tbNSCultivateWorkPeriodTemplate" />
+    <EntitySet Name="tbNSCultivateWorkValue" EntityType="Self.tbNSCultivateWorkValue" />
+    <EntitySet Name="tbNSCultivateWorkValueTemplate" EntityType="Self.tbNSCultivateWorkValueTemplate" />
+    <EntitySet Name="tbRelAppContractTypeSurvey" EntityType="Self.tbRelAppContractTypeSurvey" />
+    <EntitySet Name="tbSysUserData" EntityType="Self.tbSysUserData" />
+    <EntitySet Name="tbTMLandList" EntityType="Self.tbTMLandList" />
+    <EntitySet Name="tbTMLandListBackup" EntityType="Self.tbTMLandListBackup" />
+    <EntitySet Name="tbTMLandListRecord" EntityType="Self.tbTMLandListRecord" />
+    <EntitySet Name="tbTMLandListResurvey" EntityType="Self.tbTMLandListResurvey" />
+    <EntitySet Name="tbTree" EntityType="Self.tbTree" />
+    <EntitySet Name="tbTreeFruit" EntityType="Self.tbTreeFruit" />
+    <EntitySet Name="V_ContractLand" EntityType="Self.V_ContractLand" />
+    <EntitySet Name="V_ContractLandCadastral" EntityType="Self.V_ContractLandCadastral" />
+    <EntitySet Name="V_ContractLandForest" EntityType="Self.V_ContractLandForest" />
+    <FunctionImport Name="SP_TM_UpdateLandByResurvey" ReturnType="Collection(String)">
+      <Parameter Name="TMLandListID" Mode="In" Type="String" />
+      <Parameter Name="TMLandListResurveyID" Mode="In" Type="String" />
+    </FunctionImport>
+    <EntitySet Name="V_RTUpdateLandPrice" EntityType="NT_PlantTreeModel.V_RTUpdateLandPrice" />
+    <EntitySet Name="tbRTLandValueTemp" EntityType="NT_PlantTreeModel.tbRTLandValueTemp" />
+    <EntitySet Name="tbAppSaplingAllocationItem" EntityType="NT_PlantTreeModel.tbAppSaplingAllocationItem" />
+    <EntitySet Name="V_ContractAccept" EntityType="NT_PlantTreeModel.V_ContractAccept" />
+  </EntityContainer>
+  <EntityType Name="V_RTUpdateLandPrice">
+    <Key>
+      <PropertyRef Name="ContractID" />
+      <PropertyRef Name="LandContractID" />
+      <PropertyRef Name="RTLandExtendID" />
+      <PropertyRef Name="ContractLandCadastralID" />
+      <PropertyRef Name="RentCalcType" />
+    </Key>
+    <Property Name="ContractID" Type="String" Nullable="false" MaxLength="32" FixedLength="true" Unicode="false" />
+    <Property Name="LandContractID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="RTLandExtendID" Type="String" Nullable="false" MaxLength="32" FixedLength="true" Unicode="false" />
+    <Property Name="ContractLandCadastralID" Type="String" Nullable="false" MaxLength="32" FixedLength="true" Unicode="false" />
+    <Property Name="WorkStationID" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+    <Property Name="RentCalcType" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="CityID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="TownID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="MainSec" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SubSec" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LandNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Unit" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="SecCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="LevyYear" Type="Int32" />
+    <Property Name="RentYear" Type="Int32" />
+    <Property Name="PriceYear" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="LandPrice" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="CurrentValue" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="AppraisalLandValue" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="ResponseResult" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ResultExplain" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="RTLandValueSurveyID" Type="String" MaxLength="32" FixedLength="true" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tbRTLandValueTemp">
+    <Key>
+      <PropertyRef Name="RTLandValueSurveyID" />
+    </Key>
+    <Property Name="RTLandValueSurveyID" Type="String" Nullable="false" MaxLength="32" FixedLength="true" Unicode="false" />
+    <Property Name="RTLandExtendID" Type="String" Nullable="false" MaxLength="32" FixedLength="true" Unicode="false" />
+    <Property Name="LevyYear" Type="Int32" Nullable="false" />
+    <Property Name="RentYear" Type="Int32" Nullable="false" />
+    <Property Name="UNIT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SEC" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PriceYear" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="LandPrice" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="CurrentValue" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="AppraisalLandValue" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="ResponseResult" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ResultExplain" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ResponseDate" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="tbAppSaplingAllocationItem">
+    <Key>
+      <PropertyRef Name="AppSaplingAllocationItemID" />
+    </Key>
+    <Property Name="AppSaplingAllocationItemID" Type="String" Nullable="false" MaxLength="32" FixedLength="true" Unicode="false" />
+    <Property Name="AppSaplingAllocationID" Type="String" Nullable="false" MaxLength="32" FixedLength="true" Unicode="false" />
+    <Property Name="TreeID" Type="String" MaxLength="32" FixedLength="true" Unicode="false" />
+    <Property Name="SaplingType" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Area" Type="Decimal" Precision="9" Scale="4" />
+    <Property Name="Quantity" Type="Int32" />
+    <Property Name="ModifyUser" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="ModifyDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="V_ContractAccept">
+    <Key>
+      <PropertyRef Name="ContractID" />
+      <PropertyRef Name="LandContractID" />
+      <PropertyRef Name="SourceContractID" />
+      <PropertyRef Name="AppFormID" />
+      <PropertyRef Name="AppContractTypeID" />
+    </Key>
+    <Property Name="ContractID" Type="String" Nullable="false" MaxLength="32" FixedLength="true" Unicode="false" />
+    <Property Name="ContractStatusID" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+    <Property Name="LandContractID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FromDate" Type="DateTime" Precision="0" />
+    <Property Name="ExpirtyDate" Type="DateTime" Precision="0" />
+    <Property Name="Area" Type="Decimal" Precision="15" Scale="6" />
+    <Property Name="RentCode" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+    <Property Name="ContractClassify" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="ContractChangeDate" Type="DateTime" Precision="0" />
+    <Property Name="ContractChangeNo" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="ContractChangePurpose" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AgreeOrder" Type="Int32" />
+    <Property Name="UsePurpose" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="LandKindName" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="WorkStationID" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+    <Property Name="Memo" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="SourceContractID" Type="String" Nullable="false" MaxLength="32" FixedLength="true" Unicode="false" />
+    <Property Name="LesseeName" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Name="AppFormID" Type="String" Nullable="false" MaxLength="32" FixedLength="true" Unicode="false" />
+    <Property Name="AppContractStatus" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="AppFormStatus" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="IsAppFormDataOK" Type="String" MaxLength="1" FixedLength="true" Unicode="true" />
+    <Property Name="AppTypeName" Type="String" MaxLength="400" FixedLength="false" Unicode="false" />
+    <Property Name="AppTypeState" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AppTypeStateID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AppContractTypeID" Type="String" Nullable="false" MaxLength="32" FixedLength="true" Unicode="false" />
+    <Property Name="AcceptDate" Type="DateTime" Precision="0" />
+    <Property Name="AcceptUser" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="UnderTaker" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+  </EntityType>
+</Schema>

@@ -1,0 +1,34 @@
+    ======  ======
+    Time:2022/8/22 下午 02:29:59
+    Title: Initiate log
+    Message: 
+    Time:2022/8/22 下午 02:29:59
+    Title: Initiate InternalManager
+    Message: Trying to Validate License
+    Time:2022/8/22 下午 02:29:59
+    Title: Requesting EVT
+    Message: EVTP
+    Time:2022/8/22 下午 02:29:59
+    Title: Requesting Validation
+    Message: ILMValidate
+    Time:2022/8/22 下午 02:29:59
+    Title: LICENSER
+    Message: FNF
+    Time:2022/8/22 下午 02:30:01
+    Title: 拒絕存取路徑 'C:\ProgramData\Telerik\Hash.lic'。
+    Message:    於 System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   於 System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   於 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   於 Telerik.Licensing.Licenser.ReadHashPass()
+    Time:2022/8/22 下午 02:30:01
+    Title: 拒絕存取路徑 'C:\ProgramData\Telerik\Hash.lic'。
+    Message:    於 System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   於 System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   於 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   於 Telerik.Licensing.Licenser.ReadHashPass()
+    ResolveFWLinkAccountManager statusCode is redirect: 'True'
+    ResolveFWLinkAccountManager resovled fwlink from 'https://go.microsoft.com/fwlink/?LinkID=415837' to 'https://app.vssps.visualstudio.com/'
+    2022-08-22-14.29.39.618-devenv-94020.tsv -> 2022-08-23-14.30.05.474-devenv-94020.tsv
+2-07-02-15.45.54.102-devenv-56776.tsv -> 2022-07-03-17.38.54.182-devenv-56776.tsv
+    devenv.exe Information: 0 : Refreshing auth token for presence service.
+    2022-07-03-17.38.54.182-devenv-56776.tsv -> 2022-07-04-11.25.32.336-devenv-56776.tsv
