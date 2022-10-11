@@ -94,7 +94,7 @@ namespace WebBO.Controllers
            
             var password = Extension.StringEncrypt._3DESCrypto.TripleDesDecryptorCBC(request.accpassword);
 
-            pw = crY.ClassLibrary.SecuritySolution.Cryptography.Cryptography.Current.Encrypt(password);
+            //pw = crY.ClassLibrary.SecuritySolution.Cryptography.Cryptography.Current.Encrypt(password);
             try
             {
 
@@ -106,14 +106,14 @@ namespace WebBO.Controllers
                                     ");
 
                 parm.Add("@id", request.accontid);
-                parm.Add("@password", pw);
+                parm.Add("@password", password);
 
                 table.Load(cn.ExecuteReader(querySql.ToString(), parm));
                 if (table.Rows.Count > 0)
                 {                   
                         //pw = table.Rows[0]["accpassword"].ToString();
                         //table.Rows[0]["accpassword"] = crY.ClassLibrary.SecuritySolution.Cryptography.Cryptography.Current.Decrypt(pw);
-                        //dt = table;
+                        dt = table;
                         isSuccess = true;
                         message = "成功。";                   
                 }

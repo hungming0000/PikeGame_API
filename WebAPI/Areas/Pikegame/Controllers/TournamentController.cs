@@ -7,12 +7,12 @@ using System.Web;
 using System.Web.Http;
 using System.Web.Http.Cors;
 
-namespace WebAPI.Areas.BusStopManagement.Controllers
+namespace WebAPI.Areas.Pikegame.Controllers
 {
-    public class CompanyController : ApiController
+    public class TournamentController : ApiController
     {
         [EnableCors(origins: "*", headers: "*", methods: "*")]
-        [Route("BusStopManagement/Company/{MethodName}")]
+        [Route("Pikegame/Tournament/{MethodName}")]
         [HttpPost]
         public IHttpActionResult ExecuteMethod(string MethodName)
         {
@@ -22,7 +22,7 @@ namespace WebAPI.Areas.BusStopManagement.Controllers
                 AssemblyLauncher assemblyLauncher = new AssemblyLauncher();
                 //執行指定的Method                
                 var ret = assemblyLauncher.ExecuteCommand(
-                    new WebBO.Areas.BusStopManagement.Controllers.CompanyController(),
+                    new WebBO.Areas.Pikegame.Controllers.TournamentController(),
                     MethodName,
                    Request.Content.ReadAsStringAsync().Result
                     );

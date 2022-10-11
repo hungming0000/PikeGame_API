@@ -343,9 +343,7 @@
     <Compile Include="App_Start\SwaggerConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Areas\BusStopManagement\Controllers\BusShelterController.cs" />
-    <Compile Include="Areas\BusStopManagement\Controllers\BusStationController.cs" />
-    <Compile Include="Areas\BusStopManagement\Controllers\CompanyController.cs" />
-    <Compile Include="Areas\BusStopManagement\Controllers\IntelStopController.cs" />
+    <Compile Include="Areas\Pikegame\Controllers\TournamentController.cs" />
     <Compile Include="Auth\ADAuth.cs" />
     <Compile Include="Auth\OnlyReqHttpsAttribute.cs" />
     <Compile Include="Class\clsBabu.cs" />
@@ -353,7 +351,6 @@
     <Compile Include="Class\EZRs232.cs" />
     <Compile Include="Class\Printer.cs" />
     <Compile Include="Class\RawJsonActionResult.cs" />
-    <Compile Include="Areas\BusStopManagement\Controllers\BusStopController.cs" />
     <Compile Include="Controllers\HmMenuController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\UploadFileController.cs" />
@@ -876,9 +873,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Areas\BusStopManagement\Views\BusShelter\" />
-    <Folder Include="Areas\BusStopManagement\Views\BusStation\" />
-    <Folder Include="Areas\BusStopManagement\Views\Company\" />
-    <Folder Include="Areas\BusStopManagement\Views\IntelStop\" />
+    <Folder Include="Areas\Pikegame\Views\Tournament\" />
     <Folder Include="assets\" />
     <Folder Include="Content\" />
     <Folder Include="lib\" />

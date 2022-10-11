@@ -195,14 +195,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Areas\BusStopManagement\Controllers\BusShelterController.cs" />
-    <Compile Include="Areas\BusStopManagement\Controllers\BusStationController.cs" />
-    <Compile Include="Areas\BusStopManagement\Controllers\BusStopController.cs" />
-    <Compile Include="Areas\BusStopManagement\Controllers\CompanyController.cs" />
-    <Compile Include="Areas\BusStopManagement\Controllers\IntelStopController.cs" />
     <Compile Include="Areas\BusStopManagement\Models\BuscompanymModel.cs" />
     <Compile Include="Areas\BusStopManagement\Models\BusshelterModel.cs" />
     <Compile Include="Areas\BusStopManagement\Models\BusstationmModel.cs" />
     <Compile Include="Areas\BusStopManagement\Models\UpdateBusstopmnewestModel.cs" />
+    <Compile Include="Areas\Pikegame\Controllers\TournamentController.cs" />
     <Compile Include="Connected Services\cmsService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -819,7 +816,9 @@
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Areas\Pikegame\Models\" />
+  </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Connected Services\cmsService\" />
     <WCFMetadataStorage Include="Connected Services\OrderService\" />

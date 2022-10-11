@@ -8,46 +8,50 @@ using System.Threading.Tasks;
 using WebBO.General;
 using WebBO.General.Repository.Connection;
 
-namespace WebBO.Areas.BusStopManagement.Controllers
+namespace WebBO.Areas.Pikegame.Controllers
 {
-    public class IntelStopController
+    public class TournamentController
     {
         protected ConnectionFactory _connectionFactory;
-        public IntelStopController()
+        public TournamentController()
         {
             _connectionFactory = new ConnectionFactory();
 
         }
 		/// <summary>
-		/// 取得智慧站牌
+		/// 取得比賽列表
 		/// </summary>
 		/// <returns></returns>
-		public ExecuteCommandAPIResult GetVebusintelstopattr()
+		public ExecuteCommandAPIResult GetTournament()
 		{
 			IDbConnection cn = _connectionFactory.CreateConnection("Pgsql");
 			string message = "";
 			bool isSuccess = true;
 			StringBuilder querySql = new StringBuilder();
 			querySql.Append(@"
-			                 SELECT imsi,
-											vtid,
-											alivetime,
-											code,
-											connect_time,
-											disconnect_time,
-											mname,
-											name,
-											CONCAT (
-												parameter,
-												'秒'
-												) parameter,
-											regioncode,
-											STATE as busstate,
-											stoptypedesc,
-											sys_type,
-											routes,
-											positions
-										FROM operationpolicy.vebusintelstopattr t1
+			          SELECT t.*,
+						(
+							SELECT accountname
+							FROM accountm AS a
+							WHERE a.accountid = s.accountid
+							) jugde,
+						(
+							SELECT accountname
+							FROM accountm AS a
+							WHERE a.accountid = s.red_accountid
+							) red_account,
+						(
+							SELECT accountname
+							FROM accountm AS a
+							WHERE a.accountid = s.blue_accountid
+							) blue_account,
+						s.sessionname,
+						s.sessiontime,
+						s.redfraction_sum,
+						s.bluefraction_sum,
+						s.mstatus
+					FROM PUBLIC.session AS s
+					INNER JOIN PUBLIC.tournament AS t ON s.tournamentid = t.tournamentid
 
             ");
 
@@ -62,7 +66,5 @@ namespace WebBO.Areas.BusStopManagement.Controllers
 				Count = dt.Rows.Count,
 			};
 		}
-
-
 	}
 }
