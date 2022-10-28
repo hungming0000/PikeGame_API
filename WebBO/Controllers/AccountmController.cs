@@ -73,7 +73,7 @@ namespace WebBO.Controllers
         #region 使用者登入
         public class LoginRequest
         {
-            public string accontid { get; set; }
+            public string accountid { get; set; }
             public string accpassword { get; set; }
         }
         /// <summary>
@@ -100,12 +100,12 @@ namespace WebBO.Controllers
 
                 querySql.Append(@"
                                   SELECT * FROM public.accountm
-                                                             Where accontid= @id 
+                                                             Where accountid= @id 
                                                              and accpassword= @password
-                                                             ORDER BY accontid ASC
+                                                             ORDER BY accountid ASC
                                     ");
 
-                parm.Add("@id", request.accontid);
+                parm.Add("@id", request.accountid);
                 parm.Add("@password", password);
 
                 table.Load(cn.ExecuteReader(querySql.ToString(), parm));
@@ -152,13 +152,13 @@ namespace WebBO.Controllers
             string message = "";
             bool isSuccess = true;
 
-            var id = crY.ClassLibrary.SecuritySolution.Cryptography.Cryptography.Current.Encrypt(request.accontid);
+            var id = crY.ClassLibrary.SecuritySolution.Cryptography.Cryptography.Current.Encrypt(request.accountid);
 
             StringBuilder querySql = new StringBuilder();
             querySql.Append(@"
             SELECT * FROM public.accountm
-                                     Where accontid= @id And acm_password=@password
-                                     ORDER BY accontid ASC
+                                     Where accountid= @id And acm_password=@password
+                                     ORDER BY accountid ASC
             ");
 
             var parm = new DynamicParameters();

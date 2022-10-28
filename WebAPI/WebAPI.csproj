@@ -343,6 +343,8 @@
     <Compile Include="App_Start\SwaggerConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Areas\BusStopManagement\Controllers\BusShelterController.cs" />
+    <Compile Include="Areas\Pikegame\Controllers\SessionController.cs" />
+    <Compile Include="Areas\Pikegame\Controllers\SessiondetialController.cs" />
     <Compile Include="Areas\Pikegame\Controllers\TournamentController.cs" />
     <Compile Include="Auth\ADAuth.cs" />
     <Compile Include="Auth\OnlyReqHttpsAttribute.cs" />
@@ -353,6 +355,7 @@
     <Compile Include="Class\RawJsonActionResult.cs" />
     <Compile Include="Controllers\HmMenuController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\NotifyWebSocketController.cs" />
     <Compile Include="Controllers\UploadFileController.cs" />
     <Compile Include="Controllers\UploadPictureController.cs" />
     <Compile Include="Controllers\AccountmController.cs" />
@@ -873,6 +876,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Areas\BusStopManagement\Views\BusShelter\" />
+    <Folder Include="Areas\Pikegame\Views\Sessiondetial\" />
+    <Folder Include="Areas\Pikegame\Views\Session\" />
     <Folder Include="Areas\Pikegame\Views\Tournament\" />
     <Folder Include="assets\" />
     <Folder Include="Content\" />
@@ -880,6 +885,7 @@
     <Folder Include="Logs\" />
     <Folder Include="Views\BusStopManagement\" />
     <Folder Include="Views\HmMenu\" />
+    <Folder Include="Views\NotifyWebSocket\" />
     <Folder Include="Views\UploadFile\" />
     <Folder Include="Views\UploadPicture\" />
     <Folder Include="Views\UserData\" />

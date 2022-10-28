@@ -199,7 +199,11 @@
     <Compile Include="Areas\BusStopManagement\Models\BusshelterModel.cs" />
     <Compile Include="Areas\BusStopManagement\Models\BusstationmModel.cs" />
     <Compile Include="Areas\BusStopManagement\Models\UpdateBusstopmnewestModel.cs" />
+    <Compile Include="Areas\Pikegame\Controllers\SessionController.cs" />
+    <Compile Include="Areas\Pikegame\Controllers\SessiondetialController.cs" />
     <Compile Include="Areas\Pikegame\Controllers\TournamentController.cs" />
+    <Compile Include="Areas\Pikegame\Models\TournamentDetailModel.cs" />
+    <Compile Include="Areas\Pikegame\Models\TournamentModel.cs" />
     <Compile Include="Connected Services\cmsService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -816,9 +820,7 @@
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Areas\Pikegame\Models\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <WCFMetadataStorage Include="Connected Services\cmsService\" />
     <WCFMetadataStorage Include="Connected Services\OrderService\" />
