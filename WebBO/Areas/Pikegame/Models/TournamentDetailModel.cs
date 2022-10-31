@@ -22,9 +22,10 @@ namespace WebBO.Areas.Pikegame.Models
     {
         public int sessionid { get; set; }
         public int tournamentid { get; set; }
+        public string judge_accountid { get; set; }
         public string judge_account { get; set; }
         public string sessionname { get; set; }
-        public DateTime? sessiontime { get; set; }
+        public string sessiontime { get; set; }
         public string red_accountid { get; set; }
         public string red_account { get; set; }
         public string blue_accountid { get; set; }

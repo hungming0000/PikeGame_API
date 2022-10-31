@@ -307,7 +307,7 @@ namespace WebBO.Areas.Pikegame.Controllers
 			parm.Add("@tournamentenddate", request.tournamentenddate);
 			parm.Add("@maxfraction", request.maxfraction);			
 
-			dt.Load(cn.ExecuteReader(querySql.ToString(), parm));
+			//dt.Load(cn.ExecuteReader(querySql.ToString(), parm));
 
 			return new ExecuteCommandAPIResult()
 			{
