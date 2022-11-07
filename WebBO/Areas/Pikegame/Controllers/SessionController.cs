@@ -19,6 +19,7 @@ namespace WebBO.Areas.Pikegame.Controllers
             _connectionFactory = new ConnectionFactory();
         }
 
+		#region 取得比賽場次列表
 		/// <summary>
 		/// 取得比賽場次列表
 		/// </summary>
@@ -54,11 +55,10 @@ namespace WebBO.Areas.Pikegame.Controllers
 											SELECT accountname
 											FROM accountm AS a
 											WHERE a.accountid = s.blue_accountid
-											) blue_account
+											) blue_account,
+											is_equipment_exist(sessionid)
 									FROM PUBLIC.session s
 									ORDER BY sessionid ASC
-
-
             ");
 
 			var dt = new DataTable();
@@ -72,12 +72,13 @@ namespace WebBO.Areas.Pikegame.Controllers
 				Count = dt.Rows.Count,
 			};
 		}
+        #endregion
 
-		/// <summary>
-		/// 取得比賽場次列表
-		/// </summary>
-		/// <returns></returns>
-		public DataTable GetSession()
+        /// <summary>
+        /// 取得比賽場次列表
+        /// </summary>
+        /// <returns></returns>
+        public DataTable GetSession()
 		{
 			IDbConnection cn = _connectionFactory.CreateConnection("Pgsql");
 			
@@ -111,8 +112,9 @@ namespace WebBO.Areas.Pikegame.Controllers
 		}
 
 
+		#region 新增比賽場次列表
 		/// <summary>
-		/// 新增比賽列表
+		/// 新增比賽場次列表
 		/// </summary>
 		/// <returns></returns>
 		public ExecuteCommandAPIResult SetSession(SessionModel request)
@@ -152,7 +154,7 @@ namespace WebBO.Areas.Pikegame.Controllers
 			parm.Add("@sessiontime", request.sessiontime);
 			parm.Add("@red_accountid", request.red_accountid);
 			parm.Add("@blue_accountid", request.blue_accountid);			
-			parm.Add("@mstatus", true);
+			parm.Add("@mstatus", 0);
 
 			var dt = new DataTable();		
 
@@ -167,5 +169,7 @@ namespace WebBO.Areas.Pikegame.Controllers
 			};
 		}
 
-	}
+        #endregion
+
+    }
 }

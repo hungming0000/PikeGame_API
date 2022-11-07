@@ -19,6 +19,7 @@ namespace WebBO.Areas.Pikegame.Controllers
             _connectionFactory = new ConnectionFactory();
 
         }
+		#region 取得比賽列表
 		/// <summary>
 		/// 取得比賽列表
 		/// </summary>
@@ -64,7 +65,7 @@ namespace WebBO.Areas.Pikegame.Controllers
 					SELECT tournamentid,
 						tournamentname,
 						(tournamentstartdate::TEXT) || '~' || (tournamentenddate::TEXT) tournamentdate,
-						maxfraction
+						maxfraction					
 					FROM PUBLIC.tournament
 					ORDER BY tournamentstartdate DESC
 			");
@@ -110,8 +111,9 @@ namespace WebBO.Areas.Pikegame.Controllers
 				Count = dt.Rows.Count,
 			};
 		}
+        #endregion
 
-		public static DataTable ObjectToData(object o)
+        public static DataTable ObjectToData(object o)
 		{
 			DataTable dt = new DataTable("OutputData");
 
@@ -131,6 +133,7 @@ namespace WebBO.Areas.Pikegame.Controllers
 			return dt;
 		}
 
+		#region 取得選手列表
 		/// <summary>
 		/// 取得選手列表
 		/// </summary>
@@ -159,9 +162,10 @@ namespace WebBO.Areas.Pikegame.Controllers
 				Count = dt.Rows.Count,
 			};
 		}
+		#endregion
 
 
-
+		#region 取得裁判列表
 		/// <summary>
 		/// 取得裁判列表
 		/// </summary>
@@ -190,7 +194,9 @@ namespace WebBO.Areas.Pikegame.Controllers
 				Count = dt.Rows.Count,
 			};
 		}
+		#endregion
 
+		#region  取得現在比賽的場次
 		/// <summary>
 		/// 取得現在比賽的場次
 		/// </summary>
@@ -213,6 +219,35 @@ namespace WebBO.Areas.Pikegame.Controllers
 			return dt;
 		}
 
+		public DataTable GetNowTournamentByequipmentid(string equipmentid)
+		{
+			IDbConnection cn = _connectionFactory.CreateConnection("Pgsql");
+			StringBuilder querySql = new StringBuilder();
+			var parm = new DynamicParameters();
+			querySql.Append(@"
+						SELECT *
+						FROM PUBLIC.equipmentsetting
+						WHERE sessionid = (
+								SELECT sessionid
+								FROM PUBLIC.session
+								WHERE sessionid IN (
+										SELECT sessionid
+										FROM PUBLIC.equipmentsetting
+										WHERE equipmentid =@equipmentid
+										)
+									AND mstatus = 1
+								)
+							AND equipmentid = @equipmentid			
+            ");
+
+			var dt = new DataTable();
+			parm.Add("@equipmentid", equipmentid);
+			dt.Load(cn.ExecuteReader(querySql.ToString(),parm));
+
+			return dt;
+		}
+		#endregion
+
 		/// <summary>
 		/// 取得細項
 		/// </summary>
@@ -227,7 +262,7 @@ namespace WebBO.Areas.Pikegame.Controllers
 		//		WHERE tournamentstartdate <= now()
 		//			AND tournamentEnddate >= now()
 
-  //          ");
+		//          ");
 
 		//	var dt = new DataTable();
 		//	dt.Load(cn.ExecuteReader(querySql.ToString()));
@@ -236,7 +271,7 @@ namespace WebBO.Areas.Pikegame.Controllers
 		//}
 
 
-
+		#region 新增比賽列表
 		/// <summary>
 		/// 新增比賽列表
 		/// </summary>
@@ -317,7 +352,7 @@ namespace WebBO.Areas.Pikegame.Controllers
 				Count = dt.Rows.Count,
 			};
 		}
+        #endregion
 
-
-	}
+    }
 }

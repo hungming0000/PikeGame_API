@@ -20,7 +20,7 @@ namespace WebBO.Areas.Pikegame.Models
         public string blue_accountid { get; set; }
         public int? redfraction_sum { get; set; }
         public int? bluefraction_sum { get; set; }
-        public bool mstatus { get; set; }
+        public int? mstatus { get; set; }
 
     }
 }

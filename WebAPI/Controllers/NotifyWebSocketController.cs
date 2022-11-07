@@ -13,6 +13,7 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Http;
 using System.Web.WebSockets;
+using WebBO.Areas.Pikegame.Controllers;
 using WebBO.General.Repository.Connection;
 
 namespace WebAPI.Controllers
@@ -48,17 +49,27 @@ namespace WebAPI.Controllers
                     var sendmessagedt = "";
                     string message = Encoding.UTF8.GetString(buffer.Array, 0, result.Count);
 
-                    var resultdt = new DataTable();
-                   // var resultdt = new AmbulanceetaglightstatusController().GetAmbulanceetaglightstatus(message);
+                    //var resultdt = new DataTable();
+                    var resultdt = new SessiondetialController().GetWisdomGunhead(message);
 
 
                     if (resultdt.Rows.Count > 0)
                     {
-                        sendmessagedt = message + "_" + resultdt.Rows[0]["lightstatus"].ToString();
+                        var redhit = resultdt.Rows[0]["redhit"].ToString();
+                        var bluehit = resultdt.Rows[0]["bluehit"].ToString();
+                        var sessiondetialid = resultdt.Rows[0]["sessiondetialid"].ToString();
+                        if (redhit == "True")
+                        {
+                            sendmessagedt = "Red_"+ redhit+"_"+ sessiondetialid;
+                        }
+                        else if (bluehit == "True")
+                        {
+                            sendmessagedt = "Blue_" + bluehit + "_" + sessiondetialid;
+                        }                        
                     }
                     else
                     {
-                        sendmessagedt = message + "_" + "false";
+                        sendmessagedt = "目前沒有最新得分資訊!";
 
                     }
 

@@ -343,6 +343,7 @@
     <Compile Include="App_Start\SwaggerConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Areas\BusStopManagement\Controllers\BusShelterController.cs" />
+    <Compile Include="Areas\Pikegame\Controllers\EquipmentsettingController.cs" />
     <Compile Include="Areas\Pikegame\Controllers\SessionController.cs" />
     <Compile Include="Areas\Pikegame\Controllers\SessiondetialController.cs" />
     <Compile Include="Areas\Pikegame\Controllers\TournamentController.cs" />
@@ -876,6 +877,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Areas\BusStopManagement\Views\BusShelter\" />
+    <Folder Include="Areas\Pikegame\Views\Equipmentsetting\" />
     <Folder Include="Areas\Pikegame\Views\Sessiondetial\" />
     <Folder Include="Areas\Pikegame\Views\Session\" />
     <Folder Include="Areas\Pikegame\Views\Tournament\" />
@@ -908,7 +910,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>59626</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:59638/</IISUrl>
+          <IISUrl>https://localhost:44302/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
