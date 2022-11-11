@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WebBO.Areas.Pikegame.Models;
 using WebBO.General;
 using WebBO.General.Repository.Connection;
 
@@ -36,16 +37,16 @@ namespace WebBO.Areas.Pikegame.Controllers
             var resultdt = new DataTable();
 
             querySql.Append(String.Format(@"
-					SELECT pivotcode('(select red_accountid as player,sessiondetialid  ,redfraction
+					SELECT pivotcode('(select red_accountid as player, row_number() over (ORDER BY sessiondetialid)as rownum  ,redfraction
 					from session t1
 					left join  sessiondetial  t2 on  t1.sessionid = t2.sessionid
 					where t1.sessionid ={0}
 					union
-					select blue_accountid,sessiondetialid  ,bluefraction
+					select blue_accountid,row_number() over (ORDER BY sessiondetialid)as rownum  ,bluefraction
 					from session t1
 					left join  sessiondetial  t2 on  t1.sessionid = t2.sessionid
 					where t1.sessionid ={0}
-					order by 1) a', 'player', 'sessiondetialid', 'redfraction', 'integer');			          
+					order by rownum) a', 'player', 'rownum', 'redfraction', 'integer');			          
             ", sessionid));
 
             dt.Load(cn.ExecuteReader(querySql.ToString()));
@@ -231,6 +232,54 @@ namespace WebBO.Areas.Pikegame.Controllers
 
             return dt;
         }
+        #endregion
+
+        #region 裁判輸入分數
+
+        /// <summary>
+        /// 裁判輸入分數
+        /// </summary>
+        /// <returns></returns>
+        public ExecuteCommandAPIResult EditFraction(SessiondetialModel request)
+        {
+            IDbConnection cn = _connectionFactory.CreateConnection("Pgsql");
+            string message = "";
+            bool isSuccess = true;
+            StringBuilder querySql = new StringBuilder();
+            var parm = new DynamicParameters();
+            #region  sql
+            querySql.Append(@"
+				UPDATE PUBLIC.sessiondetial
+                SET redfraction =@redfraction,
+	                bluefraction=@bluefraction,
+                    mstatus=0
+                WHERE sessiondetialid =@sessiondetialid ;
+
+                    UPDATE PUBLIC.session
+                    SET redfraction_sum = redfraction_sum +@redfraction,
+	                    bluefraction_sum = bluefraction_sum +@bluefraction
+                    WHERE sessionid = @sessionid ;
+
+			
+			       ");
+            #endregion            
+            parm.Add("@sessionid", request.sessionid);
+            parm.Add("@sessiondetialid", request.sessiondetialid);
+            parm.Add("@redfraction", request.redfraction);
+            parm.Add("@bluefraction", request.bluefraction);
+
+            var dt = new DataTable();
+            dt.Load(cn.ExecuteReader(querySql.ToString(), parm));
+
+            return new ExecuteCommandAPIResult()
+            {
+                isSuccess = isSuccess,
+                Message = message,
+                Data = dt,
+                Count = dt.Rows.Count,
+            };
+        }
+
         #endregion
 
     }

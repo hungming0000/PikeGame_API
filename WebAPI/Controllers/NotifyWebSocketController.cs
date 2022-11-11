@@ -58,13 +58,14 @@ namespace WebAPI.Controllers
                         var redhit = resultdt.Rows[0]["redhit"].ToString();
                         var bluehit = resultdt.Rows[0]["bluehit"].ToString();
                         var sessiondetialid = resultdt.Rows[0]["sessiondetialid"].ToString();
+                        var sessionid = resultdt.Rows[0]["sessionid"].ToString();
                         if (redhit == "True")
                         {
-                            sendmessagedt = "Red_"+ redhit+"_"+ sessiondetialid;
+                            sendmessagedt = "Red_"+ redhit+"_"+ sessiondetialid+"_"+ sessionid;
                         }
                         else if (bluehit == "True")
                         {
-                            sendmessagedt = "Blue_" + bluehit + "_" + sessiondetialid;
+                            sendmessagedt = "Blue_" + bluehit + "_" + sessiondetialid + "_" + sessionid;
                         }                        
                     }
                     else

@@ -40,7 +40,7 @@ namespace WebBO.Areas.Pikegame.Controllers
 										blue_accountid,
 										redfraction_sum,
 										bluefraction_sum,
-										mstatus,
+										mstatus::text,
 										(
 											SELECT accountname
 											FROM accountm AS a
@@ -151,14 +151,14 @@ namespace WebBO.Areas.Pikegame.Controllers
 			parm.Add("@tournamentid", request.tournamentid);
 			parm.Add("@judge_accountid", request.judge_accountid);
 			parm.Add("@sessionname", request.sessionname);
-			parm.Add("@sessiontime", request.sessiontime);
+			parm.Add("@sessiontime", Convert.ToDateTime(request.sessiontime));
 			parm.Add("@red_accountid", request.red_accountid);
 			parm.Add("@blue_accountid", request.blue_accountid);			
 			parm.Add("@mstatus", 0);
 
 			var dt = new DataTable();		
 
-			//dt.Load(cn.ExecuteReader(querySql.ToString(), parm));
+			dt.Load(cn.ExecuteReader(querySql.ToString(), parm));
 
 			return new ExecuteCommandAPIResult()
 			{
@@ -169,7 +169,73 @@ namespace WebBO.Areas.Pikegame.Controllers
 			};
 		}
 
-        #endregion
+		#endregion
 
-    }
+
+		#region 開始/結束 比賽
+		public ExecuteCommandAPIResult SetSessionmstatus(SessionModel request)
+		{
+			IDbConnection cn = _connectionFactory.CreateConnection("Pgsql");
+			string message = "";
+			bool isSuccess = true;
+			StringBuilder querySql = new StringBuilder();
+			var parm = new DynamicParameters();
+			var selectparm = new DynamicParameters();
+			var dt = new DataTable();
+			var selectdt = new DataTable();
+
+            //查詢該裁判是否有正在比賽中的場次
+			querySql.Append(@"	
+				SELECT *
+				FROM PUBLIC.session
+				WHERE accountid = (
+						SELECT accountid
+						FROM PUBLIC.session
+						WHERE sessionid = @sessionid
+						)
+					AND mstatus = 1
+				ORDER BY sessionid ASC
+
+			");
+			selectparm.Add("@sessionid", request.sessionid);
+			selectdt.Load(cn.ExecuteReader(querySql.ToString(), selectparm));
+
+			//表示該裁判有正在判決中的場次
+            if (selectdt.Rows.Count > 0&& request.mstatus==1)
+            {
+				isSuccess = false;
+				message = "該裁判目前有正在判決中的場次!";
+
+			}
+			//沒有就新增
+            else
+            {
+				querySql.Clear();
+
+				querySql.Append(@"	
+				UPDATE PUBLIC.session
+				SET mstatus = @mstatus
+				WHERE sessionid = @sessionid
+			");
+
+			
+				parm.Add("@sessionid", request.sessionid);
+				parm.Add("@mstatus", request.mstatus);
+				dt.Load(cn.ExecuteReader(querySql.ToString(), parm));
+			}
+
+
+			return new ExecuteCommandAPIResult()
+			{
+				isSuccess = isSuccess,
+				Message = message,
+				Data = null,
+				Count = dt.Rows.Count,
+			};
+		}
+
+
+		#endregion
+
+	}
 }

@@ -54,7 +54,7 @@ namespace WebBO.Areas.Pikegame.Controllers
         }
         #endregion
 
-
+        #region 新增設備編號
         /// <summary>
         /// 新增設備編號
         /// </summary>
@@ -106,8 +106,9 @@ namespace WebBO.Areas.Pikegame.Controllers
                 Count = dt.Rows.Count,
             };
         }
+        #endregion
 
-
+        #region 編輯設備編號
         /// <summary>
         /// 編輯設備編號
         /// </summary>
@@ -148,5 +149,6 @@ namespace WebBO.Areas.Pikegame.Controllers
                 Count = dt.Rows.Count,
             };
         }
+        #endregion
     }
 }

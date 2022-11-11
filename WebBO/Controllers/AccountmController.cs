@@ -142,8 +142,6 @@ namespace WebBO.Controllers
         #endregion
 
 
-
-
         // 帳號管理
         #region 帳號管理 列表 GetUserData
         public ExecuteCommandAPIResult GetUserData(LoginRequest request)
@@ -302,102 +300,103 @@ namespace WebBO.Controllers
         #endregion
 
 
-        #region 帳號管理 新增 Create
-        public ExecuteCommandAPIResult Create(SysUserDataModel request)
+        #region 帳號管理
+
+        public ExecuteCommandAPIResult GetAccountm()
         {
+            IDbConnection cn = _connectionFactory.CreateConnection("Pgsql");
+            string message = "";
+            bool isSuccess = true;
+            StringBuilder querySql = new StringBuilder();
+            querySql.Append(@"			         
+					SELECT  accountid,
+	                                accountname,
+	                                accountgroupname,
+	                                accountstyle
+                                FROM PUBLIC.accountm
+                                ORDER BY accountid ASC
+
+            ");
+
+            var dt = new DataTable();
+            dt.Load(cn.ExecuteReader(querySql.ToString()));
+
+            return new ExecuteCommandAPIResult()
+            {
+                isSuccess = isSuccess,
+                Message = message,
+                Data = dt,
+                Count = dt.Rows.Count,
+            };
+        }
+
+        public ExecuteCommandAPIResult GetAccountmById(string accountid)
+        {
+            IDbConnection cn = _connectionFactory.CreateConnection("Pgsql");
+            string message = "";
+            bool isSuccess = true;
+            StringBuilder querySql = new StringBuilder();
+            var parm = new DynamicParameters();
+            querySql.Append(@"			         
+					SELECT  *
+                                FROM PUBLIC.accountm
+                                WHERE accountid=@accountid
+                                ORDER BY accountid ASC
+
+            ");
+
+            var dt = new DataTable();
+            parm.Add("@accountid", accountid);
+            dt.Load(cn.ExecuteReader(querySql.ToString(), parm));
+
+            return new ExecuteCommandAPIResult()
+            {
+                isSuccess = isSuccess,
+                Message = message,
+                Data = dt,
+                Count = dt.Rows.Count,
+            };
+        }
+
+        #region 帳號管理 新增 Create
+        public ExecuteCommandAPIResult CreateAccountm(AccountmModel request)
+        {
+            IDbConnection cn = _connectionFactory.CreateConnection("Pgsql");
             var message = "成功。";
             bool isSuccess = true;
-            var SysOrganizationID = request.SysOrganizationID;
+            StringBuilder querySql = new StringBuilder();
+            var parm = new DynamicParameters();
+            var dt = new DataTable();
 
-            var CSQL = $@"select *
-                        from tbSysUserData
-                        where UserID = '{request.UserID}' ";
-            DataTable dt = CommonLib.GetDataFromSQL(CSQL);
+            querySql.Append(@"	
+			    SELECT *
+                FROM PUBLIC.accountm
+                where accountid=@accountid
+                ORDER BY accountid ASC
+
+            ");
+            parm.Add("@accountid", request.accountid);
+            dt.Load(cn.ExecuteReader(querySql.ToString(), parm));
+
             if (dt.Rows.Count == 0)
             {
-                if (!string.IsNullOrEmpty(request.WorkStation))
-                {
-                    SysOrganizationID = request.WorkStation;
-                }
+                querySql.Clear();
+                querySql.Append(@"	
+			    INSERT INTO PUBLIC.accountm
+                VALUES (
+	                @accountid,
+	                @accountname,
+	                @accpassword,
+	                @accountgroupname,
+	                @accountstyle
+	                );
+            ");
+                parm.Add("@accountname", request.accountname);
+                parm.Add("@accpassword", request.accpassword);
+                parm.Add("@accountgroupname", request.accountgroupname);
+                parm.Add("@accountstyle", request.accountstyle);
 
-                var SQL = $@"insert into tbSysUserData (
-                                    UserID, 
-                                    Password, 
-                                    SysOrganizationID,
-                                    SysGroupID,
-                                    UserName,
-                                    SubOrganizationName,
-                                    IsEnable,
-                                    IsDirector,
-                                    Email,
-                                    Tel,
-                                    CellPhone,
-                                    Memo,
-                                    LastResetPwTime,
-                                    ModifyUser,
-                                    ModifyDate,
-                                    IsDel
-                                    )
-                                    VALUES (
-                                    '{request.UserID}', 
-                                    '{request.Password}',
-                                    '{SysOrganizationID}',
-                                    '{request.SysGroupID}',
-                                    '{request.UserName}',
-                                    '{request.SubOrganizationName}',
-                                    '{request.IsEnable}',
-                                    '{request.IsDirector}',
-                                    '{request.Email}',
-                                    '{request.Tel}',
-                                    '{request.CellPhone}',
-                                    '{request.Memo}',
-                                    getdate(),
-                                    '{request.ModifyUser}',
-                                    getdate(),
-                                    'NotDel'
-                                    )";
-                CommonLib.GetDataFromSQL(SQL);
-
-                // 額外權限
-                if (request.SysFunction.Count() > 0)
-                {
-                    foreach (var item in request.SysFunction)
-                    {
-                        var fSQL = $@"insert into tbSysPermit (
-                                    SysPermitID, 
-                                    SysGroupOrUserID,
-                                    SysFunctionID,
-                                    ModifyUser,
-                                    ModifyDate
-                                    ) OUTPUT @@ROWCOUNT as Result
-                                    VALUES (
-                                    '{Guid.NewGuid().ToString("N")}', 
-                                    '{request.UserID}', 
-                                    '{item.SysFunctionID}', 
-                                    '{request.ModifyUser}',
-                                    getdate()
-                                    )";
-                        CommonLib.GetDataFromSQL(fSQL);
-                    }
-                }
-
-                if (request.UserType.Count() > 0)
-                {
-                    foreach (var item in request.UserType)
-                    {
-                        var UTSQL = $@"insert into tbUserType (
-                                    SysUserTypeID, 
-                                    SysUserTypeName,
-                                    UserID
-                                    ) OUTPUT @@ROWCOUNT as Result
-                                    VALUES (
-                                    '{Guid.NewGuid().ToString("N")}', 
-                                    '{item.UserTypeItem}',
-                                    '{request.UserID}'
-                                    )";
-                        CommonLib.GetDataFromSQL(UTSQL);
-                    }
-                }
+                cn.ExecuteReader(querySql.ToString(), parm);
             }
             else
             {
@@ -417,85 +416,33 @@ namespace WebBO.Controllers
         #endregion
 
         #region 帳號管理 編輯 Edit
-        public ExecuteCommandAPIResult Edit(SysUserDataModel request)
+        public ExecuteCommandAPIResult EditAccountm(AccountmModel request)
         {
+            IDbConnection cn = _connectionFactory.CreateConnection("Pgsql");
             var message = "成功。";
             bool isSuccess = true;
-            var SysOrganizationID = request.SysOrganizationID;
+            StringBuilder querySql = new StringBuilder();
+            var parm = new DynamicParameters();
+            var dt = new DataTable();
 
-            if (!string.IsNullOrEmpty(request.WorkStation))
-            {
-                SysOrganizationID = request.WorkStation;
-            }
+            querySql.Append(@"	
+			    UPDATE PUBLIC.accountm
+                SET accountname = @accountname,
+	                accpassword = @accpassword,
+	                accountgroupname = @accountgroupname,
+	                accountstyle = @accountstyle
+                WHERE accountid = @accountid
 
-            // 編輯帳號
-            var SQL = $@"update tbSysUserData set 
-                            Password = '{request.Password}',
-                            SysOrganizationID = '{SysOrganizationID}',
-                            SysGroupID = '{request.SysGroupID}',
-                            UserName = '{request.UserName}',
-                            SubOrganizationName = '{request.SubOrganizationName}',
-                            IsEnable= '{request.IsEnable}',
-                            IsDirector = '{request.IsDirector}',
-                            Email = '{request.Email}',
-                            Tel = '{request.Tel}',
-                            CellPhone = '{request.CellPhone}',
-                            Memo = '{request.Memo}',
-                            ModifyUser = '{request.ModifyUser}',
-                            ModifyDate = getdate()
-                            where UserID = '{request.UserID}'";
-            CommonLib.GetDataFromSQL(SQL);
 
-            // 刪除額外權限
-            var dSQL = $@"delete from tbSysPermit 
-                        where SysGroupOrUserID = '{request.UserID}' ";
-            CommonLib.GetDataFromSQL(dSQL);
+            ");
+            parm.Add("@accountid", request.accountid);
+            parm.Add("@accountname", request.accountname);
+            parm.Add("@accpassword", request.accpassword);
+            parm.Add("@accountgroupname", request.accountgroupname);
+            parm.Add("@accountstyle", request.accountstyle);
+            dt.Load(cn.ExecuteReader(querySql.ToString(), parm));
 
-            // 新增額外權限
-            if (request.SysFunction.Count() > 0)
-            {
-                foreach (var item in request.SysFunction)
-                {
-                    var fSQL = $@"insert into tbSysPermit (
-                                    SysPermitID, 
-                                    SysGroupOrUserID,
-                                    SysFunctionID,
-                                    ModifyUser,
-                                    ModifyDate
-                                    ) OUTPUT @@ROWCOUNT as Result
-                                    VALUES (
-                                    '{Guid.NewGuid().ToString("N")}', 
-                                    '{request.UserID}', 
-                                    '{item.SysFunctionID}', 
-                                    '{request.ModifyUser}',
-                                    getdate()
-                                    )";
-                    CommonLib.GetDataFromSQL(fSQL);
-                }
-            }
 
-            // 刪除身分
-            var dUTSQL = $@"delete from tbUserType 
-                        where UserID = '{request.UserID}' ";
-            CommonLib.GetDataFromSQL(dUTSQL);
-
-            if (request.UserType.Count() > 0)
-            {
-                foreach (var item in request.UserType)
-                {
-                    var UTSQL = $@"insert into tbUserType (
-                                    SysUserTypeID, 
-                                    SysUserTypeName,
-                                    UserID
-                                    ) OUTPUT @@ROWCOUNT as Result
-                                    VALUES (
-                                    '{Guid.NewGuid().ToString("N")}', 
-                                    '{item.UserTypeItem}',
-                                    '{request.UserID}'
-                                    )";
-                    CommonLib.GetDataFromSQL(UTSQL);
-                }
-            }
             return new ExecuteCommandAPIResult()
             {
                 isSuccess = isSuccess,
@@ -507,18 +454,22 @@ namespace WebBO.Controllers
         #endregion
 
         #region 帳號管理 刪除 Delete
-        public ExecuteCommandAPIResult Delete(string userID)
+        public ExecuteCommandAPIResult DeleteAccountmById(string accountid)
         {
-            var message = "成功。";
+            IDbConnection cn = _connectionFactory.CreateConnection("Pgsql");
+            string message = "";
             bool isSuccess = true;
+            StringBuilder querySql = new StringBuilder();
+            var parm = new DynamicParameters();
+            querySql.Append(@"			         
+					DELETE 
+                                FROM PUBLIC.accountm
+                                WHERE accountid=@accountid 
+            ");
 
-            var SQLL = $@"update tbSysUserData set
-                            IsDel = 'Delete'
-                            where UserID = '{userID}'";
-
-            CommonLib.GetDataFromSQL(SQLL);
-
-
+            var dt = new DataTable();
+            parm.Add("@accountid", accountid);
+            dt.Load(cn.ExecuteReader(querySql.ToString(), parm));
 
             return new ExecuteCommandAPIResult()
             {
@@ -528,6 +479,57 @@ namespace WebBO.Controllers
                 Count = 1,
             };
         }
+        #endregion
+
+
+        #region 取得帳號類型
+        /// <summary>
+        /// 取得選手列表
+        /// </summary>
+        /// <returns></returns>
+        public ExecuteCommandAPIResult GetAccountgroupname()
+        {
+            IDbConnection cn = _connectionFactory.CreateConnection("Pgsql");
+            string message = "";
+            bool isSuccess = true;
+            StringBuilder querySql = new StringBuilder();
+            querySql.Append(@"
+			    SELECT *
+                FROM (
+	                SELECT 0 AS accountstyle,
+		                '比賽制定者' AS accountgroupname
+	
+	                UNION
+	
+	                SELECT 1 AS accountstyle,
+		                '裁判' AS accountgroupname
+	
+	                UNION
+	
+	                SELECT 2 AS accountstyle,
+		                '選手' AS accountgroupname
+	
+	                UNION
+	
+	                SELECT 3 AS accountstyle,
+		                '觀眾' AS accountgroupname
+	                ) a
+                ORDER BY accountstyle
+            ");
+
+            var dt = new DataTable();
+            dt.Load(cn.ExecuteReader(querySql.ToString()));
+
+            return new ExecuteCommandAPIResult()
+            {
+                isSuccess = isSuccess,
+                Message = message,
+                Data = dt,
+                Count = dt.Rows.Count,
+            };
+        }
+        #endregion
+
         #endregion
 
 
