@@ -183,8 +183,9 @@ namespace WebBO.Areas.Pikegame.Controllers
 			var selectparm = new DynamicParameters();
 			var dt = new DataTable();
 			var selectdt = new DataTable();
+			bool is_equipment_exist;
 
-            //查詢該裁判是否有正在比賽中的場次
+			//查詢該裁判是否有正在比賽中的場次
 			querySql.Append(@"	
 				SELECT *
 				FROM PUBLIC.session
@@ -200,12 +201,19 @@ namespace WebBO.Areas.Pikegame.Controllers
 			selectparm.Add("@sessionid", request.sessionid);
 			selectdt.Load(cn.ExecuteReader(querySql.ToString(), selectparm));
 
+			is_equipment_exist=GetEquipment_exist(request.sessionid);
+
 			//表示該裁判有正在判決中的場次
-            if (selectdt.Rows.Count > 0&& request.mstatus==1)
+			if (selectdt.Rows.Count > 0&& request.mstatus==1)
             {
 				isSuccess = false;
 				message = "該裁判目前有正在判決中的場次!";
 
+			}
+			else if (is_equipment_exist==false)
+            {
+				isSuccess = false;
+				message = "設未設定設備編號";
 			}
 			//沒有就新增
             else
@@ -235,7 +243,31 @@ namespace WebBO.Areas.Pikegame.Controllers
 		}
 
 
-		#endregion
+        #endregion
 
-	}
+        #region 取得設備編號是否存在
+        public bool GetEquipment_exist(int sessionid)
+        {
+			bool is_equipment_exist = true;
+			IDbConnection cn = _connectionFactory.CreateConnection("Pgsql");
+			StringBuilder querySql = new StringBuilder();
+			var parm = new DynamicParameters();
+			var dt = new DataTable();
+			#region  sql
+			querySql.Append(@"
+				SELECT is_equipment_exist(sessionid)
+				FROM PUBLIC.session
+				WHERE sessionid = @sessionid;
+				");
+            #endregion
+            parm.Add("@sessionid", sessionid);
+			dt.Load(cn.ExecuteReader(querySql.ToString(), parm));
+
+			is_equipment_exist =Convert.ToBoolean( dt.Rows[0]["is_equipment_exist"].ToString());
+
+			return is_equipment_exist;
+
+		}
+        #endregion
+    }
 }
