@@ -20,6 +20,37 @@ namespace WebBO.Areas.Pikegame.Controllers
 
         }
 
+        #region 取得全部設備編號
+        /// <summary>
+        /// 取得全部設備編號
+        /// </summary>
+        /// <returns></returns>
+        public ExecuteCommandAPIResult GetAllEquipmentsetting()
+        {
+            IDbConnection cn = _connectionFactory.CreateConnection("Pgsql");
+            string message = "";
+            bool isSuccess = true;
+            StringBuilder querySql = new StringBuilder();
+     
+            querySql.Append(@"
+					SELECT * FROM public.equipmentsetting
+                    ORDER BY sid ASC 
+			");
+
+
+            var dt = new DataTable();
+            dt.Load(cn.ExecuteReader(querySql.ToString()));
+
+            return new ExecuteCommandAPIResult()
+            {
+                isSuccess = isSuccess,
+                Message = message,
+                Data = dt,
+                Count = dt.Rows.Count,
+            };
+        }
+        #endregion
+
         #region 取得設備編號
         /// <summary>
         /// 取得設備編號

@@ -282,5 +282,44 @@ namespace WebBO.Areas.Pikegame.Controllers
 
         #endregion
 
+        #region 取得機器編號 
+        /// <summary>
+		/// 取得機器編號 
+		/// </summary>
+		/// <returns></returns>
+		public ExecuteCommandAPIResult GetEquipmentidList()
+        {
+            IDbConnection cn = _connectionFactory.CreateConnection("Pgsql");
+            string message = "";
+            bool isSuccess = true;
+            StringBuilder querySql = new StringBuilder();
+            querySql.Append(@"			         
+					SELECT sessionname,
+	                (
+		                SELECT accountname
+		                FROM accountm AS a
+		                WHERE a.accountid = s.accountid
+		                ) judge_account,
+                    team,
+	                equipmentid
+                FROM PUBLIC.equipmentsetting e
+                LEFT JOIN PUBLIC.session s ON e.sessionid = s.sessionid
+                WHERE mstatus=1
+            ");
+
+            var dt = new DataTable();
+            dt.Load(cn.ExecuteReader(querySql.ToString()));
+
+            return new ExecuteCommandAPIResult()
+            {
+                isSuccess = isSuccess,
+                Message = message,
+                Data = dt,
+                Count = dt.Rows.Count,
+            };
+        }
+
+        #endregion
+
     }
 }
