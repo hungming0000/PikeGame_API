@@ -310,30 +310,49 @@ namespace WebBO.Areas.Pikegame.Controllers
         }
         #endregion
 
-     
+
 
         /// <summary>
         /// 取得細項
         /// </summary>
         /// <returns></returns>
-        //public DataTable GetNowTournament()
-        //{
-        //	IDbConnection cn = _connectionFactory.CreateConnection("Pgsql");
-        //	StringBuilder querySql = new StringBuilder();
-        //	querySql.Append(@"
-        //	    SELECT *
-        //		FROM PUBLIC.tournament
-        //		WHERE tournamentstartdate <= now()
-        //			AND tournamentEnddate >= now()
 
-        //          ");
+        #region For Winform Sessionselect 
 
-        //	var dt = new DataTable();
-        //	dt.Load(cn.ExecuteReader(querySql.ToString()));
+        /// <summary>
+        /// 取得比賽For Winform
+        /// </summary>       
+        /// <returns></returns>
+        public ExecuteCommandAPIResult GetTournamentSelect()
+        {
+            IDbConnection cn = _connectionFactory.CreateConnection("Pgsql");
+            StringBuilder querySql = new StringBuilder();
+            string message = "";
+            bool isSuccess = true;           
+            var dt = new DataTable();
+            #region  sql
+            querySql.Append(@"
+			
+				SELECT tournamentid, tournamentname 
+                FROM public.tournament 
+                ORDER BY tournamentstartdate DESC ;
+				");
+            #endregion         
 
-        //	return dt;
-        //}
+            dt.Load(cn.ExecuteReader(querySql.ToString()));
 
+            return new ExecuteCommandAPIResult()
+            {
+                isSuccess = isSuccess,
+                Message = message,
+                Data = dt,
+                Count = dt.Rows.Count,
+            };
+
+        }
+
+
+        #endregion
 
 
     }

@@ -2077,7 +2077,6 @@ C:\project\PikeGame_API\WebAPI\bin\WebBO.dll
 C:\project\PikeGame_API\WebAPI\bin\WebGrease.dll
 C:\project\PikeGame_API\WebAPI\bin\IConnectStringProvider.dll
 C:\project\PikeGame_API\WebAPI\bin\crY.ClassLibrary.dll
-C:\project\PikeGame_API\WebAPI\bin\Microsoft.Diagnostics.Tracing.EventSource.dll
 C:\project\PikeGame_API\WebAPI\bin\WebBO.pdb
 C:\project\PikeGame_API\WebAPI\bin\WebBO.xml
 C:\project\PikeGame_API\WebAPI\bin\WebBO.dll.config
@@ -2172,3 +2171,6 @@ C:\project\PikeGame_API\WebAPI\obj\Debug\WebAPI.csproj.CoreCompileInputs.cache
 C:\project\PikeGame_API\WebAPI\obj\Debug\WebAPI.csproj.CopyComplete
 C:\project\PikeGame_API\WebAPI\obj\Debug\WebAPI.dll
 C:\project\PikeGame_API\WebAPI\obj\Debug\WebAPI.pdb
+C:\project\PikeGame_API\WebAPI\bin\WebAPI.etwManifests.lst
+C:\project\PikeGame_API\WebAPI\bin\Microsoft.Diagnostics.Tracing.EventSource.dll
+C:\project\PikeGame_API\WebAPI\bin\Microsoft.Diagnostics.Tracing.EventSource.xml

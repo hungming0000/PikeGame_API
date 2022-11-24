@@ -133,7 +133,9 @@ namespace WebBO.Areas.Pikegame.Controllers
 								sessionname,
 								sessiontime,
 								red_accountid,
-								blue_accountid,							
+								blue_accountid,
+								redfraction_sum,
+								bluefraction_sum,
 								mstatus
 							)
 						VALUES (
@@ -142,7 +144,9 @@ namespace WebBO.Areas.Pikegame.Controllers
 					@sessionname,
 					@sessiontime,
 					@red_accountid,
-					@blue_accountid,				
+					@blue_accountid,		
+					@redfraction_sum,
+					@bluefraction_sum,
 					@mstatus
 						);
 			       ");
@@ -153,7 +157,9 @@ namespace WebBO.Areas.Pikegame.Controllers
 			parm.Add("@sessionname", request.sessionname);
 			parm.Add("@sessiontime", Convert.ToDateTime(request.sessiontime));
 			parm.Add("@red_accountid", request.red_accountid);
-			parm.Add("@blue_accountid", request.blue_accountid);			
+			parm.Add("@blue_accountid", request.blue_accountid);
+			parm.Add("@redfraction_sum", 0);
+			parm.Add("@bluefraction_sum", 0);
 			parm.Add("@mstatus", 0);
 
 			var dt = new DataTable();		
@@ -170,7 +176,6 @@ namespace WebBO.Areas.Pikegame.Controllers
 		}
 
 		#endregion
-
 
 		#region 開始/結束 比賽
 		public ExecuteCommandAPIResult SetSessionmstatus(SessionModel request)
@@ -268,6 +273,46 @@ namespace WebBO.Areas.Pikegame.Controllers
 			return is_equipment_exist;
 
 		}
-        #endregion
-    }
+		#endregion
+
+		#region For Winform Sessionselect 
+
+		/// <summary>
+		/// 取得場次For Winform
+		/// </summary>
+		/// <param name="tournamentid"></param>
+		/// <returns></returns>
+		public ExecuteCommandAPIResult GetSessionSelect(int tournamentid)
+		{			
+			IDbConnection cn = _connectionFactory.CreateConnection("Pgsql");
+			StringBuilder querySql = new StringBuilder();
+			string message = "";
+			bool isSuccess = true;
+			var parm = new DynamicParameters();
+			var dt = new DataTable();
+			#region  sql
+			querySql.Append(@"
+			
+					SELECT sessionid, sessionname
+					FROM public.session 
+					WHERE tournamentid=@tournamentid;
+				");
+			#endregion
+			parm.Add("@tournamentid", tournamentid);
+
+			dt.Load(cn.ExecuteReader(querySql.ToString(), parm));
+
+			return new ExecuteCommandAPIResult()
+			{
+				isSuccess = isSuccess,
+				Message = message,
+				Data = dt,
+				Count = dt.Rows.Count,
+			};
+
+		}
+
+
+		#endregion
+	}
 }
