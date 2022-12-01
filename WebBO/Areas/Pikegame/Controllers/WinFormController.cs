@@ -18,7 +18,7 @@ namespace WebBO.Areas.Pikegame.Controllers
             _connectionFactory = new ConnectionFactory();
         }
 
-        #region For Winform Sessionselect       
+        #region For Winform TournamentSelect
         /// <summary>
         /// 取得比賽For Winform
         /// </summary>       
@@ -94,5 +94,6 @@ namespace WebBO.Areas.Pikegame.Controllers
 
 
         #endregion
+
     }
 }

@@ -72,13 +72,73 @@ namespace WebBO.Areas.Pikegame.Controllers
 				Count = dt.Rows.Count,
 			};
 		}
-        #endregion
+		#endregion
 
-        /// <summary>
-        /// 取得比賽場次列表
-        /// </summary>
-        /// <returns></returns>
-        public DataTable GetSession()
+		#region 取得比賽場次列表
+		/// <summary>
+		/// 取得比賽場次列表Byid
+		/// </summary>
+		/// <returns></returns>
+		public ExecuteCommandAPIResult GetSessionForWebByid(int sessionid)
+		{
+			IDbConnection cn = _connectionFactory.CreateConnection("Pgsql");
+			string message = "";
+			bool isSuccess = true;
+			StringBuilder querySql = new StringBuilder();
+			var parm = new DynamicParameters();
+			querySql.Append(@"			         
+					SELECT      sessionid,
+										tournamentid,
+										accountid,
+										sessionname,
+										sessiontime::TEXT,
+										red_accountid,
+										blue_accountid,
+										redfraction_sum,
+										bluefraction_sum,
+										mstatus::text,
+										(
+											SELECT accountname
+											FROM accountm AS a
+											WHERE a.accountid = s.accountid
+											) judge_account,
+										(
+											SELECT accountname
+											FROM accountm AS a
+											WHERE a.accountid = s.red_accountid
+											) red_account,
+										(
+											SELECT accountname
+											FROM accountm AS a
+											WHERE a.accountid = s.blue_accountid
+											) blue_account,
+											is_equipment_exist(sessionid)
+									FROM PUBLIC.session s
+									WHERE sessionid=@sessionid
+									ORDER BY sessionid ASC
+            ");
+
+			var dt = new DataTable();
+			parm.Add("@sessionid", sessionid);
+			dt.Load(cn.ExecuteReader(querySql.ToString(),parm));
+
+
+			return new ExecuteCommandAPIResult()
+			{
+				isSuccess = isSuccess,
+				Message = message,
+				Data = dt,
+				Count = dt.Rows.Count,
+			};
+		}
+		#endregion
+
+
+		/// <summary>
+		/// 取得比賽場次列表
+		/// </summary>
+		/// <returns></returns>
+		public DataTable GetSession()
 		{
 			IDbConnection cn = _connectionFactory.CreateConnection("Pgsql");
 			
@@ -110,7 +170,6 @@ namespace WebBO.Areas.Pikegame.Controllers
 
 			return dt;			
 		}
-
 
 		#region 新增比賽場次列表
 		/// <summary>
@@ -177,6 +236,55 @@ namespace WebBO.Areas.Pikegame.Controllers
 
 		#endregion
 
+		#region 新增比賽場次列表
+		/// <summary>
+		/// 新增比賽場次列表
+		/// </summary>
+		/// <returns></returns>
+		public ExecuteCommandAPIResult UpdateSession(SessionModel request)
+		{
+			IDbConnection cn = _connectionFactory.CreateConnection("Pgsql");
+			string message = "";
+			bool isSuccess = true;
+			StringBuilder querySql = new StringBuilder();
+			var parm = new DynamicParameters();
+			#region  sql
+			querySql.Append(@"
+				
+			Update  PUBLIC.session
+			SET 
+			accountid=@judge_accountid,
+			sessionname=@sessionname,
+			sessiontime=@sessiontime,
+			red_accountid=@red_accountid,
+			blue_accountid=@blue_accountid			
+			WHERE 
+			sessionid=@sessionid
+			       ");
+			#endregion
+
+			parm.Add("@sessionid", request.sessionid);
+			parm.Add("@judge_accountid", request.judge_accountid);
+			parm.Add("@sessionname", request.sessionname);
+			parm.Add("@sessiontime", Convert.ToDateTime(request.sessiontime));
+			parm.Add("@red_accountid", request.red_accountid);
+			parm.Add("@blue_accountid", request.blue_accountid);			
+
+			var dt = new DataTable();
+
+			dt.Load(cn.ExecuteReader(querySql.ToString(), parm));
+
+			return new ExecuteCommandAPIResult()
+			{
+				isSuccess = isSuccess,
+				Message = message,
+				Data = dt,
+				Count = dt.Rows.Count,
+			};
+		}
+
+		#endregion
+
 		#region 開始/結束 比賽
 		public ExecuteCommandAPIResult SetSessionmstatus(SessionModel request)
 		{
@@ -215,11 +323,11 @@ namespace WebBO.Areas.Pikegame.Controllers
 				message = "該裁判目前有正在判決中的場次!";
 
 			}
-			else if (is_equipment_exist==false)
-            {
-				isSuccess = false;
-				message = "設未設定設備編號";
-			}
+			//else if (is_equipment_exist==false)
+   //         {
+			//	isSuccess = false;
+			//	message = "設未設定設備編號";
+			//}
 			//沒有就新增
             else
             {

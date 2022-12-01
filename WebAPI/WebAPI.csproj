@@ -351,6 +351,7 @@
     <Compile Include="Areas\Pikegame\Controllers\SessiondetialController.cs" />
     <Compile Include="Areas\Pikegame\Controllers\TournamentController.cs" />
     <Compile Include="Areas\Pikegame\Controllers\WinFormController.cs" />
+    <Compile Include="Areas\Pikegame\Controllers\WinFormPostController.cs" />
     <Compile Include="Auth\ADAuth.cs" />
     <Compile Include="Auth\OnlyReqHttpsAttribute.cs" />
     <Compile Include="Class\clsBabu.cs" />
@@ -876,6 +877,7 @@
     <Folder Include="Areas\Pikegame\Views\SessionSelect\" />
     <Folder Include="Areas\Pikegame\Views\Session\" />
     <Folder Include="Areas\Pikegame\Views\Tournament\" />
+    <Folder Include="Areas\Pikegame\Views\WinFormPost\" />
     <Folder Include="Areas\Pikegame\Views\WinForm\" />
     <Folder Include="assets\" />
     <Folder Include="Content\" />
