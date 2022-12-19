@@ -134,6 +134,62 @@ namespace WebBO.Areas.Pikegame.Controllers
 		#endregion
 
 
+		#region 取得現在的比賽場次列表
+		/// <summary>
+		/// 取得現在的比賽場次列表
+		/// </summary>
+		/// <returns></returns>
+		public ExecuteCommandAPIResult GetSessionForWebNow()
+		{
+			IDbConnection cn = _connectionFactory.CreateConnection("Pgsql");
+			string message = "";
+			bool isSuccess = true;
+			StringBuilder querySql = new StringBuilder();
+			querySql.Append(@"			         
+					SELECT      sessionid,
+										tournamentid,
+										accountid,
+										sessionname,
+										sessiontime::TEXT,
+										red_accountid,
+										blue_accountid,
+										redfraction_sum,
+										bluefraction_sum,
+										mstatus::text,
+										(
+											SELECT accountname
+											FROM accountm AS a
+											WHERE a.accountid = s.accountid
+											) judge_account,
+										(
+											SELECT accountname
+											FROM accountm AS a
+											WHERE a.accountid = s.red_accountid
+											) red_account,
+										(
+											SELECT accountname
+											FROM accountm AS a
+											WHERE a.accountid = s.blue_accountid
+											) blue_account,
+											is_equipment_exist(sessionid)
+									FROM PUBLIC.session s
+									ORDER BY sessionid ASC
+									LIMIT 5
+            ");
+
+			var dt = new DataTable();
+			dt.Load(cn.ExecuteReader(querySql.ToString()));
+
+			return new ExecuteCommandAPIResult()
+			{
+				isSuccess = isSuccess,
+				Message = message,
+				Data = dt,
+				Count = dt.Rows.Count,
+			};
+		}
+		#endregion
+
 		/// <summary>
 		/// 取得比賽場次列表
 		/// </summary>

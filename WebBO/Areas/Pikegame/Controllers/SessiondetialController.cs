@@ -37,12 +37,20 @@ namespace WebBO.Areas.Pikegame.Controllers
             var resultdt = new DataTable();
 
             querySql.Append(String.Format(@"
-					SELECT pivotcode('(select red_accountid as player, row_number() over (ORDER BY sessiondetialid)as rownum  ,redfraction
+					SELECT pivotcode('(select (
+		            SELECT accountname
+		            FROM accountm AS a
+		            WHERE a.accountid = t1.red_accountid
+		            ) AS player, row_number() over (ORDER BY sessiondetialid)as rownum  ,redfraction
 					from session t1
 					left join  sessiondetial  t2 on  t1.sessionid = t2.sessionid
 					where t1.sessionid ={0}
 					union
-					select blue_accountid,row_number() over (ORDER BY sessiondetialid)as rownum  ,bluefraction
+					select (
+		            SELECT accountname
+		            FROM accountm AS a
+		            WHERE a.accountid = t1.blue_accountid
+		            ) AS player ,row_number() over (ORDER BY sessiondetialid)as rownum  ,bluefraction
 					from session t1
 					left join  sessiondetial  t2 on  t1.sessionid = t2.sessionid
 					where t1.sessionid ={0}
@@ -56,12 +64,20 @@ namespace WebBO.Areas.Pikegame.Controllers
             if (dt.Rows[0]["pivotcode"].ToString() == "")
             {
                 querySql2.Append(@"
-						SELECT red_accountid AS player
+						SELECT (
+		                SELECT accountname
+		                FROM accountm AS a
+		                WHERE a.accountid = t1.blue_accountid
+		                )  AS player
 						FROM session t1
 						LEFT JOIN sessiondetial t2 ON t1.sessionid = t2.sessionid
 						WHERE t1.sessionid =@sessionid
 						UNION
-						SELECT blue_accountid
+						SELECT  (
+		                SELECT accountname
+		                FROM accountm AS a
+		                WHERE a.accountid = t1.red_accountid
+		                ) 
 						FROM session t1
 						LEFT JOIN sessiondetial t2 ON t1.sessionid = t2.sessionid
 						WHERE t1.sessionid = @sessionid
@@ -247,6 +263,49 @@ namespace WebBO.Areas.Pikegame.Controllers
             bool isSuccess = true;
             StringBuilder querySql = new StringBuilder();
             var parm = new DynamicParameters();
+
+            #region 擊中部位-分數
+            switch (request.redhitposition)
+            {
+                case "頭":
+                    request.redfraction = 3;
+                    request.finalredfraction = 3;
+                    break;
+                case "軀幹":
+                    request.redfraction = 3;
+                    request.finalredfraction = 3;
+                    break;
+                case "四肢":
+                    request.redfraction = 1;
+                    request.finalredfraction = 1;
+                    break;
+                case "掉槍":
+                    request.redfraction = -1;
+                    request.finalredfraction = -1;
+                    break;
+            }
+            switch (request.bluehitposition)
+            {
+                case "頭":
+                    request.bluefraction = 3;
+                    request.finalbluefraction = 3;
+                    break;
+                case "軀幹":
+                    request.bluefraction = 3;
+                    request.finalbluefraction = 3;
+                    break;
+                case "四肢":
+                    request.bluefraction = 1;
+                    request.finalbluefraction = 1;
+                    break;
+                case "掉槍":
+                    request.bluefraction = -1;
+                    request.finalbluefraction = -1;
+                    break;
+
+            }
+            #endregion
+
             #region  sql
             querySql.Append(@"
 				UPDATE PUBLIC.sessiondetial
@@ -256,8 +315,13 @@ namespace WebBO.Areas.Pikegame.Controllers
                 WHERE sessiondetialid =@sessiondetialid ;
 
                     UPDATE PUBLIC.session
-                    SET redfraction_sum = redfraction_sum +@redfraction,
-	                    bluefraction_sum = bluefraction_sum +@bluefraction
+                    SET 
+                        redfraction_sum = redfraction_sum +@redfraction,
+	                    bluefraction_sum = bluefraction_sum +@bluefraction,
+                         finalredfraction = finalredfraction +@redfraction,
+	                    finalbluefraction = finalbluefraction +@bluefraction,
+                        bluehitposition=bluehitposition,
+                        redhitposition=redhitposition
                     WHERE sessionid = @sessionid ;
 
 			
@@ -267,6 +331,111 @@ namespace WebBO.Areas.Pikegame.Controllers
             parm.Add("@sessiondetialid", request.sessiondetialid);
             parm.Add("@redfraction", request.redfraction);
             parm.Add("@bluefraction", request.bluefraction);
+            parm.Add("@finalredfraction", request.finalredfraction);
+            parm.Add("@finalbluefraction", request.finalbluefraction);
+            parm.Add("@redhitposition", request.redhitposition);
+            parm.Add("@bluehitposition", request.bluehitposition);
+
+            var dt = new DataTable();
+            dt.Load(cn.ExecuteReader(querySql.ToString(), parm));
+
+            return new ExecuteCommandAPIResult()
+            {
+                isSuccess = isSuccess,
+                Message = message,
+                Data = dt,
+                Count = dt.Rows.Count,
+            };
+        }
+
+        #endregion
+
+
+        #region 裁判編輯分數
+
+        /// <summary>
+        /// 裁判編輯分數
+        /// </summary>
+        /// <returns></returns>
+        public ExecuteCommandAPIResult EditFractionbyId(SessiondetialModel request)
+        {
+            IDbConnection cn = _connectionFactory.CreateConnection("Pgsql");
+            string message = "";
+            bool isSuccess = true;
+            StringBuilder querySql = new StringBuilder();
+            var parm = new DynamicParameters();
+
+            #region 擊中部位-分數
+            switch (request.redhitposition)
+            {
+                case "頭":
+                    request.redfraction = 3;
+                    request.finalredfraction = 3;
+                    break;
+                case "軀幹":
+                    request.redfraction = 3;
+                    request.finalredfraction = 3;
+                    break;
+                case "四肢":
+                    request.redfraction = 1;
+                    request.finalredfraction = 1;
+                    break;
+                case "掉槍":
+                    request.redfraction = -1;
+                    request.finalredfraction = -1;
+                    break;
+            }
+            switch (request.bluehitposition)
+            {
+                case "頭":
+                    request.bluefraction = 3;
+                    request.finalbluefraction = 3;
+                    break;
+                case "軀幹":
+                    request.bluefraction = 3;
+                    request.finalbluefraction = 3;
+                    break;
+                case "四肢":
+                    request.bluefraction = 1;
+                    request.finalbluefraction = 1;
+                    break;
+                case "掉槍":
+                    request.bluefraction = -1;
+                    request.finalbluefraction = -1;
+                    break;
+
+            }
+            #endregion
+
+            #region  sql
+            querySql.Append(@"
+				UPDATE PUBLIC.sessiondetial
+                SET redfraction =@redfraction,
+	                bluefraction=@bluefraction,
+                    mstatus=0
+                WHERE sessiondetialid =@sessiondetialid ;
+
+                    UPDATE PUBLIC.session
+                    SET 
+                        redfraction_sum = redfraction_sum +@redfraction,
+	                    bluefraction_sum = bluefraction_sum +@bluefraction,
+                         finalredfraction = finalredfraction +@redfraction,
+	                    finalbluefraction = finalbluefraction +@bluefraction,
+                        bluehitposition=bluehitposition,
+                        redhitposition=redhitposition
+                    WHERE sessionid = @sessionid ;
+
+			
+			       ");
+            #endregion            
+            parm.Add("@sessionid", request.sessionid);
+            parm.Add("@sessiondetialid", request.sessiondetialid);
+            parm.Add("@redfraction", request.redfraction);
+            parm.Add("@bluefraction", request.bluefraction);
+            parm.Add("@finalredfraction", request.finalredfraction);
+            parm.Add("@finalbluefraction", request.finalbluefraction);
+            parm.Add("@redhitposition", request.redhitposition);
+            parm.Add("@bluehitposition", request.bluehitposition);
 
             var dt = new DataTable();
             dt.Load(cn.ExecuteReader(querySql.ToString(), parm));

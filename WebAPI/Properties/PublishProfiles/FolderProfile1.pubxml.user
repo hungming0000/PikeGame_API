@@ -5,7 +5,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <_PublishTargetUrl>C:\Users\hungming6\pikegame</_PublishTargetUrl>
-    <History>True|2022-11-24T05:46:17.4778871Z;True|2022-11-23T17:32:59.3832918+08:00;False|2022-11-21T16:28:43.3423266+08:00;False|2022-11-21T16:27:02.8654273+08:00;</History>
+    <History>True|2022-12-02T03:40:15.6783889Z;True|2022-11-24T13:46:17.4778871+08:00;True|2022-11-23T17:32:59.3832918+08:00;False|2022-11-21T16:28:43.3423266+08:00;False|2022-11-21T16:27:02.8654273+08:00;</History>
   </PropertyGroup>
   <ItemGroup>
     <File Include="ApplicationInsights.config">
@@ -321,19 +321,19 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>11/13/2020 16:11:32</publishTime>
     </File>
     <File Include="bin/WebAPI.dll">
-      <publishTime>11/24/2022 13:46:15</publishTime>
+      <publishTime>12/02/2022 11:40:12</publishTime>
     </File>
     <File Include="bin/WebAPI.pdb">
-      <publishTime>11/24/2022 13:46:15</publishTime>
+      <publishTime>12/02/2022 11:40:12</publishTime>
     </File>
     <File Include="bin/WebBO.dll">
-      <publishTime>11/24/2022 13:46:10</publishTime>
+      <publishTime>12/02/2022 11:40:07</publishTime>
     </File>
     <File Include="bin/WebBO.dll.config">
       <publishTime>06/27/2022 10:28:14</publishTime>
     </File>
     <File Include="bin/WebBO.pdb">
-      <publishTime>11/24/2022 13:46:10</publishTime>
+      <publishTime>12/02/2022 11:40:07</publishTime>
     </File>
     <File Include="bin/WebGrease.dll">
       <publishTime>11/13/2020 16:10:05</publishTime>

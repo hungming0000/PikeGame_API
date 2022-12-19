@@ -16,6 +16,9 @@ namespace WebBO.Areas.Pikegame.Models
         public int? redfraction { get; set; }
         public int? bluefraction { get; set; }
         public int? mstatus { get; set; }
-
+        public int? finalredfraction { get; set; }
+        public int? finalbluefraction { get; set; }
+        public string bluehitposition { get; set; }
+        public string redhitposition { get; set; }
     }
 }

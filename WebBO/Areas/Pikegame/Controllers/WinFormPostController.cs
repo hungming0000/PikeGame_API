@@ -11,7 +11,7 @@ using WebBO.General.Repository.Connection;
 
 namespace WebBO.Areas.Pikegame.Controllers
 {
-     public class WinFormPostController
+    public class WinFormPostController
     {
         protected ConnectionFactory _connectionFactory;
         public WinFormPostController()
@@ -33,28 +33,29 @@ namespace WebBO.Areas.Pikegame.Controllers
             var parm = new DynamicParameters();
             var dt = new DataTable();
             bool isstart = false;
-            isstart= checkSession(request.sessionid);
+            isstart = checkSession(request.sessionid);
 
-            if(isstart==true)
-            { 
+            if (isstart == true)
+            {
 
-            querySql.Append(@"
+                querySql.Append(@"
 					INSERT INTO public.sessiondetial(sessionid,sessiondetialtime,redhit,bluehit, redfraction, bluefraction, mstatus)
 					VALUES(
-                    @sessionid,now(),@redhit,@bluehit,@redfraction,@bluefraction,@mstatus
+                    @sessionid,@sessiondetialtime,@redhit,@bluehit,@redfraction,@bluefraction,@mstatus
                     ) 
 					
 			");
 
-            parm.Add("@sessionid", request.sessionid);
-            parm.Add("@redhit", request.redhit);
-            parm.Add("@bluehit", request.bluehit);
-            parm.Add("@redfraction", 0);
-            parm.Add("@bluefraction", 0);
-            parm.Add("@mstatus", 1);
+                parm.Add("@sessionid", request.sessionid);
+                parm.Add("@sessiondetialtime", request.sessiondetialtime==null?DateTime.Now: request.sessiondetialtime);
+                parm.Add("@redhit", request.redhit);
+                parm.Add("@bluehit", request.bluehit);
+                parm.Add("@redfraction", 0);
+                parm.Add("@bluefraction", 0);
+                parm.Add("@mstatus", 1);
 
-            dt.Load(cn.ExecuteReader(querySql.ToString(), parm));
-            message = "槍頭擊中!";
+                dt.Load(cn.ExecuteReader(querySql.ToString(), parm));
+                message = "槍頭擊中!";
             }
             else
             {
@@ -88,19 +89,20 @@ namespace WebBO.Areas.Pikegame.Controllers
 					WHERE sessionid=@sessionid
 					
 			");
-            parm.Add("@sessionid", sessionid);           
+            parm.Add("@sessionid", sessionid);
 
             dt.Load(cn.ExecuteReader(querySql.ToString(), parm));
-            if (dt.Rows.Count > 0) { 
-            mstatus= dt.Rows[0]["mstatus"].ToString()!=null?Convert.ToInt32(dt.Rows[0]["mstatus"].ToString()):0;
+            if (dt.Rows.Count > 0)
+            {
+                mstatus = dt.Rows[0]["mstatus"].ToString() != null ? Convert.ToInt32(dt.Rows[0]["mstatus"].ToString()) : 0;
             }
             switch (mstatus)
             {
                 case 0:
-                    isstart=false;
+                    isstart = false;
                     break;
                 case 1:
-                    isstart=true;
+                    isstart = true;
                     break;
                 case 2:
                     isstart = false;

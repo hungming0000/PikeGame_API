@@ -11,5 +11,7 @@ namespace WebBO.Areas.Pikegame.Models
         public int sessionid { get; set; }
         public bool redhit { get; set; }
         public bool bluehit { get; set; }
+
+        public DateTime sessiondetialtime { get; set; }
     }
 }

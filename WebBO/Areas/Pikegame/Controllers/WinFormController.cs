@@ -33,9 +33,16 @@ namespace WebBO.Areas.Pikegame.Controllers
             #region  sql
             querySql.Append(@"
 			
-				SELECT tournamentid, tournamentname 
-                FROM public.tournament 
-                ORDER BY tournamentstartdate DESC ;
+				SELECT tournamentid,
+	                            tournamentname
+                            FROM PUBLIC.tournament
+                WHERE tournamentid IN (
+		                SELECT tournamentid
+		                FROM PUBLIC.session
+		                WHERE mstatus = '1'
+		                )
+                ORDER BY tournamentstartdate DESC;
+
 				");
             #endregion         
 
@@ -73,9 +80,12 @@ namespace WebBO.Areas.Pikegame.Controllers
             #region  sql
             querySql.Append(@"
 			
-					SELECT sessionid, sessionname
-					FROM public.session 
-					WHERE tournamentid=@tournamentid;
+					SELECT sessionid,
+	                                sessionname
+                     FROM PUBLIC.session
+                    WHERE mstatus = '1'
+	                                AND tournamentid = @tournamentid;
+
 				");
             #endregion
             parm.Add("@tournamentid", Convert.ToInt32( tournamentid));
