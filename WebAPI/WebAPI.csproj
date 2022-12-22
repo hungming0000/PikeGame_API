@@ -346,6 +346,7 @@
     <Compile Include="App_Start\SwaggerConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Areas\BusStopManagement\Controllers\BusShelterController.cs" />
+    <Compile Include="Areas\Pikegame\Controllers\AdvertisesettingController.cs" />
     <Compile Include="Areas\Pikegame\Controllers\EquipmentsettingController.cs" />
     <Compile Include="Areas\Pikegame\Controllers\SessionController.cs" />
     <Compile Include="Areas\Pikegame\Controllers\SessiondetialController.cs" />
@@ -872,6 +873,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Areas\BusStopManagement\Views\BusShelter\" />
+    <Folder Include="Areas\Pikegame\Views\Advertisesetting\" />
     <Folder Include="Areas\Pikegame\Views\Equipmentsetting\" />
     <Folder Include="Areas\Pikegame\Views\Sessiondetial\" />
     <Folder Include="Areas\Pikegame\Views\SessionSelect\" />
