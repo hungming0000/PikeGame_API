@@ -206,6 +206,7 @@
     <Compile Include="Areas\Pikegame\Controllers\TournamentController.cs" />
     <Compile Include="Areas\Pikegame\Controllers\WinFormController.cs" />
     <Compile Include="Areas\Pikegame\Controllers\WinFormPostController.cs" />
+    <Compile Include="Areas\Pikegame\Models\AdvertisesettingModel.cs" />
     <Compile Include="Areas\Pikegame\Models\EquipmentsettingModel.cs" />
     <Compile Include="Areas\Pikegame\Models\SessiondetialModel.cs" />
     <Compile Include="Areas\Pikegame\Models\TournamentDetailModel.cs" />
