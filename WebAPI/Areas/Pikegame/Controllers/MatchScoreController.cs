@@ -1,14 +1,14 @@
-﻿using isRock.Framework.WebAPI;
-using System;
+﻿using System;
+using isRock.Framework.WebAPI;
 using System.Web.Http;
 using System.Web.Http.Cors;
 
 namespace WebAPI.Areas.Pikegame.Controllers
 {
-    public class EquipmentsettingController : ApiController
+    public class MatchScoreController : ApiController
     {
         [EnableCors(origins: "*", headers: "*", methods: "*")]
-        [Route("Pikegame/Equipmentsetting/{MethodName}")]
+        [Route("Pikegame/MatchScore/{MethodName}")]
         [HttpPost]
         public IHttpActionResult ExecuteMethod(string MethodName)
         {
@@ -18,7 +18,7 @@ namespace WebAPI.Areas.Pikegame.Controllers
                 AssemblyLauncher assemblyLauncher = new AssemblyLauncher();
                 //執行指定的Method                
                 var ret = assemblyLauncher.ExecuteCommand(
-                    new WebBO.Areas.Pikegame.Controllers.EquipmentsettingController(),
+                    new WebBO.Areas.Pikegame.Controllers.MatchScoreController(),
                     MethodName,
                    Request.Content.ReadAsStringAsync().Result
                     );

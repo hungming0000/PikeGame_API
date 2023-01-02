@@ -348,9 +348,11 @@
     <Compile Include="Areas\BusStopManagement\Controllers\BusShelterController.cs" />
     <Compile Include="Areas\Pikegame\Controllers\AdvertisesettingController.cs" />
     <Compile Include="Areas\Pikegame\Controllers\EquipmentsettingController.cs" />
+    <Compile Include="Areas\Pikegame\Controllers\MatchScoreController.cs" />
     <Compile Include="Areas\Pikegame\Controllers\SessionController.cs" />
     <Compile Include="Areas\Pikegame\Controllers\SessiondetialController.cs" />
     <Compile Include="Areas\Pikegame\Controllers\TournamentController.cs" />
+    <Compile Include="Areas\Pikegame\Controllers\VideosettingController.cs" />
     <Compile Include="Areas\Pikegame\Controllers\WinFormController.cs" />
     <Compile Include="Areas\Pikegame\Controllers\WinFormPostController.cs" />
     <Compile Include="Auth\ADAuth.cs" />
@@ -875,10 +877,12 @@
     <Folder Include="Areas\BusStopManagement\Views\BusShelter\" />
     <Folder Include="Areas\Pikegame\Views\Advertisesetting\" />
     <Folder Include="Areas\Pikegame\Views\Equipmentsetting\" />
+    <Folder Include="Areas\Pikegame\Views\MatchScore\" />
     <Folder Include="Areas\Pikegame\Views\Sessiondetial\" />
     <Folder Include="Areas\Pikegame\Views\SessionSelect\" />
     <Folder Include="Areas\Pikegame\Views\Session\" />
     <Folder Include="Areas\Pikegame\Views\Tournament\" />
+    <Folder Include="Areas\Pikegame\Views\Videosetting\" />
     <Folder Include="Areas\Pikegame\Views\WinFormPost\" />
     <Folder Include="Areas\Pikegame\Views\WinForm\" />
     <Folder Include="assets\" />
@@ -887,6 +891,7 @@
     <Folder Include="Logs\" />
     <Folder Include="Views\BusStopManagement\" />
     <Folder Include="Views\HmMenu\" />
+    <Folder Include="Views\MatchScore\" />
     <Folder Include="Views\NotifyWebSocket\" />
     <Folder Include="Views\UploadFile\" />
     <Folder Include="Views\UploadPicture\" />

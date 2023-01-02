@@ -59,16 +59,58 @@ namespace WebBO.Areas.Pikegame.Controllers
 				Count = dt.Rows.Count,
 			};
 		}
-        #endregion
+		#endregion
+
+		#region 取得廣告輪播列表Byid
+		/// <summary>
+		/// 取得廣告輪播列表
+		/// </summary>
+		/// <returns></returns>
+		public ExecuteCommandAPIResult GetAdvertisesettingById(int advertiseid)
+		{
+			IDbConnection cn = _connectionFactory.CreateConnection("Pgsql");
+			string message = "";
+			bool isSuccess = true;
+			var parm = new DynamicParameters();
+			StringBuilder querySql = new StringBuilder();
+			querySql.Append(@"			         
+					SELECT  advertiseid,
+									advertiseurl,
+									adsstatus,
+									advertisstarttime,
+									advertisendtime,
+									advertistimeperiod,
+									advertiscosts,
+									modifydate::TEXT,
+									modifyuser,
+									periodtimes
+								FROM PUBLIC.advertisesetting
+								WHERE advertiseid = @advertiseid
+
+            ");
+
+			var dt = new DataTable();
+			parm.Add("@advertiseid", advertiseid);
+			dt.Load(cn.ExecuteReader(querySql.ToString(), parm));
 
 
-        #region 裁判輸入分數
+			return new ExecuteCommandAPIResult()
+			{
+				isSuccess = isSuccess,
+				Message = message,
+				Data = dt,
+				Count = dt.Rows.Count,
+			};
+		}
+		#endregion
 
-        /// <summary>
-        /// 裁判輸入分數
-        /// </summary>
-        /// <returns></returns>
-        public ExecuteCommandAPIResult CreateAdvertise(AdvertisesettingModel request)
+		#region 新增廣告
+
+		/// <summary>
+		/// 新增廣告
+		/// </summary>
+		/// <returns></returns>
+		public ExecuteCommandAPIResult CreateAdvertise(AdvertisesettingModel request)
         {
             IDbConnection cn = _connectionFactory.CreateConnection("Pgsql");
             string message = "";
@@ -120,6 +162,8 @@ namespace WebBO.Areas.Pikegame.Controllers
             var dt = new DataTable();
             dt.Load(cn.ExecuteReader(querySql.ToString(), parm));
 
+
+
             return new ExecuteCommandAPIResult()
             {
                 isSuccess = isSuccess,
@@ -129,7 +173,99 @@ namespace WebBO.Areas.Pikegame.Controllers
             };
         }
 
-        #endregion
+		#endregion
 
-    }
+		#region 編輯廣告
+
+		/// <summary>
+		/// 編輯廣告
+		/// </summary>
+		/// <returns></returns>
+		public ExecuteCommandAPIResult EditAdvertise(AdvertisesettingModel request)
+		{
+			IDbConnection cn = _connectionFactory.CreateConnection("Pgsql");
+			string message = "";
+			bool isSuccess = true;
+			StringBuilder querySql = new StringBuilder();
+			var parm = new DynamicParameters();
+			string advertistimeperiod = request.advertistimeperiod;
+
+			string[] arrays = advertistimeperiod.Split(',');
+			request.periodtimes = arrays.Length;
+
+
+			#region  sql
+			querySql.Append(@"
+
+						UPDATE PUBLIC.advertisesetting
+						SET advertiseurl = @advertiseurl,
+							adsstatus = @adsstatus,
+							advertisstarttime = @advertisstarttime,
+							advertisendtime = @advertisendtime,
+							advertistimeperiod = @advertistimeperiod,
+							advertiscosts = @advertiscosts,
+							modifydate =now(),
+							modifyuser = @modifyuser,
+							periodtimes = @periodtimes
+						WHERE advertiseid =@advertiseid
+
+			       ");
+			#endregion
+			parm.Add("@advertiseurl", request.advertiseurl);
+			parm.Add("@adsstatus", Convert.ToInt32(request.adsstatus));
+			parm.Add("@advertisstarttime", request.advertisstarttime);
+			parm.Add("@advertisendtime", request.advertisendtime);
+			parm.Add("@advertistimeperiod", request.advertistimeperiod);
+			parm.Add("@advertiscosts", request.advertiscosts);
+			parm.Add("@modifyuser", request.modifyuser);
+			parm.Add("@periodtimes", request.periodtimes);
+			parm.Add("@advertiseid", request.advertiseid);
+
+			var dt = new DataTable();
+			dt.Load(cn.ExecuteReader(querySql.ToString(), parm));
+
+			return new ExecuteCommandAPIResult()
+			{
+				isSuccess = isSuccess,
+				Message = message,
+				Data = dt,
+				Count = dt.Rows.Count,
+			};
+		}
+
+		#endregion
+
+		#region 刪除廣告
+		/// <summary>
+		/// 刪除廣告
+		/// </summary>
+		/// <returns></returns>
+		public ExecuteCommandAPIResult DeleteAdvertise(int advertiseid)
+		{
+			IDbConnection cn = _connectionFactory.CreateConnection("Pgsql");
+			string message = "";
+			bool isSuccess = true;
+			var parm = new DynamicParameters();
+			StringBuilder querySql = new StringBuilder();
+			querySql.Append(@"			         
+					DELETE FROM public.advertisesetting
+					WHERE advertiseid=@advertiseid
+            ");
+
+			var dt = new DataTable();
+			parm.Add("@advertiseid", advertiseid);
+			dt.Load(cn.ExecuteReader(querySql.ToString(), parm));
+
+
+			return new ExecuteCommandAPIResult()
+			{
+				isSuccess = isSuccess,
+				Message = message,
+				Data = dt,
+				Count = dt.Rows.Count,
+			};
+		}
+		#endregion
+
+	}
 }

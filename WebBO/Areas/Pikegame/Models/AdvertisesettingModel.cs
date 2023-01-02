@@ -19,5 +19,7 @@ namespace WebBO.Areas.Pikegame.Models
         public DateTime modifydate { get; set; }
         public string modifyuser { get; set; }
         public int periodtimes { get; set; }
+
+
     }
 }

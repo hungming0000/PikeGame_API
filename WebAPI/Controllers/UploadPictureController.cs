@@ -27,113 +27,116 @@ namespace WebAPI.Controllers
         [HttpPost]
         public async Task<HttpResponseMessage> Post()
         {
-            //var message = "成功。";
-            //bool isSuccess = true;
-            //object data = null;
+            var message = "成功。";
+            bool isSuccess = true;
+            object data = null;
 
-            //HttpResponseMessage response = new HttpResponseMessage();
+            HttpResponseMessage response = new HttpResponseMessage();
 
-            //var _uploadFileService = new UploadFileService();
+            var _uploadFileService = new UploadFileService();
 
-            //try
-            //{
-            //    HttpFileCollection filestest = HttpContext.Current.Request.Files;
+            try
+            {
+                HttpFileCollection filestest = HttpContext.Current.Request.Files;
 
-            //    var upFileID = string.Empty;
+                var upFileID = string.Empty;
 
 
-            //    // 處理圖片/檔案
-            //    for (int i = 0; i < filestest.Count; i++)
-            //    {
-            //        HttpPostedFile postedFile = HttpContext.Current.Request.Files[i];
+                // 處理圖片/檔案
+                for (int i = 0; i < filestest.Count; i++)
+                {
+                    HttpPostedFile postedFile = HttpContext.Current.Request.Files[i];
 
-            //        // 檔案MIME內容型別
-            //        var type = postedFile.ContentType.ToLower();
+                    // 檔案MIME內容型別
+                    var type = postedFile.ContentType.ToLower();
 
-            //        // 圖片儲存路徑
-            //        var folder = HttpContext.Current.Request.Form["UpVTFolder"];
+                    // 圖片儲存路徑
+                    //var folder = HttpContext.Current.Request.Form["UpVTFolder"];
+                    var folder = "advertise";
 
-            //        // 圖片.檔案名稱
-            //        var actualFileName = DateTime.Now.ToString("yyyyMMddHHmmssffff");
-            //        var fileName = Path.GetFileNameWithoutExtension(postedFile.FileName);
-            //        var fileExtName = Path.GetExtension(postedFile.FileName).ToLower();
 
-            //        // 路徑
-            //        var fullFilePath = $@"{fileSavedPath}\{folder}\{actualFileName}{fileExtName}";
+                    // 圖片.檔案名稱
+                    //var actualFileName = DateTime.Now.ToString("yyyyMMddHHmmssffff");
+                   
+                    var fileName = Path.GetFileNameWithoutExtension(postedFile.FileName);
+                    var fileExtName = Path.GetExtension(postedFile.FileName).ToLower();
 
-            //        // 儲存檔案
-            //        postedFile.SaveAs(fullFilePath);
+                    // 路徑
+                    var fullFilePath = $@"{fileSavedPath}\{folder}\{fileName}{fileExtName}";
 
-            //        var thumbnailName = "";
+                    // 儲存檔案
+                    postedFile.SaveAs(fullFilePath);
 
-            //        if (fileExtName == ".jpg" || fileExtName == ".jpeg" || fileExtName == ".png" || fileExtName == ".gif")
-            //        {
-            //            var fullThumbFilePath = $@"{fileSavedPath}\{folder}\{actualFileName}_tumb{fileExtName}";
+                   // var thumbnailName = "";
 
-            //            thumbnailName = actualFileName + "_tumb";
+                    //if (fileExtName == ".jpg" || fileExtName == ".jpeg" || fileExtName == ".png" || fileExtName == ".gif")
+                    //{
+                    //    var fullThumbFilePath = $@"{fileSavedPath}\{folder}\{actualFileName}_tumb{fileExtName}";
 
-            //            // 儲存縮圖
-            //            ImageTool.SaveThumbPicHeight(fullFilePath, gThumbPicWidth, fullThumbFilePath);
-            //        }
+                    //    thumbnailName = actualFileName + "_tumb";
 
-            //        // 取圖片資料
-            //        var model = new ProcessingStepModel()
-            //        {
-            //            ProcessingStepId  = HttpContext.Current.Request.Form["ProcessingStepId"],
-            //            PictureName = fileName,
-            //            FlowId   =HttpContext.Current.Request.Form["FlowId"],
-            //            PictureFileExt = fileExtName,
-            //            UpVTFolder = folder,
-            //            UpActualFileName = actualFileName,
-            //            UpThumbnailName = thumbnailName,
-            //            ModifyUser = HttpContext.Current.Request.Form["ModifyUser"],
+                    //    // 儲存縮圖
+                    //    ImageTool.SaveThumbPicHeight(fullFilePath, gThumbPicWidth, fullThumbFilePath);
+                    //}
 
-            //        };
+                    // 取圖片資料
+                    //var model = new ProcessingStepModel()
+                    //{
+                    //    ProcessingStepId = HttpContext.Current.Request.Form["ProcessingStepId"],
+                    //    PictureName = fileName,
+                    //    FlowId = HttpContext.Current.Request.Form["FlowId"],
+                    //    PictureFileExt = fileExtName,
+                    //    UpVTFolder = folder,
+                    //    UpActualFileName = actualFileName,
+                    //    UpThumbnailName = thumbnailName,
+                    //    ModifyUser = HttpContext.Current.Request.Form["ModifyUser"],
 
-            //        // 上傳資料儲存到DB => tbUploadFile
-            //        upFileID = _uploadFileService.UploadPirture(model);
-            //    }
+                    //};
 
-            //    var _jsonString = new
-            //    {
-            //        isSuccess = isSuccess,
-            //        Message = message,
-            //        Data = data,
-            //        Count = 1
-            //    };
+                    // 上傳資料儲存到DB => tbUploadFile
+                   // upFileID = _uploadFileService.UploadPirture(model);
+                }
 
-            //    var content = new StringContent(JsonConvert.SerializeObject(_jsonString), Encoding.UTF8, "application/json");
+                var _jsonString = new
+                {
+                    isSuccess = isSuccess,
+                    Message = message,
+                    Data = data,
+                    Count = 1
+                };
 
-            //    response = new HttpResponseMessage
-            //    {
-            //        StatusCode = HttpStatusCode.OK,
-            //        Content = content,
-            //        ReasonPhrase = "Success"
-            //    };
+                var content = new StringContent(JsonConvert.SerializeObject(_jsonString), Encoding.UTF8, "application/json");
 
-            //}
-            //catch (Exception e)
-            //{
-            //    var _jsonString = new
-            //    {
-            //        isSuccess = false,
-            //        Message = e.Message,
-            //        Data = data,
-            //        Count = 0
-            //    };
+                response = new HttpResponseMessage
+                {
+                    StatusCode = HttpStatusCode.OK,
+                    Content = content,
+                    ReasonPhrase = "Success"
+                };
 
-            //    var content = new StringContent(JsonConvert.SerializeObject(_jsonString), Encoding.UTF8, "application/json");
+            }
+            catch (Exception e)
+            {
+                var _jsonString = new
+                {
+                    isSuccess = false,
+                    Message = e.Message,
+                    Data = data,
+                    Count = 0
+                };
 
-            //    response = new HttpResponseMessage
-            //    {
-            //        StatusCode = HttpStatusCode.OK,
-            //        Content = content,
-            //        ReasonPhrase = "Upload File Error!"
-            //    };
-            //}
+                var content = new StringContent(JsonConvert.SerializeObject(_jsonString), Encoding.UTF8, "application/json");
 
-            //return response;
-            return null;
+                response = new HttpResponseMessage
+                {
+                    StatusCode = HttpStatusCode.OK,
+                    Content = content,
+                    ReasonPhrase = "Upload File Error!"
+                };
+            }
+
+            return response;
+            //return null;
         }
     }
 }
