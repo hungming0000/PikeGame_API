@@ -34,7 +34,8 @@ namespace WebBO.Areas.Pikegame.Controllers
             querySql.Append(@"
 			
 				SELECT tournamentid,
-	                            tournamentname
+	                            tournamentname,
+								maxfraction
                             FROM PUBLIC.tournament
                 WHERE tournamentid IN (
 		                SELECT tournamentid
