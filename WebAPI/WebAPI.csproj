@@ -349,6 +349,7 @@
     <Compile Include="Areas\Pikegame\Controllers\AdvertisesettingController.cs" />
     <Compile Include="Areas\Pikegame\Controllers\EquipmentsettingController.cs" />
     <Compile Include="Areas\Pikegame\Controllers\MatchScoreController.cs" />
+    <Compile Include="Areas\Pikegame\Controllers\NewssettingController.cs" />
     <Compile Include="Areas\Pikegame\Controllers\SessionController.cs" />
     <Compile Include="Areas\Pikegame\Controllers\SessiondetialController.cs" />
     <Compile Include="Areas\Pikegame\Controllers\TournamentController.cs" />
@@ -386,7 +387,6 @@
     <Compile Include="Results\ChallengeResult.cs" />
     <Compile Include="SignalR\Hubs\MessageLogHub.cs" />
     <Compile Include="SignalR\Hubs\ProductHub.cs" />
-    <Compile Include="WebBO\Controllers\HmmenuController.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App_Data\swagger.yaml">
@@ -878,6 +878,7 @@
     <Folder Include="Areas\Pikegame\Views\Advertisesetting\" />
     <Folder Include="Areas\Pikegame\Views\Equipmentsetting\" />
     <Folder Include="Areas\Pikegame\Views\MatchScore\" />
+    <Folder Include="Areas\Pikegame\Views\Newssetting\" />
     <Folder Include="Areas\Pikegame\Views\Sessiondetial\" />
     <Folder Include="Areas\Pikegame\Views\SessionSelect\" />
     <Folder Include="Areas\Pikegame\Views\Session\" />
@@ -896,6 +897,7 @@
     <Folder Include="Views\UploadFile\" />
     <Folder Include="Views\UploadPicture\" />
     <Folder Include="Views\UserData\" />
+    <Folder Include="WebBO\Controllers\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

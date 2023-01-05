@@ -11,6 +11,8 @@ namespace WebBO.Areas.Pikegame.Models
         public int videoid { get; set; }
         public string videourl { get; set; }
         public string videostatus { get; set; }
+        public string videotitle { get; set; }
+        public string videodescription { get; set; }
         public DateTime modifydate { get; set; }
         public string modifyuser { get; set; }
     }

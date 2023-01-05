@@ -202,6 +202,7 @@
     <Compile Include="Areas\Pikegame\Controllers\AdvertisesettingController.cs" />
     <Compile Include="Areas\Pikegame\Controllers\EquipmentsettingController.cs" />
     <Compile Include="Areas\Pikegame\Controllers\MatchScoreController.cs" />
+    <Compile Include="Areas\Pikegame\Controllers\NewssettingController.cs" />
     <Compile Include="Areas\Pikegame\Controllers\SessionController.cs" />
     <Compile Include="Areas\Pikegame\Controllers\SessiondetialController.cs" />
     <Compile Include="Areas\Pikegame\Controllers\TournamentController.cs" />
@@ -210,6 +211,7 @@
     <Compile Include="Areas\Pikegame\Controllers\WinFormPostController.cs" />
     <Compile Include="Areas\Pikegame\Models\AdvertisesettingModel.cs" />
     <Compile Include="Areas\Pikegame\Models\EquipmentsettingModel.cs" />
+    <Compile Include="Areas\Pikegame\Models\NewssettingModel.cs" />
     <Compile Include="Areas\Pikegame\Models\SessiondetialModel.cs" />
     <Compile Include="Areas\Pikegame\Models\TournamentDetailModel.cs" />
     <Compile Include="Areas\Pikegame\Models\TournamentModel.cs" />
